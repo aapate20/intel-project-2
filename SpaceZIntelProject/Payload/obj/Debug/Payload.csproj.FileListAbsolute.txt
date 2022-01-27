@@ -1,0 +1,16 @@
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\bin\Debug\Payload.exe.config
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\bin\Debug\Payload.exe
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\bin\Debug\Payload.pdb
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.csproj.AssemblyReference.cache
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.csproj.SuggestedBindingRedirects.cache
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\MainWindow.g.cs
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\App.g.cs
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload_MarkupCompile.cache
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload_MarkupCompile.lref
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\MainWindow.baml
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.g.resources
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.Properties.Resources.resources
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.csproj.GenerateResource.cache
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.csproj.CoreCompileInputs.cache
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.exe
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.pdb

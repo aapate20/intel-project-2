@@ -1,0 +1,20 @@
+﻿<Window x:Class="DeepSpaceNetwork.DSNDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeepSpaceNetwork"
+        mc:Ignorable="d"
+        Title="Spacecraft Details" Height="500" Width="800">
+    <Grid Background="AntiqueWhite">
+        <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
+        <Label Content="Deep Space Network Dashboard" FontSize="22" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="331"/>
+        <ListBox x:Name="ActiveSpaceCraftList" Margin="70,130,561,154"/>
+        <ListBox x:Name="NewSpaceCraftList" Margin="567,130,64,154"/>
+        <TextBox x:Name="SpacecraftDetails" TextWrapping="Wrap" Text="" Margin="256,130,250,154" />
+        <Label Content="Active Spacecraft" FontSize="19" FontWeight="Bold" HorizontalAlignment="Left" Margin="70,67,0,0" VerticalAlignment="Top" Width="180" Height="58"/>
+        <Label Content="New Spacecraft" FontSize="19" FontWeight="Bold" HorizontalAlignment="Left" Margin="567,67,0,0" VerticalAlignment="Top" Width="180" Height="58"/>
+        <Label Content="Spacecraft Details" FontSize="19" FontWeight="Bold" HorizontalAlignment="Left" Margin="302,67,0,0" VerticalAlignment="Top" Width="180" Height="58"/>
+        <Button Content="Show Spacecraft Details" FontSize="36" HorizontalAlignment="Left" Margin="194,349,0,0" VerticalAlignment="Top" Width="396" Height="65" RenderTransformOrigin="0.492,-0.419" Click="Get_Spacecraft_details"/>
+    </Grid>
+</Window>

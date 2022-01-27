@@ -1,0 +1,22 @@
+2022-01-26 13:59:11,115 [110] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft() return successfully.
+2022-01-26 14:00:34,752 [115] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft() return successfully.
+2022-01-26 21:17:45,353 [13] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:18:08,440 [139] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA
+2022-01-26 21:18:08,583 [139] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-01-26 21:18:10,673 [137] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:18:16,916 [139] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:19:02,378 [139] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:19:58,148 [166] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:21:55,153 [189] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:23:02,670 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:23:37,325 [192] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:24:44,451 [211] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:26:08,870 [211] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:26:31,381 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:26:41,045 [211] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft() return successfully.
+2022-01-26 21:26:49,372 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft() return successfully.
+2022-01-26 21:39:20,958 [295] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:51:59,831 [360] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:53:00,910 [334] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:53:23,715 [333] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-26 21:53:27,403 [333] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.

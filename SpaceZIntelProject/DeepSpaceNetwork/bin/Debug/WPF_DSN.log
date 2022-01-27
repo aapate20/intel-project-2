@@ -1,0 +1,53 @@
+2022-01-26 00:45:55,390 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging  =============        
+2022-01-26 00:45:55,475 [1] INFO DeepSpaceNetwork.MainWindow - Application started
+2022-01-26 00:50:12,182 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging  =============        
+2022-01-26 00:50:12,243 [1] INFO DeepSpaceNetwork.MainWindow - Application started
+2022-01-26 01:40:10,919 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 01:40:10,980 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 01:40:55,220 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 01:40:55,304 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 13:32:18,872 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 13:32:19,069 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 13:59:03,756 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 13:59:04,277 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 14:00:32,049 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 14:00:32,108 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 14:00:36,496 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\DSNDashboard.xaml.cs - Error in Get_Spacecraft_details() Event.
+System.Exception: Please select one item from either list.
+   at DeepSpaceNetwork.DSNDashboard.Get_Spacecraft_details(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\DSNDashboard.xaml.cs:line 75
+2022-01-26 21:17:39,571 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:17:39,638 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:19:55,218 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:19:55,313 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:20:04,783 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\LaunchSpacecraft.xaml.cs - Launch_Spacecraft() error
+System.ComponentModel.Win32Exception (0x80004005): The system cannot find the file specified
+   at System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at DeepSpaceNetwork.LaunchSpacecraft.Launch_Spacecraft(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\LaunchSpacecraft.xaml.cs:line 77
+2022-01-26 21:21:52,910 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:21:52,967 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:21:57,690 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\LaunchSpacecraft.xaml.cs - Launch_Spacecraft() error
+System.ComponentModel.Win32Exception (0x80004005): The system cannot find the file specified
+   at System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at DeepSpaceNetwork.LaunchSpacecraft.Launch_Spacecraft(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\LaunchSpacecraft.xaml.cs:line 78
+2022-01-26 21:23:00,858 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:23:00,919 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:23:35,686 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:23:35,770 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:24:42,789 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:24:42,866 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:26:07,179 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:26:07,261 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:26:28,899 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:26:28,959 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:39:18,227 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:39:18,285 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:39:29,027 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:51:56,948 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:51:57,010 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:52:58,975 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-26 21:52:59,040 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-26 21:53:15,585 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\LaunchSpacecraft.xaml.cs - Launch_Spacecraft() error
+System.Exception: Please select one from available spacecraft.
+   at DeepSpaceNetwork.LaunchSpacecraft.Launch_Spacecraft(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\LaunchSpacecraft.xaml.cs:line 74
