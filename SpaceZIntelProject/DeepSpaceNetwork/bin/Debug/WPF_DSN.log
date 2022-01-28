@@ -51,3 +51,40 @@ System.ComponentModel.Win32Exception (0x80004005): The system cannot find the fi
 2022-01-26 21:53:15,585 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\LaunchSpacecraft.xaml.cs - Launch_Spacecraft() error
 System.Exception: Please select one from available spacecraft.
    at DeepSpaceNetwork.LaunchSpacecraft.Launch_Spacecraft(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\LaunchSpacecraft.xaml.cs:line 74
+2022-01-27 12:08:06,803 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 12:08:06,860 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 12:40:51,908 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 12:40:51,976 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 12:40:57,425 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 12:41:43,703 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 12:41:43,778 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 12:43:33,054 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 12:43:33,105 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 12:43:35,066 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 12:43:41,807 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 12:43:41,858 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 12:43:43,652 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 13:19:44,573 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 13:19:44,630 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 13:19:48,637 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 13:19:59,275 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 13:26:29,569 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 13:26:29,624 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 13:27:20,687 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 13:27:20,738 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 13:51:31,549 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 13:51:31,609 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 13:53:41,416 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 13:53:41,467 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 13:55:31,507 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 13:55:31,602 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 14:00:35,509 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 14:00:35,564 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 14:01:54,490 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 14:01:54,554 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 15:55:01,484 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 15:55:01,688 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 16:41:57,706 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-27 16:41:57,810 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 16:42:12,399 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-27 16:42:46,393 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started

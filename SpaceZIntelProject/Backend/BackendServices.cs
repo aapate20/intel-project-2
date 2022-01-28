@@ -26,5 +26,11 @@ namespace Backend
 
         [OperationContract]
         void UpdateSpacecraft(string vehicleName, string status);
+
+        [OperationContract]
+        List<Vehicle> GetAllLaunchSequenceSpacecraft();
+
+        [OperationContract]
+        Vehicle GetSpacecraft(string vehicleName);
     }
 }

@@ -56,8 +56,10 @@ namespace DeepSpaceNetwork
                     {
                         throw new Exception("Please enter integer value in Orbit Radius field.");
                     }
+                    vehicle.Status = Constants.STATUS_ADDED;
+                    payload.Status = Constants.STATUS_ADDED;
                     vehicle.Payload = payload;
-                    vehicle.Status = "Added";
+                    
                     string msg = backendServicesClient.AddSpaceCraft(vehicle);
                     MessageBox.Show(msg + " " + count.ToString(), "Status", MessageBoxButton.OK, MessageBoxImage.Information);
                     var missionControlSystem = new MissionControlSystem(); //create your new form.

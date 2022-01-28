@@ -243,6 +243,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CommunicationDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommunicationSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DSNDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -261,6 +269,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommunicationDashboard.xaml.cs">
+      <DependentUpon>CommunicationDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommunicationSystem.xaml.cs">
+      <DependentUpon>CommunicationSystem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\BackendServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>

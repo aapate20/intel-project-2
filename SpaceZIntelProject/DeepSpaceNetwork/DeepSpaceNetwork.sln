@@ -9,15 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepSpaceNetwork", "DeepSpa
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaunchVehicle", "..\LaunchVehicle\LaunchVehicle.csproj", "{89655912-9A17-4BFD-AD58-978D6399D12D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EABD9098-C81D-4071-9E73-A20CC1709D46} = {EABD9098-C81D-4071-9E73-A20CC1709D46}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payload", "..\Payload\Payload.csproj", "{54E49B6D-916E-4DA0-99B1-E30CE1257104}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend", "..\Backend\Backend.csproj", "{EABD9098-C81D-4071-9E73-A20CC1709D46}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BC8B2D14-A93D-4C3B-ADA3-42ACBB9EEE12} = {BC8B2D14-A93D-4C3B-ADA3-42ACBB9EEE12}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "..\Database\Database.csproj", "{BC8B2D14-A93D-4C3B-ADA3-42ACBB9EEE12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{EABD9098-C81D-4071-9E73-A20CC1709D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EABD9098-C81D-4071-9E73-A20CC1709D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EABD9098-C81D-4071-9E73-A20CC1709D46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC8B2D14-A93D-4C3B-ADA3-42ACBB9EEE12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC8B2D14-A93D-4C3B-ADA3-42ACBB9EEE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC8B2D14-A93D-4C3B-ADA3-42ACBB9EEE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC8B2D14-A93D-4C3B-ADA3-42ACBB9EEE12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

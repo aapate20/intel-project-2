@@ -10,11 +10,13 @@ namespace Backend
         public string Name { get; set; }
         public string Type { get; set; }
 
+        public string Status { get; set; }
         public Payload() { }
-        public Payload(string Name, string Type)
+        public Payload(string Name, string Type, String Status)
         {
             this.Name = Name;
             this.Type = Type;
+            this.Status = Status;
         }
     }
 }

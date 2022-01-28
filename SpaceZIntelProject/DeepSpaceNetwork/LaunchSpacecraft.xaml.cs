@@ -23,12 +23,12 @@ namespace DeepSpaceNetwork
         private static readonly log4net.ILog log = LogHelper.GetLogger();
         private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
-        private Dictionary<string, Process> processDirectory;
+        private Dictionary<string, Process> processDirectory = new Dictionary<string, Process>();
+        private Dictionary<string, BackendServiceReference.Vehicle> spacecraftDirectory = new Dictionary<string, BackendServiceReference.Vehicle>();
         public LaunchSpacecraft()
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
-            processDirectory = new Dictionary<string, Process>();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.Refresh_Window_After_Event();
             Mouse.OverrideCursor = Cursors.Arrow;
@@ -47,6 +47,7 @@ namespace DeepSpaceNetwork
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
                     SpacecraftList.Items.Add(v.Name);
+                    spacecraftDirectory[v.Name] = v;
                 }
             }
             catch (Exception ex)
@@ -83,8 +84,15 @@ namespace DeepSpaceNetwork
                         string parentDirectory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(currentDirectory).ToString()).ToString();
                         string finalLocation = System.IO.Path.Combine(parentDirectory, Constants.LAUNCH_VEHICLE_DIRECTORY).ToString();
                         process.StartInfo = new ProcessStartInfo(finalLocation);
+                        process.StartInfo.Arguments = selectedSpacecraft;
                         processDirectory[selectedSpacecraft] = process;
                         process.Start();
+                        backendServicesClient.UpdateSpacecraft(selectedSpacecraft, Constants.STATUS_LAUNCH_INITIATED);
+                        var communicationDashboard = new CommunicationDashboard(spacecraftDirectory[selectedSpacecraft]);
+                        communicationDashboard.Show();
+                        var mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        this.Close();
                     }
                     else
                     {
@@ -97,9 +105,9 @@ namespace DeepSpaceNetwork
                 log.Error("Launch_Spacecraft() error", ex);
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 SpacecraftList.SelectedIndex = 0;
+                this.Refresh_Window_After_Event();
             }
             finally{
-                this.Refresh_Window_After_Event();
                 Mouse.OverrideCursor = Cursors.Arrow;
             }
         }

@@ -38,9 +38,12 @@ namespace DeepSpaceNetwork
             this.Close();
         }
 
-        private void Go_to_Communication_Dashboard(object sender, RoutedEventArgs e)
+        private void Go_to_Communication_System(object sender, RoutedEventArgs e)
         {
-
+            var communicationSystem = new CommunicationSystem(); //create your new form.
+            communicationSystem.Show(); //show the new form.
+            this.Close();
         }
+
     }
 }

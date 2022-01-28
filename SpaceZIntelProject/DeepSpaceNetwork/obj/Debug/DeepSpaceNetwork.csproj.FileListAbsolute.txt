@@ -118,3 +118,7 @@ C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\b
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\bin\Debug\System.ValueTuple.xml
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\bin\Debug\log4net.dll
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\bin\Debug\log4net.xml
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\CommunicationSystem.g.cs
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\CommunicationSystem.baml
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\CommunicationDashboard.g.cs
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\CommunicationDashboard.baml

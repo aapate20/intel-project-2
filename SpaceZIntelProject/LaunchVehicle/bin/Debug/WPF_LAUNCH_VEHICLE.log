@@ -1,0 +1,40 @@
+2022-01-27 13:53:45,279 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 13:55:49,859 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:00:51,812 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:04:56,100 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:04:56,108 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.OnStartup(StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 25
+2022-01-27 14:05:38,858 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:05:38,863 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.OnStartup(StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 25
+2022-01-27 14:06:07,266 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:06:07,271 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.OnStartup(StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 25
+2022-01-27 14:09:05,153 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:09:05,158 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.OnStartup(StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 14:10:54,371 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:11:37,950 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:25:30,428 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:25:30,443 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 15:53:55,418 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 15:53:55,437 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 15:54:22,145 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 15:54:22,157 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 15:55:31,371 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 16:42:12,415 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 16:43:22,481 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 16:43:22,495 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 23:50:32,055 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 23:50:32,072 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 23:50:52,891 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 23:50:52,903 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 23:51:09,482 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 23:51:09,494 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
