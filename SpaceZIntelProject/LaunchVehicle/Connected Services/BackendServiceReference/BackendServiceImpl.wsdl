@@ -37,17 +37,23 @@
   <wsdl:message name="BackendServices_UpdateSpacecraft_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateSpacecraftResponse" />
   </wsdl:message>
-  <wsdl:message name="BackendServices_GetAllLaunchSequenceSpacecraft_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllLaunchSequenceSpacecraft" />
+  <wsdl:message name="BackendServices_GetAllOnlineSpacecraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOnlineSpacecraft" />
   </wsdl:message>
-  <wsdl:message name="BackendServices_GetAllLaunchSequenceSpacecraft_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllLaunchSequenceSpacecraftResponse" />
+  <wsdl:message name="BackendServices_GetAllOnlineSpacecraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOnlineSpacecraftResponse" />
   </wsdl:message>
   <wsdl:message name="BackendServices_GetSpacecraft_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSpacecraft" />
   </wsdl:message>
   <wsdl:message name="BackendServices_GetSpacecraft_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSpacecraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAllOnlinePayload_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOnlinePayload" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAllOnlinePayload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOnlinePayloadResponse" />
   </wsdl:message>
   <wsdl:portType name="BackendServices">
     <wsdl:operation name="AddSpaceCraft">
@@ -70,13 +76,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/UpdateSpacecraft" message="tns:BackendServices_UpdateSpacecraft_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/UpdateSpacecraftResponse" message="tns:BackendServices_UpdateSpacecraft_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllLaunchSequenceSpacecraft">
-      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetAllLaunchSequenceSpacecraft" message="tns:BackendServices_GetAllLaunchSequenceSpacecraft_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetAllLaunchSequenceSpacecraftResponse" message="tns:BackendServices_GetAllLaunchSequenceSpacecraft_OutputMessage" />
+    <wsdl:operation name="GetAllOnlineSpacecraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlineSpacecraft" message="tns:BackendServices_GetAllOnlineSpacecraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlineSpacecraftResponse" message="tns:BackendServices_GetAllOnlineSpacecraft_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetSpacecraft">
       <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetSpacecraft" message="tns:BackendServices_GetSpacecraft_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetSpacecraftResponse" message="tns:BackendServices_GetSpacecraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOnlinePayload">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlinePayload" message="tns:BackendServices_GetAllOnlinePayload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlinePayloadResponse" message="tns:BackendServices_GetAllOnlinePayload_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_BackendServices" type="tns:BackendServices">
@@ -126,8 +136,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllLaunchSequenceSpacecraft">
-      <soap:operation soapAction="http://tempuri.org/BackendServices/GetAllLaunchSequenceSpacecraft" style="document" />
+    <wsdl:operation name="GetAllOnlineSpacecraft">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/GetAllOnlineSpacecraft" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -137,6 +147,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSpacecraft">
       <soap:operation soapAction="http://tempuri.org/BackendServices/GetSpacecraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOnlinePayload">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/GetAllOnlinePayload" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

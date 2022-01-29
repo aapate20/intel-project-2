@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,8 @@ namespace DeepSpaceNetwork
     public partial class MainWindow : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-
-        public MainWindow()
+        public static Dictionary<string, Process> processDirectory = new Dictionary<string, Process>();
+         public MainWindow()
         {
             log4net.Config.XmlConfigurator.Configure();
             InitializeComponent();
@@ -33,15 +34,15 @@ namespace DeepSpaceNetwork
 
         private void Go_to_DSN_Dashboard(object sender, RoutedEventArgs e)
         {
-            var missionControlSystem = new MissionControlSystem(); //create your new form.
-            missionControlSystem.Show(); //show the new form.
+            var missionControlSystem = new MissionControlSystem(); 
+            missionControlSystem.Show();
             this.Close();
         }
 
         private void Go_to_Communication_System(object sender, RoutedEventArgs e)
         {
-            var communicationSystem = new CommunicationSystem(); //create your new form.
-            communicationSystem.Show(); //show the new form.
+            var mianCommunicationSystem = new MainCommunicationSystem();
+            mianCommunicationSystem.Show(); 
             this.Close();
         }
 

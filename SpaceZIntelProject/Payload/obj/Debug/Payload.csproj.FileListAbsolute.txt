@@ -14,3 +14,6 @@ C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.csproj.CoreCompileInputs.cache
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.exe
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.pdb
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\bin\Debug\log4net.dll
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\bin\Debug\log4net.xml
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Payload\obj\Debug\Payload.csproj.CopyComplete

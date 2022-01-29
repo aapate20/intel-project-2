@@ -31,6 +31,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="payloadName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -57,6 +58,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="column" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -66,15 +68,15 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllLaunchSequenceSpacecraft">
+  <xs:element name="GetAllOnlineSpacecraft">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllLaunchSequenceSpacecraftResponse">
+  <xs:element name="GetAllOnlineSpacecraftResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="GetAllLaunchSequenceSpacecraftResult" nillable="true" type="q4:ArrayOfVehicle" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="GetAllOnlineSpacecraftResult" nillable="true" type="q4:ArrayOfVehicle" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -89,6 +91,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="GetSpacecraftResult" nillable="true" type="q5:Vehicle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOnlinePayload">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOnlinePayloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="GetAllOnlinePayloadResult" nillable="true" type="q6:ArrayOfVehicle" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

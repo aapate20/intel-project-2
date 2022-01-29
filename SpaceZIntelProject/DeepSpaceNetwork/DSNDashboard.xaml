@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeepSpaceNetwork"
         mc:Ignorable="d"
-        Title="Spacecraft Details" Height="500" Width="800">
+        Title="Spacecraft Details" Height="500" Width="820">
     <Grid Background="AntiqueWhite">
         <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
-        <Label Content="Deep Space Network Dashboard" FontSize="22" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="331"/>
-        <ListBox x:Name="ActiveSpaceCraftList" Margin="70,130,561,154"/>
-        <ListBox x:Name="NewSpaceCraftList" Margin="567,130,64,154"/>
-        <TextBox x:Name="SpacecraftDetails" TextWrapping="Wrap" Text="" Margin="256,130,250,154" />
-        <Label Content="Active Spacecraft" FontSize="19" FontWeight="Bold" HorizontalAlignment="Left" Margin="70,67,0,0" VerticalAlignment="Top" Width="180" Height="58"/>
-        <Label Content="New Spacecraft" FontSize="19" FontWeight="Bold" HorizontalAlignment="Left" Margin="567,67,0,0" VerticalAlignment="Top" Width="180" Height="58"/>
-        <Label Content="Spacecraft Details" FontSize="19" FontWeight="Bold" HorizontalAlignment="Left" Margin="302,67,0,0" VerticalAlignment="Top" Width="180" Height="58"/>
-        <Button Content="Show Spacecraft Details" FontSize="36" HorizontalAlignment="Left" Margin="194,349,0,0" VerticalAlignment="Top" Width="396" Height="65" RenderTransformOrigin="0.492,-0.419" Click="Get_Spacecraft_details"/>
+        <Label Content="Deep Space Network Dashboard" FontSize="22" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="331"/>
+        <ListBox x:Name="ActiveSpaceCraftList" Margin="35,130,585,154" Height="200" Width="200"/>
+        <ListBox x:Name="NewSpaceCraftList" Margin="600,130,20,154" Height="200" Width="200"/>
+        <TextBox x:Name="SpacecraftDetails" TextWrapping="Wrap" Text="" Margin="257,130,244,154" Height="200" Width="300"/>
+        <Label Content="Other Spacecraft" FontSize="19" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,67,0,0" VerticalAlignment="Top" Width="200" Height="58"/>
+        <Label Content="New and Active Spacecraft" FontSize="19" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="557,67,0,0" VerticalAlignment="Top" Width="253" Height="58"/>
+        <Label Content="Spacecraft Details" FontSize="19" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="302,67,0,0" VerticalAlignment="Top" Width="180" Height="58"/>
+        <Button Content="Show Spacecraft Details" FontSize="36" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="194,349,0,0" VerticalAlignment="Top" Width="396" Height="65" RenderTransformOrigin="0.492,-0.419" Click="Get_Spacecraft_details"/>
     </Grid>
 </Window>

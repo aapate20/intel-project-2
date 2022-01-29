@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaunchVehicle"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded">
+        Title="MainWindow" Height="600" Width="800" Closing="Window_Closing" Closed="Window_Closed">
     <Grid Background="AntiqueWhite">
         <Label x:Name="SpaceCraftLabel" Content="" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Width="698" Height="71"/>
         <Label Content="Orbit Radius:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="51,144,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
         <Label Content="Payload Name:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="51,100,0,0" VerticalAlignment="Top" Width="151" Height="39"/>
         <Label Content="Payload Type:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="451,100,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
-        <Label x:Name="orbitRadius" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="238,144,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
-        <Label x:Name="payloadName" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="238,100,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
-        <Label x:Name="payloadType" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="614,100,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
-        <TextBox x:Name="DSNCommunication" Background="Azure" HorizontalAlignment="Center" Margin="0,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="698" Height="263"/>
-        <Label Content="Launch in (sec):" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="51,202,0,0" VerticalAlignment="Top" Width="151" Height="39"/>
-        <Label x:Name="launchSequence" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="238,202,0,0" VerticalAlignment="Top" Width="66" Height="39"/>
+        <Label x:Name="OrbitRadius" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="238,144,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
+        <Label x:Name="PayloadName" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="238,100,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
+        <Label x:Name="PayloadType" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="614,100,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
+        <TextBox x:Name="DSNCommunication" Background="Azure" HorizontalAlignment="Center" Margin="0,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="738" Height="263"/>
+        <Label x:Name="LaunchLabel" Content="Launch in (sec):" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="51,202,0,0" VerticalAlignment="Top" Width="151" Height="39"/>
+        <Label x:Name="LaunchSequence" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="238,202,0,0" VerticalAlignment="Top" Width="66" Height="39"/>
         <Label Content="Time to orbit (sec):" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="410,202,0,0" VerticalAlignment="Top" Width="176" Height="39"/>
-        <Label x:Name="timeToOrbit" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="616,202,0,0" VerticalAlignment="Top" Width="133" Height="39"/>
+        <Label x:Name="TimeToOrbit" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="616,202,0,0" VerticalAlignment="Top" Width="153" Height="39"/>
     </Grid>
 </Window>

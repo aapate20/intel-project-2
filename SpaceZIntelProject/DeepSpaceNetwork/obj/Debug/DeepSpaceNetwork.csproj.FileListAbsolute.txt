@@ -122,3 +122,9 @@ C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\o
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\CommunicationSystem.baml
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\CommunicationDashboard.g.cs
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\CommunicationDashboard.baml
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\PayloadCommunicationDashboard.g.cs
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\PayloadCommunicationDashboard.baml
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\MainCommunicationSystem.g.cs
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\PayloadCommunicationSystem.g.cs
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\MainCommunicationSystem.baml
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\obj\Debug\PayloadCommunicationSystem.baml

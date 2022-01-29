@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid Background="AntiqueWhite">
-        <Button Content="Mission Control System" HorizontalContentAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,189,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_DSN_Dashboard" />
-        <Button Content="Communication System" FontSize="30" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_Communication_System"/>
+        <Button Content="Mission Control System" Background="Azure" HorizontalContentAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,189,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_DSN_Dashboard" />
+        <Button Content="Communication System" Background="Azure" FontSize="30" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_Communication_System"/>
         <Label Content="SpaceZ Software Project" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,62,0,344"/>
 
     </Grid>

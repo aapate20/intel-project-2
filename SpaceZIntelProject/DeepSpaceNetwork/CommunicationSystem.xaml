@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeepSpaceNetwork"
         mc:Ignorable="d"
-        Title="CommunicationSystem" Height="500" Width="800">
+        Title="SpacecraftCommunicationSystem" Height="500" Width="800">
     <Grid Background="AntiqueWhite">
         <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
-        <Label Content="Communication System" FontSize="40" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" Width="432" Height="69"/>
-        <ComboBox x:Name="LaunchSpacecraftList" FontSize="20" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top" Width="332" Height="52"></ComboBox>
-        <Button Content="Go To Dashboard" FontSize="40" HorizontalAlignment="Center" Margin="0,290,0,0" VerticalAlignment="Top" Width="332" Height="63" Click="Communication_Dashboard"/>
+        <Label Content="Spacecraft Communication System" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" Width="665" Height="69"/>
+        <ComboBox x:Name="LaunchSpacecraftList" FontSize="20" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top" Width="432" Height="52"></ComboBox>
+        <Button Content="Go To Spacecraft Dashboard" FontSize="30" HorizontalAlignment="Center" Margin="0,290,0,0" VerticalAlignment="Top" Width="432" Height="63" Click="Communication_Dashboard"/>
     </Grid>
 </Window>

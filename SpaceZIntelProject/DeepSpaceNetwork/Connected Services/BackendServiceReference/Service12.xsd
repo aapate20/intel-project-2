@@ -4,8 +4,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OrbitRadius" type="xs:int" />
+      <xs:element minOccurs="0" name="OrbitRadius" type="xs:double" />
       <xs:element minOccurs="0" name="Payload" nillable="true" type="tns:Payload" />
+      <xs:element minOccurs="0" name="SpacecraftStatus" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -13,6 +14,7 @@
   <xs:complexType name="Payload">
     <xs:sequence>
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayloadStatus" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
     </xs:sequence>

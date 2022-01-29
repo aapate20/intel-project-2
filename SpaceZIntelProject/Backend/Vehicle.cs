@@ -12,19 +12,26 @@ namespace Backend
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+
         public string Name { get; set; }
-        public int OrbitRadius { get; set; }
+
+        public double OrbitRadius { get; set; }
 
         public Payload Payload { get; set; }
 
         public string Status { get; set; }
+
+        public string SpacecraftStatus { get; set; }
+
         public Vehicle() { }
-        public Vehicle(string Name, int OrbitRadius, Payload Payload, string Status)
+
+        public Vehicle(string Name, int OrbitRadius, Payload Payload, string Status, string SpacecraftStatus)
         {
             this.Name = Name;
             this.OrbitRadius = OrbitRadius; 
             this.Payload = Payload; 
             this.Status = Status;
+            this.SpacecraftStatus = SpacecraftStatus;
         }
     }
 }

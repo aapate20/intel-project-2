@@ -42,15 +42,15 @@ namespace DeepSpaceNetwork
                 && payload.Name != "" && payload.Type != null && payload.Type != "")
                 {
                     vehicle.Name = spaceCraftName.Text;
-                    long count = backendServicesClient.CheckSpacecraftExists(vehicle.Name);
+                    long count = backendServicesClient.CheckSpacecraftExists(vehicle.Name, payload.Name);
                     if (count > 0)
                     {
-                        throw new Exception("Spacecraft already exist. " + count.ToString());
+                        throw new Exception("Spacecraft or Payload already exist. " + count.ToString());
                     } 
-                    bool success = Int32.TryParse(orbitRadius.Text, out int OrbitIntInput);
+                    bool success = Double.TryParse(orbitRadius.Text, out double orbitDoubleInput);
                     if (success)
                     {
-                        vehicle.OrbitRadius = OrbitIntInput;
+                        vehicle.OrbitRadius = Math.Round(orbitDoubleInput, 3);
                     }
                     else
                     {
@@ -58,6 +58,8 @@ namespace DeepSpaceNetwork
                     }
                     vehicle.Status = Constants.STATUS_ADDED;
                     payload.Status = Constants.STATUS_ADDED;
+                    vehicle.SpacecraftStatus = Constants.STATUS_OFFLINE;
+                    payload.PayloadStatus = Constants.STATUS_OFFLINE;
                     vehicle.Payload = payload;
                     
                     string msg = backendServicesClient.AddSpaceCraft(vehicle);

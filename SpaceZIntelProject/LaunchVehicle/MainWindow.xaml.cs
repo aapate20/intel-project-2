@@ -22,27 +22,45 @@ namespace LaunchVehicle
     public partial class MainWindow : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private string spaceCraftName;
-        private BackendServiceReference.BackendServicesClient client;
-        private BackendServiceReference.Vehicle vehicle;
-        private DispatcherTimer dt;
-        private int decrement = 10;
-        private int timeToOrbitRadius = 0;
+        private readonly string spaceCraftName;
+        private readonly BackendServiceReference.BackendServicesClient client;
+        private readonly BackendServiceReference.Vehicle vehicle;
+        private DispatcherTimer launchTimer;
+        private DispatcherTimer orbitTimer;
+        private int launchSequenceSecond = 20;
+        private int timeToOrbitSeconds = 0;
         public MainWindow(string spaceCraftName)
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
             client = new BackendServiceReference.BackendServicesClient();
             this.spaceCraftName = spaceCraftName;
-            SpaceCraftLabel.Content = this.spaceCraftName + " Dashboard";
+            this.SpaceCraftLabel.Content = this.spaceCraftName + " Dashboard";
             try
             {
-                vehicle = client.GetSpacecraft(spaceCraftName);
+                this.vehicle = client.GetSpacecraft(spaceCraftName);
                 if(vehicle != null)
                 {
-                    orbitRadius.Content = vehicle.OrbitRadius;
-                    payloadName.Content = vehicle.Payload.Name;
-                    payloadType.Content = vehicle.Payload.Type;
+                    MessageBox.Show(vehicle.Status + " " + vehicle.SpacecraftStatus);
+                    this.OrbitRadius.Content = vehicle.OrbitRadius;
+                    this.PayloadName.Content = vehicle.Payload.Name;
+                    this.PayloadType.Content = vehicle.Payload.Type;
+                    this.CalculateTimeToOrbit();
+                    if (Constants.STATUS_LAUNCH_INITIATED.Equals(vehicle.Status))
+                    {
+                        this.CalculateTimeToOrbit();
+                        this.Start_Launch_Sequence();
+                    }
+                    else
+                    {
+                        this.TimeToOrbit.Content = Constants.STATUS_ORBIT_REACHED;
+                        this.LaunchLabel.Visibility = Visibility.Hidden;
+                        this.LaunchSequence.Visibility = Visibility.Hidden;
+                    }
+                }
+                else
+                {
+                    throw new Exception("Cannot fetch Spacecraft data from database.");
                 }
             }
             catch (Exception ex)
@@ -54,24 +72,116 @@ namespace LaunchVehicle
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Start_Launch_Sequence()
         {
-            this.dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromSeconds(1);
-            dt.Tick += launchSequenceTicker;
-            dt.Start();
+            this.launchTimer = new DispatcherTimer();
+            this.launchTimer.Interval = TimeSpan.FromSeconds(1);
+            this.launchTimer.Tick += LaunchSequenceTicker;
+            this.launchTimer.Start();
         }
 
         
-        private void launchSequenceTicker(object sender, EventArgs e)
+        private void LaunchSequenceTicker(object sender, EventArgs e)
         {
-            this.decrement--;
-            launchSequence.Content = this.decrement.ToString();
+            this.launchSequenceSecond--;
+            this.LaunchSequence.Content = this.launchSequenceSecond.ToString();
 
-            if(this.decrement == 0)
+            if(this.launchSequenceSecond == 0)
             {
-                dt.Stop();
+                this.launchTimer.Stop();                
+                this.LaunchSpacecraft();
             }
         }
+        private void LaunchSpacecraft()
+        {
+            try
+            {
+                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCHED);
+                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
+                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_AIR);
+                this.orbitTimer = new DispatcherTimer();
+                this.orbitTimer.Interval = TimeSpan.FromSeconds(1);
+                this.orbitTimer.Tick += TimeToReachOrbitTicker;
+                this.orbitTimer.Start();
+            }
+            catch(Exception ex)
+            {
+                log.Error("LaunchVehicle! Did not receive Vehicle object.", ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
+        }
+
+        private void TimeToReachOrbitTicker(object sender, EventArgs e)
+        {
+            this.timeToOrbitSeconds--;
+            this.TimeToOrbit.Content = this.timeToOrbitSeconds.ToString();
+
+            if(timeToOrbitSeconds == 0)
+            {
+                this.TimeToOrbit.Content = Constants.STATUS_ORBIT_REACHED;
+                this.orbitTimer.Stop();
+                this.LaunchPayload();
+            }
+        }
+
+        private void LaunchPayload()
+        {
+            try
+            {
+                this.client.UpdateSpacecraft(vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_ORBIT_REACHED);
+                this.client.UpdateSpacecraft(vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_LAUNCH_INITIATED);
+                this.client.UpdateSpacecraft(vehicle.Name, Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_ONLINE);
+            }
+            catch (Exception ex)
+            {
+                log.Error("LaunchVehicle! Did not receive Vehicle object.", ex);
+                MessageBox.Show("Some problem in the software!, Please contact Admin.", "Error", MessageBoxButton.OK, MessageBoxImage.Error); 
+            }
+        }
+
+        private void CalculateTimeToOrbit()
+        {
+            try
+            {
+                this.timeToOrbitSeconds = (int)Math.Ceiling((this.vehicle.OrbitRadius / 3600) + 10);
+                this.TimeToOrbit.Content = this.timeToOrbitSeconds.ToString();
+            }
+            catch (Exception ex)
+            {
+                log.Error("LaunchVehicle! Did not receive Vehicle object.", ex);
+                MessageBox.Show("Some problem in the software!, Please contact Admin.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to close the window?", "Close?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, 
+                MessageBoxResult.Cancel) != MessageBoxResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if(this.launchSequenceSecond > 0)
+            {
+                this.launchTimer.Stop();
+                if(this.vehicle != null)
+                {
+                    this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_ADDED);
+                    this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE);
+                }
+            }
+            else if(this.timeToOrbitSeconds > 0)
+            {
+                this.orbitTimer.Stop();
+                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_MISSION_ABORTED);
+                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE);
+                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_MISSION_ABORTED);
+            }
+        }
+
     }
 }

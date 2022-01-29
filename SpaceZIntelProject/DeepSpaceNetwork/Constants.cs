@@ -14,6 +14,14 @@ namespace DeepSpaceNetwork
         public const string STATUS_DEORBIT = "Deorbit";
         public const string STATUS_DECOMMISSION = "Decommission";
         public const string STATUS_ADDED = "Added";
+        public const string STATUS_AIR = "Air";
+        public const string STATUS_ONLINE = "Online";
+        public const string STATUS_OFFLINE = "Offline";
+        public const string COLUMN_SPACECRAFT_STATUS = "SpacecraftStatus";
+        public const string COLUMN_STATUS = "Status";
+        public const string COLUMN_PAYLOAD_STATUS = "Payload.Status";
+        public const string LAUNCH_PAYLOAD = "Launch Payload";
+        public static string PAYLOAD_DASHBOARD = "Payload Dashboard";
         public const string LAUNCH_VEHICLE_DIRECTORY = "LaunchVehicle\\bin\\Debug\\LaunchVehicle.exe";
     }
 }

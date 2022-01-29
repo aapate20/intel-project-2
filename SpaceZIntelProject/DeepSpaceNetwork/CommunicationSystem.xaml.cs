@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace DeepSpaceNetwork
 
             try
             {
-                Arr = backendServicesClient.GetAllLaunchSequenceSpacecraft();
+                Arr = backendServicesClient.GetAllOnlineSpacecraft();
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
                     LaunchSpacecraftList.Items.Add(v.Name);
@@ -61,9 +62,34 @@ namespace DeepSpaceNetwork
             try
             {
                 string selectedSpacecraft = LaunchSpacecraftList.SelectedItem.ToString();
-                var communicationDashboard = new CommunicationDashboard(spacecraftDirectory[selectedSpacecraft]);
-                communicationDashboard.Show();
-                this.Close();
+                if ("Select".Equals(selectedSpacecraft))
+                {
+                    throw new Exception("Please select one from available spacecraft.");
+                }
+                else
+                {
+                    MainWindow.processDirectory.TryGetValue(selectedSpacecraft, out Process currentProcess);
+                    if (currentProcess == null || currentProcess.HasExited)
+                    {
+                        Process process = new Process();
+                        string currentDirectory = System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString();
+                        string parentDirectory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(currentDirectory).ToString()).ToString();
+                        string finalLocation = System.IO.Path.Combine(parentDirectory, Constants.LAUNCH_VEHICLE_DIRECTORY).ToString();
+                        process.StartInfo = new ProcessStartInfo(finalLocation);
+                        process.StartInfo.Arguments = selectedSpacecraft;
+                        MainWindow.processDirectory[selectedSpacecraft] = process;
+                        process.Start();
+                        var communicationDashboard = new CommunicationDashboard(spacecraftDirectory[selectedSpacecraft]);
+                        communicationDashboard.Show();
+                        var mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Luanch Vehicle: " + selectedSpacecraft + " is currently running");
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -80,8 +106,8 @@ namespace DeepSpaceNetwork
 
         private void Go_Back(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
+            var mainCommunicationSystem = new MainCommunicationSystem();
+            mainCommunicationSystem.Show();
             this.Close();
         }
     }

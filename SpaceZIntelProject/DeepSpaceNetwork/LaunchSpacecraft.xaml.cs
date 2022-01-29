@@ -23,8 +23,8 @@ namespace DeepSpaceNetwork
         private static readonly log4net.ILog log = LogHelper.GetLogger();
         private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
-        private Dictionary<string, Process> processDirectory = new Dictionary<string, Process>();
         private Dictionary<string, BackendServiceReference.Vehicle> spacecraftDirectory = new Dictionary<string, BackendServiceReference.Vehicle>();
+
         public LaunchSpacecraft()
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -76,7 +76,7 @@ namespace DeepSpaceNetwork
                 }
                 else
                 {
-                    processDirectory.TryGetValue(selectedSpacecraft, out Process currentProcess);
+                    MainWindow.processDirectory.TryGetValue(selectedSpacecraft, out Process currentProcess);
                     if (currentProcess == null || currentProcess.HasExited)
                     {
                         Process process = new Process();
@@ -85,9 +85,10 @@ namespace DeepSpaceNetwork
                         string finalLocation = System.IO.Path.Combine(parentDirectory, Constants.LAUNCH_VEHICLE_DIRECTORY).ToString();
                         process.StartInfo = new ProcessStartInfo(finalLocation);
                         process.StartInfo.Arguments = selectedSpacecraft;
-                        processDirectory[selectedSpacecraft] = process;
+                        MainWindow.processDirectory[selectedSpacecraft] = process;
                         process.Start();
-                        backendServicesClient.UpdateSpacecraft(selectedSpacecraft, Constants.STATUS_LAUNCH_INITIATED);
+                        backendServicesClient.UpdateSpacecraft(selectedSpacecraft, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCH_INITIATED);
+                        backendServicesClient.UpdateSpacecraft(selectedSpacecraft, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
                         var communicationDashboard = new CommunicationDashboard(spacecraftDirectory[selectedSpacecraft]);
                         communicationDashboard.Show();
                         var mainWindow = new MainWindow();

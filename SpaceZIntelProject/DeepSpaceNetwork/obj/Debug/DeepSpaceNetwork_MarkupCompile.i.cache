@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\App.xaml
-71745777519
+10669703148
 
-15-11081699
+181183723224
 1711357568428
-AddSpacecraft.xaml;CommunicationDashboard.xaml;CommunicationSystem.xaml;DSNDashboard.xaml;LaunchSpacecraft.xaml;MainWindow.xaml;MissionControlSystem.xaml;
+AddSpacecraft.xaml;CommunicationDashboard.xaml;CommunicationSystem.xaml;DSNDashboard.xaml;LaunchSpacecraft.xaml;MainCommunicationSystem.xaml;MainWindow.xaml;MissionControlSystem.xaml;PayloadCommunicationDashboard.xaml;PayloadCommunicationSystem.xaml;
 
 False
 
