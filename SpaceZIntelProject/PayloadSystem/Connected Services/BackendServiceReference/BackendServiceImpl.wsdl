@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="BackendServiceImpl" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:11997/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:11997/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11997/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Backend" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BackendServices_AddSpaceCraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSpaceCraft" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_AddSpaceCraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSpaceCraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAllSpacecraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSpacecraft" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAllSpacecraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSpacecraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_CheckSpacecraftExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSpacecraftExists" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_CheckSpacecraftExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSpacecraftExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAddedSpacecraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddedSpacecraft" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAddedSpacecraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddedSpacecraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_UpdateSpacecraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSpacecraft" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_UpdateSpacecraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSpacecraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAllOnlineSpacecraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOnlineSpacecraft" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAllOnlineSpacecraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOnlineSpacecraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetSpacecraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpacecraft" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetSpacecraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpacecraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAllOnlinePayload_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOnlinePayload" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetAllOnlinePayload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOnlinePayloadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BackendServices">
+    <wsdl:operation name="AddSpaceCraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/AddSpaceCraft" message="tns:BackendServices_AddSpaceCraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/AddSpaceCraftResponse" message="tns:BackendServices_AddSpaceCraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSpacecraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetAllSpacecraft" message="tns:BackendServices_GetAllSpacecraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetAllSpacecraftResponse" message="tns:BackendServices_GetAllSpacecraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSpacecraftExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/CheckSpacecraftExists" message="tns:BackendServices_CheckSpacecraftExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/CheckSpacecraftExistsResponse" message="tns:BackendServices_CheckSpacecraftExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddedSpacecraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetAddedSpacecraft" message="tns:BackendServices_GetAddedSpacecraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetAddedSpacecraftResponse" message="tns:BackendServices_GetAddedSpacecraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSpacecraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/UpdateSpacecraft" message="tns:BackendServices_UpdateSpacecraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/UpdateSpacecraftResponse" message="tns:BackendServices_UpdateSpacecraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOnlineSpacecraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlineSpacecraft" message="tns:BackendServices_GetAllOnlineSpacecraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlineSpacecraftResponse" message="tns:BackendServices_GetAllOnlineSpacecraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpacecraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetSpacecraft" message="tns:BackendServices_GetSpacecraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetSpacecraftResponse" message="tns:BackendServices_GetSpacecraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOnlinePayload">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlinePayload" message="tns:BackendServices_GetAllOnlinePayload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlinePayloadResponse" message="tns:BackendServices_GetAllOnlinePayload_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_BackendServices" type="tns:BackendServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSpaceCraft">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/AddSpaceCraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSpacecraft">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/GetAllSpacecraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSpacecraftExists">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/CheckSpacecraftExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddedSpacecraft">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/GetAddedSpacecraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSpacecraft">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/UpdateSpacecraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOnlineSpacecraft">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/GetAllOnlineSpacecraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpacecraft">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/GetSpacecraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOnlinePayload">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/GetAllOnlinePayload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BackendServiceImpl">
+    <wsdl:port name="BasicHttpBinding_BackendServices" binding="tns:BasicHttpBinding_BackendServices">
+      <soap:address location="http://localhost:11997/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

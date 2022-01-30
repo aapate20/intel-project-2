@@ -23,8 +23,8 @@ namespace DeepSpaceNetwork
     public partial class MainWindow : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        public static Dictionary<string, Process> processDirectory = new Dictionary<string, Process>();
-         public MainWindow()
+        public static Dictionary<string, Process> processDirectorySpacecraft = new Dictionary<string, Process>();
+        public MainWindow()
         {
             log4net.Config.XmlConfigurator.Configure();
             InitializeComponent();
@@ -34,14 +34,14 @@ namespace DeepSpaceNetwork
 
         private void Go_to_DSN_Dashboard(object sender, RoutedEventArgs e)
         {
-            var missionControlSystem = new MissionControlSystem(); 
+            Window missionControlSystem = new MissionControlSystem();
             missionControlSystem.Show();
             this.Close();
         }
 
         private void Go_to_Communication_System(object sender, RoutedEventArgs e)
         {
-            var mianCommunicationSystem = new MainCommunicationSystem();
+            Window mianCommunicationSystem = new MainCommunicationSystem();
             mianCommunicationSystem.Show(); 
             this.Close();
         }

@@ -27,7 +27,7 @@ namespace LaunchVehicle
         private readonly BackendServiceReference.Vehicle vehicle;
         private DispatcherTimer launchTimer;
         private DispatcherTimer orbitTimer;
-        private int launchSequenceSecond = 20;
+        private int launchSequenceSecond = 10;
         private int timeToOrbitSeconds = 0;
         public MainWindow(string spaceCraftName)
         {
@@ -41,7 +41,6 @@ namespace LaunchVehicle
                 this.vehicle = client.GetSpacecraft(spaceCraftName);
                 if(vehicle != null)
                 {
-                    MessageBox.Show(vehicle.Status + " " + vehicle.SpacecraftStatus);
                     this.OrbitRadius.Content = vehicle.OrbitRadius;
                     this.PayloadName.Content = vehicle.Payload.Name;
                     this.PayloadType.Content = vehicle.Payload.Type;
@@ -65,7 +64,7 @@ namespace LaunchVehicle
             }
             catch (Exception ex)
             {
-                log.Error("GetAddedSpacecraft() Error.", ex);
+                log.Error("Error Initializing LaunchVehicle Window.", ex);
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
@@ -88,7 +87,8 @@ namespace LaunchVehicle
 
             if(this.launchSequenceSecond == 0)
             {
-                this.launchTimer.Stop();                
+                this.launchTimer.Stop();
+                this.LaunchSequence.Content = "Spacecraft Launched!";
                 this.LaunchSpacecraft();
             }
         }
@@ -96,6 +96,8 @@ namespace LaunchVehicle
         {
             try
             {
+                this.LaunchLabel.Visibility= Visibility.Hidden;
+                this.LaunchSequence.Visibility= Visibility.Hidden;
                 this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCHED);
                 this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
                 this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_AIR);

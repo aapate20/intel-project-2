@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,54 @@ namespace DeepSpaceNetwork
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
         private readonly BackendServiceReference.BackendServicesClient backendServicesClient;
-        private readonly BackendServiceReference.Payload payload;
-        public PayloadCommunicationDashboard(BackendServiceReference.Payload payload)
+        private readonly BackendServiceReference.Vehicle vehicle;
+        public PayloadCommunicationDashboard(BackendServiceReference.Vehicle vehicle)
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
-            this.payload = payload;
+            this.vehicle = vehicle;
             this.backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            this.payloadCommunicationSystemLabel.Content = this.vehicle.Payload.Name + " " + "Communication Dashboard";
+            this.payloadType.Content = this.vehicle.Payload.Type;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
+
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            var payloadCommunicationSystem = new PayloadCommunicationSystem();
+            payloadCommunicationSystem.Show();
+            this.Close();
+        }
+
+        private void Decommision_Payload(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_DECOMMISSION);
+                backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_OFFLINE);
+                MainWindow.processDirectorySpacecraft.TryGetValue(this.vehicle.Payload.Name, out Process currentProcess);
+                if (currentProcess != null && !currentProcess.HasExited)
+                {
+                    currentProcess.Kill();
+                    MainWindow.processDirectorySpacecraft.Remove(this.vehicle.Name);
+                }
+                startTelemetryBtn.IsEnabled = false;
+                stopTelemetryBtn.IsEnabled = false;
+                decommisionBtn.IsEnabled = false;
+                startDataBtn.IsEnabled = false;
+                stopDataBtn.IsEnabled = false;
+                this.telemetryBox.Text = "";
+                this.dataBox.Text = "";
+                this.communicationBox.Text = "Lost Connection to Payload";
+                this.telemetryBox.IsEnabled = false;
+                this.dataBox.IsEnabled = false;
+                this.communicationBox.IsEnabled = false;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Decommision_Payload(): " + ex.Message, ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

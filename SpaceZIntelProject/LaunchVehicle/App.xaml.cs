@@ -19,7 +19,6 @@ namespace LaunchVehicle
         void App_Startup(object sender, StartupEventArgs e)
         {
             log4net.Config.XmlConfigurator.Configure();
-            log.Info("        =============  Started Logging - Launch Vehicle =============        ");
             string launchSpacecraftName = "";
             try
             {
@@ -29,6 +28,7 @@ namespace LaunchVehicle
             {
                 log.Error(ex);
             }
+            log.Info("        =============  Started Logging - Launch Vehicle: " + launchSpacecraftName + " =============        ");
             MainWindow mainWindow = new MainWindow(launchSpacecraftName);
             mainWindow.Show();
         }

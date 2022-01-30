@@ -68,7 +68,7 @@ namespace DeepSpaceNetwork
                 }
                 else
                 {
-                    MainWindow.processDirectory.TryGetValue(selectedSpacecraft, out Process currentProcess);
+                    MainWindow.processDirectorySpacecraft.TryGetValue(selectedSpacecraft, out Process currentProcess);
                     if (currentProcess == null || currentProcess.HasExited)
                     {
                         Process process = new Process();
@@ -77,18 +77,12 @@ namespace DeepSpaceNetwork
                         string finalLocation = System.IO.Path.Combine(parentDirectory, Constants.LAUNCH_VEHICLE_DIRECTORY).ToString();
                         process.StartInfo = new ProcessStartInfo(finalLocation);
                         process.StartInfo.Arguments = selectedSpacecraft;
-                        MainWindow.processDirectory[selectedSpacecraft] = process;
+                        MainWindow.processDirectorySpacecraft[selectedSpacecraft] = process;
                         process.Start();
-                        var communicationDashboard = new CommunicationDashboard(spacecraftDirectory[selectedSpacecraft]);
-                        communicationDashboard.Show();
-                        var mainWindow = new MainWindow();
-                        mainWindow.Show();
-                        this.Close();
                     }
-                    else
-                    {
-                        MessageBox.Show("Luanch Vehicle: " + selectedSpacecraft + " is currently running");
-                    }
+                    var communicationDashboard = new CommunicationDashboard(spacecraftDirectory[selectedSpacecraft]);
+                    communicationDashboard.Show();
+                    this.Close();
                 }
             }
             catch (Exception ex)

@@ -22,6 +22,9 @@ namespace DeepSpaceNetwork
         public const string COLUMN_PAYLOAD_STATUS = "Payload.Status";
         public const string LAUNCH_PAYLOAD = "Launch Payload";
         public static string PAYLOAD_DASHBOARD = "Payload Dashboard";
+        public const string COLUMN_PAYLOAD_PAYLOAD_STATUS = "Payload.PayloadStatus";
+        public const string STATUS_ORBIT_REACHED = "Orbit Reached";
         public const string LAUNCH_VEHICLE_DIRECTORY = "LaunchVehicle\\bin\\Debug\\LaunchVehicle.exe";
+        public const string PAYLOAD_DIRECTORY = "PayloadSystem\\bin\\Debug\\PayloadSystem.exe";
     }
 }

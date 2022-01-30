@@ -7,18 +7,20 @@
         mc:Ignorable="d"
         Title="CommunicationDashboard" Height="600" Width="800">
     <Grid Background="AntiqueWhite">
-        <Label x:Name="spaceCraftName" Content="" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Width="730" Height="62"/>
+        <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
+        <Label x:Name="spaceCraftName" Content="" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Width="666" Height="62"/>
         <Button x:Name="startTelemetry" Background="Azure" Content="Start Telemetry" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,161,0,0" VerticalAlignment="Top" Width="164" Height="42"/>
-        <Button x:Name="stopTelemetry" Background="Azure" Content="Stop Telemetry" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="204,161,0,0" VerticalAlignment="Top" Width="159" Height="42"/>
-        <Button Background="Azure" Content="Deorbit" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,101,0,0" VerticalAlignment="Top" Width="164" Height="42" Click="DeOrbit_Spacecraft"/>
-        <Button x:Name="customPayloadBtn" Background="Azure" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="210,101,0,0" VerticalAlignment="Top" Width="153" Height="42" Click="Custom_Payload_Function"/>
+        <Button x:Name="stopTelemetry" Background="Azure" Content="Stop Telemetry" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="204,161,0,0" VerticalAlignment="Top" Width="196" Height="42"/>
+        <Button x:Name="deorbitSpacecraft" Background="Azure" Content="Deorbit" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,101,0,0" VerticalAlignment="Top" Width="164" Height="42" Click="DeOrbit_Spacecraft"/>
+        <Button x:Name="customPayloadBtn" Background="Azure" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="210,101,0,0" VerticalAlignment="Top" Width="190" Height="42" Click="Custom_Payload_Function"/>
         <Label Content="Payload Name:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,130,0,0" VerticalAlignment="Top" Width="149" Height="39"/>
         <Label Content="Payload Type:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,176,0,0" VerticalAlignment="Top" Width="149" Height="39"/>
-        <Label x:Name="payloadName" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="598,130,0,0" VerticalAlignment="Top" Width="135" Height="40" RenderTransformOrigin="0.497,0.857"/>
-        <Label x:Name="payloadType" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="598,179,0,0" VerticalAlignment="Top" Width="136" Height="40"/>
+        <Label x:Name="payloadName" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="598,130,0,0" VerticalAlignment="Top" Width="167" Height="40" RenderTransformOrigin="0.497,0.857"/>
+        <Label x:Name="payloadType" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="598,179,0,0" VerticalAlignment="Top" Width="167" Height="40"/>
         <TextBox Background="Azure" x:Name="telemetryBox" HorizontalAlignment="Left" Margin="35,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="328" Height="265"/>
         <TextBox Background="Azure" x:Name="communicationBox" HorizontalAlignment="Left" Margin="432,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="333" Height="265"/>
         <Label Content="Telemetry Information" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,224,0,0" VerticalAlignment="Top" Width="328" Height="39"/>
         <Label Content="Spacecraft communication" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,224,0,0" VerticalAlignment="Top" Width="333" Height="39"/>
+        <Label x:Name="payloadWarning" Content="" FontSize="14" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,101,0,0" VerticalAlignment="Top" Width="333" Height="29"/>
     </Grid>
 </Window>

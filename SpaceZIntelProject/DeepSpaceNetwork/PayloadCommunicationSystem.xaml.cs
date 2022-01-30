@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace DeepSpaceNetwork
         private static readonly log4net.ILog log = LogHelper.GetLogger();
         private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
-        private Dictionary<string, BackendServiceReference.Payload> payloadDirectory = new Dictionary<string, BackendServiceReference.Payload>();
+        private Dictionary<string, BackendServiceReference.Vehicle> sapceCraftDirectory = new Dictionary<string, BackendServiceReference.Vehicle>();
         public PayloadCommunicationSystem()
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -45,7 +46,7 @@ namespace DeepSpaceNetwork
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
                     LaunchPayloadList.Items.Add(v.Payload.Name);
-                    payloadDirectory[v.Payload.Name] = v.Payload;
+                    sapceCraftDirectory[v.Payload.Name] = v;
                 }
             }
             catch (Exception ex)
@@ -60,8 +61,20 @@ namespace DeepSpaceNetwork
             Mouse.OverrideCursor = Cursors.Wait;
             try
             {
-                string selectedSpacecraft = LaunchPayloadList.SelectedItem.ToString();
-                var payloadCommunicationDashboard = new PayloadCommunicationDashboard(payloadDirectory[selectedSpacecraft]);
+                string spacecraftPayloadName = LaunchPayloadList.SelectedItem.ToString();
+                MainWindow.processDirectorySpacecraft.TryGetValue(spacecraftPayloadName, out Process currentProcess);
+                if (currentProcess == null || currentProcess.HasExited)
+                {
+                    Process process = new Process();
+                    string currentDirectory = System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString();
+                    string parentDirectory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(currentDirectory).ToString()).ToString();
+                    string finalLocation = System.IO.Path.Combine(parentDirectory, Constants.PAYLOAD_DIRECTORY).ToString();
+                    process.StartInfo = new ProcessStartInfo(finalLocation);
+                    process.StartInfo.Arguments = sapceCraftDirectory[spacecraftPayloadName].Name;
+                    MainWindow.processDirectorySpacecraft[spacecraftPayloadName] = process;
+                    process.Start();
+                }
+                var payloadCommunicationDashboard = new PayloadCommunicationDashboard(sapceCraftDirectory[spacecraftPayloadName]);
                 payloadCommunicationDashboard.Show();
                 this.Close();
             }
