@@ -15,12 +15,22 @@ namespace LaunchVehicle
     public partial class App : Application
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(App));
-        protected override void OnStartup(StartupEventArgs e)
-        {
 
+        void App_Startup(object sender, StartupEventArgs e)
+        {
             log4net.Config.XmlConfigurator.Configure();
-            log.Info("        =============  Started Logging - Launch Vehicle =============        ");
-            base.OnStartup(e);
+            string launchSpacecraftName = "";
+            try
+            {
+                launchSpacecraftName = e.Args[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+            log.Info("        =============  Started Logging - Launch Vehicle: " + launchSpacecraftName + " =============        ");
+            MainWindow mainWindow = new MainWindow(launchSpacecraftName);
+            mainWindow.Show();
         }
     }
 }

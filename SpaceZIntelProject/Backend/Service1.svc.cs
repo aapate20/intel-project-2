@@ -21,6 +21,7 @@ namespace Backend
         private static string connStr = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
         private static readonly MongoClientSettings settings = MongoClientSettings.FromConnectionString(connStr);
         private static readonly MongoClient client = new MongoClient(settings);
+        private Dictionary<string, Telemetry> telemetryDictionary = new Dictionary<string, Telemetry>();  
         public string AddSpaceCraft(Vehicle vehicle)
         {
             try
@@ -45,16 +46,9 @@ namespace Backend
             {
                 var db = client.GetDatabase(Constants.DATABASE_SPACEZ);
                 var collection = db.GetCollection<Vehicle>(Constants.COLLECTION_SPACECRAFT);
-                var filterBuilder = Builders<Vehicle>.Filter;
-                FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_STATUS, Constants.STATUS_ADDED) | 
-                    filterBuilder.Eq(Constants.COLUMN_STATUS, Constants.STATUS_LAUNCHED);
                 List<Vehicle> documents = new List<Vehicle>();
-                var cursor = collection.Find(filter).ToCursor();
-                foreach (var document in cursor.ToEnumerable())
-                {
-                    documents.Add(document);
-                }
-                log.Info("GetAllSpacecraft() return successfully.");
+                documents = collection.Find(new BsonDocument()).ToList<Vehicle>();
+                log.Info("GetAllSpacecraft(), Return successful with documents: " + documents);
                 return documents;
             }
             catch(Exception ex)
@@ -64,16 +58,17 @@ namespace Backend
             }
         }
 
-        public long CheckSpacecraftExists(string vehicleName)
+        public long CheckSpacecraftExists(string vehicleName, string payloadName)
         {
             try
             {
                 var db = client.GetDatabase(Constants.DATABASE_SPACEZ);
                 var collection = db.GetCollection<Vehicle>(Constants.COLLECTION_SPACECRAFT);
                 var filterBuilder = Builders<Vehicle>.Filter;
-                FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_NAME, vehicleName);
+                FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_NAME, vehicleName) |
+                    filterBuilder.Eq(Constants.COLUMN_PAYLOAD_NAME, payloadName);
                 long count = collection.CountDocuments(filter);
-                log.Info("CheckSpacecraftExists() return successfully with count: " + count + " for vehicle: " + vehicleName);
+                log.Info("CheckSpacecraftExists() return successfully with count: " + count + " for vehicle: " + vehicleName + " " + payloadName);
                 return count;
             }
             catch (Exception ex)
@@ -108,7 +103,7 @@ namespace Backend
             
         }
 
-        public void UpdateSpacecraft(string vehicleName, string status)
+        public void UpdateSpacecraft(string vehicleName, string column, string status)
         {
             try
             {
@@ -116,15 +111,100 @@ namespace Backend
                 var collection = db.GetCollection<Vehicle>(Constants.COLLECTION_SPACECRAFT);
                 var filterBuilder = Builders<Vehicle>.Filter;
                 FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_NAME, vehicleName);
-                var update = Builders<Vehicle>.Update.Set(Constants.COLUMN_STATUS, status);
+                var update = Builders<Vehicle>.Update.Set(column, status);
                 collection.UpdateOne(filter, update);
-                log.Info("UpdateSpacecraft() return successfully for vehicle: " + vehicleName);
+                log.Info("UpdateSpacecraft() return successfully for vehicle: " + vehicleName + " " + column + " " + status);
             }
             catch (Exception ex)
             {
                 log.Error("Backend, UpdateSpacecraft(string vehicleName) Error.", ex);
             }
             
+        }
+
+        public List<Vehicle> GetAllOnlineSpacecraft()
+        {
+            try
+            {
+                var db = client.GetDatabase(Constants.DATABASE_SPACEZ);
+                var collection = db.GetCollection<Vehicle>(Constants.COLLECTION_SPACECRAFT);
+                var filterBuilder = Builders<Vehicle>.Filter;
+                FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
+                List<Vehicle> documents = new List<Vehicle>();
+                var cursor = collection.Find(filter).ToCursor();
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    documents.Add(document);
+                }
+                log.Info("GetAllLaunchSequenceSpacecraft() return successfully.");
+                return documents;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, GetAddedSpacecraft() Error.", ex);
+                return new List<Vehicle>();
+            }
+        }
+
+        public List<Vehicle> GetAllOnlinePayload()
+        {
+            try
+            {
+                var db = client.GetDatabase(Constants.DATABASE_SPACEZ);
+                var collection = db.GetCollection<Vehicle>(Constants.COLLECTION_SPACECRAFT);
+                var filterBuilder = Builders<Vehicle>.Filter;
+                FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_ONLINE);
+                List<Vehicle> documents = new List<Vehicle>();
+                var cursor = collection.Find(filter).ToCursor();
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    documents.Add(document);
+                }
+                log.Info("GetAllOnlinePayload() return successfully." + documents);
+                return documents;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, GetAddedSpacecraft() Error.", ex);
+                return new List<Vehicle>();
+            }
+        }
+
+        public Vehicle GetSpacecraft(string vehicleName)
+        {
+            try
+            {
+                var db = client.GetDatabase(Constants.DATABASE_SPACEZ);
+                var collection = db.GetCollection<Vehicle>(Constants.COLLECTION_SPACECRAFT);
+                var filterBuilder = Builders<Vehicle>.Filter;
+                FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_NAME, vehicleName);
+                Vehicle document = collection.Find(filter).First<Vehicle>();
+                log.Info("GetSpacecraft() return successfully for vehicle: " + vehicleName);
+                return document;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, UpdateSpacecraft(string vehicleName) Error.", ex);
+                return null;
+            }
+        }
+
+        public void UpdateTelemetryMap(string vehicleName, Telemetry telemetry)
+        {
+            this.telemetryDictionary[vehicleName] = telemetry;
+        }
+
+        public Telemetry GetTelemetryOfVehicle(string vehicleName)
+        {
+            try
+            {
+                return this.telemetryDictionary[vehicleName];
+            }
+            catch(Exception ex)
+            {
+                log.Error("Backend, GetTelemetryOfVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return new Telemetry();
+            }
         }
     }
 

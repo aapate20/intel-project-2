@@ -10,6 +10,7 @@ C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\Backen
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\Backend.dll
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\Backend.pdb
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\DnsClient.dll
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\log4net.dll
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\MongoDB.Bson.dll
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\MongoDB.Driver.Core.dll
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\MongoDB.Driver.dll
@@ -22,6 +23,7 @@ C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\System
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\System.Runtime.CompilerServices.Unsafe.dll
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\System.Text.Encoding.CodePages.dll
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\DnsClient.xml
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\log4net.xml
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\MongoDB.Bson.xml
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\MongoDB.Driver.xml
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\MongoDB.Driver.Core.xml
@@ -36,5 +38,3 @@ C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\obj\Debug\
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\obj\Debug\Backend.csproj.CopyComplete
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\obj\Debug\Backend.dll
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\obj\Debug\Backend.pdb
-C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\log4net.dll
-C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\bin\log4net.xml

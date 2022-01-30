@@ -19,12 +19,27 @@ namespace Backend
         List<Vehicle> GetAllSpacecraft();
 
         [OperationContract]
-        long CheckSpacecraftExists(string vehicleName);
+        long CheckSpacecraftExists(string vehicleName, string payloadName);
 
         [OperationContract]
         List<Vehicle> GetAddedSpacecraft();
 
         [OperationContract]
-        void UpdateSpacecraft(string vehicleName, string status);
+        void UpdateSpacecraft(string vehicleName, string column, string status);
+
+        [OperationContract]
+        List<Vehicle> GetAllOnlineSpacecraft();
+
+        [OperationContract]
+        Vehicle GetSpacecraft(string vehicleName);
+
+        [OperationContract]
+        List<Vehicle> GetAllOnlinePayload();
+
+        [OperationContract]
+        void UpdateTelemetryMap(string vehicleName, Telemetry telemetry);
+
+        [OperationContract]
+        Telemetry GetTelemetryOfVehicle(string vehicleName);
     }
 }

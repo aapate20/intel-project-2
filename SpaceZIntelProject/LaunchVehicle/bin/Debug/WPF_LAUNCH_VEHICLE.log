@@ -1,0 +1,103 @@
+2022-01-27 13:53:45,279 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 13:55:49,859 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:00:51,812 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:04:56,100 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:04:56,108 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.OnStartup(StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 25
+2022-01-27 14:05:38,858 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:05:38,863 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.OnStartup(StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 25
+2022-01-27 14:06:07,266 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:06:07,271 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.OnStartup(StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 25
+2022-01-27 14:09:05,153 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:09:05,158 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.OnStartup(StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 14:10:54,371 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:11:37,950 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:25:30,428 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 14:25:30,443 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 15:53:55,418 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 15:53:55,437 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 15:54:22,145 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 15:54:22,157 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 15:55:31,371 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 16:42:12,415 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 16:43:22,481 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 16:43:22,495 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 23:50:32,055 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 23:50:32,072 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 23:50:52,891 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 23:50:52,903 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-27 23:51:09,482 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-27 23:51:09,494 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-28 12:03:34,025 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-28 12:03:34,038 [1] ERROR LaunchVehicle.App - System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LaunchVehicle.App.App_Startup(Object sender, StartupEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\App.xaml.cs:line 26
+2022-01-28 12:03:38,345 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs - GetAddedSpacecraft() Error.
+System.ServiceModel.EndpointNotFoundException: There was no endpoint listening at http://localhost:11997/Service1.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:11997
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at LaunchVehicle.BackendServiceReference.BackendServices.GetSpacecraft(String vehicleName)
+   at LaunchVehicle.BackendServiceReference.BackendServicesClient.GetSpacecraft(String vehicleName) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\Connected Services\BackendServiceReference\Reference.cs:line 309
+   at LaunchVehicle.MainWindow..ctor(String spaceCraftName) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs:line 40
+2022-01-28 12:50:07,496 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-28 13:21:46,600 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-28 14:04:09,210 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-28 14:04:54,624 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-28 14:18:57,573 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-28 14:19:48,260 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-28 14:20:50,714 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-28 22:23:41,960 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:25:39,211 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:26:27,819 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:31:23,487 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:34:48,162 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:35:38,249 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:36:02,985 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:39:52,301 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:40:30,345 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:41:46,412 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:45:46,393 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:46:43,448 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:55:27,746 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 02:56:13,612 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 11:34:24,322 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 12:22:14,041 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 14:18:46,953 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 14:20:32,828 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 14:28:21,425 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 14:40:23,626 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 14:44:11,402 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 14:58:36,450 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle =============        
+2022-01-29 16:56:53,260 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-29 18:29:19,825 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-29 18:30:47,293 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-29 18:36:47,833 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-29 18:38:29,687 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        

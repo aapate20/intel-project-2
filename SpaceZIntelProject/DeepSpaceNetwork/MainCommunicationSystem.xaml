@@ -1,0 +1,15 @@
+﻿<Window x:Class="DeepSpaceNetwork.MainCommunicationSystem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeepSpaceNetwork"
+        mc:Ignorable="d"
+        Title="MainCommunicationSystem" Height="500" Width="800">
+    <Grid Background="AntiqueWhite">
+        <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
+        <Button Content="Spacecraft Communication Dashboard" Background="Azure" HorizontalContentAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,189,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_Spacecraft_Communication_System" />
+        <Button Content="Payload Communication Dashboard" Background="Azure" FontSize="30" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_Payload_Communication_System"/>
+        <Label Content="Communication System Dashboard" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,62,0,344" Width="646"/>
+    </Grid>
+</Window>

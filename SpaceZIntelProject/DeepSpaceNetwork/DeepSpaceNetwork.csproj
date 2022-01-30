@@ -243,11 +243,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CommunicationDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommunicationSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DSNDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LaunchSpacecraft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainCommunicationSystem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,6 +274,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CommunicationDashboard.xaml.cs">
+      <DependentUpon>CommunicationDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommunicationSystem.xaml.cs">
+      <DependentUpon>CommunicationSystem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\BackendServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -275,6 +293,9 @@
       <DependentUpon>LaunchSpacecraft.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogHelper.cs" />
+    <Compile Include="MainCommunicationSystem.xaml.cs">
+      <DependentUpon>MainCommunicationSystem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -283,10 +304,24 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PayloadCommunicationDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PayloadCommunicationSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MissionControlSystem.xaml.cs">
       <DependentUpon>MissionControlSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PayloadCommunicationDashboard.xaml.cs">
+      <DependentUpon>PayloadCommunicationDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PayloadCommunicationSystem.xaml.cs">
+      <DependentUpon>PayloadCommunicationSystem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -305,7 +340,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Connected Services\BackendServiceReference\BackendServiceImpl.wsdl" />
+    <None Include="Connected Services\BackendServiceReference\DeepSpaceNetwork.BackendServiceReference.Telemetry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\BackendServiceReference\DeepSpaceNetwork.BackendServiceReference.Vehicle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

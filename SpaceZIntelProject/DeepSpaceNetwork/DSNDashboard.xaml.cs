@@ -40,11 +40,11 @@ namespace DeepSpaceNetwork
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
                     SpaceCraftDir[v.Name] = v;
-                    if ("Added".Equals(v.Status))
+                    if (Constants.STATUS_ADDED.Equals(v.Status) || Constants.STATUS_LAUNCHED.Equals(v.Status))
                     {
                         NewSpaceCraftList.Items.Add(v.Name);
                     }
-                    else if ("Launched".Equals(v.Status))
+                    else
                     {
                         ActiveSpaceCraftList.Items.Add(v.Name);
                     }
@@ -89,6 +89,7 @@ namespace DeepSpaceNetwork
                     }
 
                     SpacecraftDetails.Text = sb.ToString();
+                    SpacecraftDetails.ScrollToEnd();
                     sb.Clear();
                 }
             }
@@ -111,8 +112,10 @@ namespace DeepSpaceNetwork
             {
                 sb.Append("Name: " + vehicle.Name + "\n");
                 sb.Append("Orbit Radius: " + vehicle.OrbitRadius + "\n");
+                sb.Append("Spacecraft Status: " + vehicle.Status + "\n");
                 sb.Append("Payload Name: " + vehicle.Payload.Name + "\n");
                 sb.Append("Payload Type: " + vehicle.Payload.Type + "\n");
+                sb.Append("Payload Status: " + vehicle.Payload.Status + "\n");
                 sb.Append("----------------\n\n");
             }
         }

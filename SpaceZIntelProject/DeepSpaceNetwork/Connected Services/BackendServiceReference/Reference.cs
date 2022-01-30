@@ -29,10 +29,13 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrbitRadiusField;
+        private double OrbitRadiusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private DeepSpaceNetwork.BackendServiceReference.Payload PayloadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpacecraftStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StatusField;
@@ -74,7 +77,7 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrbitRadius {
+        public double OrbitRadius {
             get {
                 return this.OrbitRadiusField;
             }
@@ -95,6 +98,19 @@ namespace DeepSpaceNetwork.BackendServiceReference {
                 if ((object.ReferenceEquals(this.PayloadField, value) != true)) {
                     this.PayloadField = value;
                     this.RaisePropertyChanged("Payload");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SpacecraftStatus {
+            get {
+                return this.SpacecraftStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpacecraftStatusField, value) != true)) {
+                    this.SpacecraftStatusField = value;
+                    this.RaisePropertyChanged("SpacecraftStatus");
                 }
             }
         }
@@ -135,6 +151,12 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PayloadStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -161,6 +183,32 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PayloadStatus {
+            get {
+                return this.PayloadStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PayloadStatusField, value) != true)) {
+                    this.PayloadStatusField = value;
+                    this.RaisePropertyChanged("PayloadStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Type {
             get {
                 return this.TypeField;
@@ -169,6 +217,115 @@ namespace DeepSpaceNetwork.BackendServiceReference {
                 if ((object.ReferenceEquals(this.TypeField, value) != true)) {
                     this.TypeField = value;
                     this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Telemetry", Namespace="http://schemas.datacontract.org/2004/07/Backend")]
+    [System.SerializableAttribute()]
+    public partial class Telemetry : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AltitudeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double LatitudeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double LongitudeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double TemperatureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeToOrbitField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Altitude {
+            get {
+                return this.AltitudeField;
+            }
+            set {
+                if ((this.AltitudeField.Equals(value) != true)) {
+                    this.AltitudeField = value;
+                    this.RaisePropertyChanged("Altitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Latitude {
+            get {
+                return this.LatitudeField;
+            }
+            set {
+                if ((this.LatitudeField.Equals(value) != true)) {
+                    this.LatitudeField = value;
+                    this.RaisePropertyChanged("Latitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Longitude {
+            get {
+                return this.LongitudeField;
+            }
+            set {
+                if ((this.LongitudeField.Equals(value) != true)) {
+                    this.LongitudeField = value;
+                    this.RaisePropertyChanged("Longitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Temperature {
+            get {
+                return this.TemperatureField;
+            }
+            set {
+                if ((this.TemperatureField.Equals(value) != true)) {
+                    this.TemperatureField = value;
+                    this.RaisePropertyChanged("Temperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeToOrbit {
+            get {
+                return this.TimeToOrbitField;
+            }
+            set {
+                if ((this.TimeToOrbitField.Equals(value) != true)) {
+                    this.TimeToOrbitField = value;
+                    this.RaisePropertyChanged("TimeToOrbit");
                 }
             }
         }
@@ -200,10 +357,10 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle[]> GetAllSpacecraftAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/CheckSpacecraftExists", ReplyAction="http://tempuri.org/BackendServices/CheckSpacecraftExistsResponse")]
-        long CheckSpacecraftExists(string vehicleName);
+        long CheckSpacecraftExists(string vehicleName, string payloadName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/CheckSpacecraftExists", ReplyAction="http://tempuri.org/BackendServices/CheckSpacecraftExistsResponse")]
-        System.Threading.Tasks.Task<long> CheckSpacecraftExistsAsync(string vehicleName);
+        System.Threading.Tasks.Task<long> CheckSpacecraftExistsAsync(string vehicleName, string payloadName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAddedSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAddedSpacecraftResponse")]
         DeepSpaceNetwork.BackendServiceReference.Vehicle[] GetAddedSpacecraft();
@@ -212,10 +369,40 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle[]> GetAddedSpacecraftAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateSpacecraft", ReplyAction="http://tempuri.org/BackendServices/UpdateSpacecraftResponse")]
-        void UpdateSpacecraft(string vehicleName, string status);
+        void UpdateSpacecraft(string vehicleName, string column, string status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateSpacecraft", ReplyAction="http://tempuri.org/BackendServices/UpdateSpacecraftResponse")]
-        System.Threading.Tasks.Task UpdateSpacecraftAsync(string vehicleName, string status);
+        System.Threading.Tasks.Task UpdateSpacecraftAsync(string vehicleName, string column, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlineSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlineSpacecraftResponse")]
+        DeepSpaceNetwork.BackendServiceReference.Vehicle[] GetAllOnlineSpacecraft();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlineSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlineSpacecraftResponse")]
+        System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle[]> GetAllOnlineSpacecraftAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetSpacecraftResponse")]
+        DeepSpaceNetwork.BackendServiceReference.Vehicle GetSpacecraft(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetSpacecraftResponse")]
+        System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle> GetSpacecraftAsync(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlinePayload", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlinePayloadResponse")]
+        DeepSpaceNetwork.BackendServiceReference.Vehicle[] GetAllOnlinePayload();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlinePayload", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlinePayloadResponse")]
+        System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle[]> GetAllOnlinePayloadAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateTelemetryMap", ReplyAction="http://tempuri.org/BackendServices/UpdateTelemetryMapResponse")]
+        void UpdateTelemetryMap(string vehicleName, DeepSpaceNetwork.BackendServiceReference.Telemetry telemetry);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateTelemetryMap", ReplyAction="http://tempuri.org/BackendServices/UpdateTelemetryMapResponse")]
+        System.Threading.Tasks.Task UpdateTelemetryMapAsync(string vehicleName, DeepSpaceNetwork.BackendServiceReference.Telemetry telemetry);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/BackendServices/GetTelemetryOfVehicleResponse")]
+        DeepSpaceNetwork.BackendServiceReference.Telemetry GetTelemetryOfVehicle(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/BackendServices/GetTelemetryOfVehicleResponse")]
+        System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Telemetry> GetTelemetryOfVehicleAsync(string vehicleName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -261,12 +448,12 @@ namespace DeepSpaceNetwork.BackendServiceReference {
             return base.Channel.GetAllSpacecraftAsync();
         }
         
-        public long CheckSpacecraftExists(string vehicleName) {
-            return base.Channel.CheckSpacecraftExists(vehicleName);
+        public long CheckSpacecraftExists(string vehicleName, string payloadName) {
+            return base.Channel.CheckSpacecraftExists(vehicleName, payloadName);
         }
         
-        public System.Threading.Tasks.Task<long> CheckSpacecraftExistsAsync(string vehicleName) {
-            return base.Channel.CheckSpacecraftExistsAsync(vehicleName);
+        public System.Threading.Tasks.Task<long> CheckSpacecraftExistsAsync(string vehicleName, string payloadName) {
+            return base.Channel.CheckSpacecraftExistsAsync(vehicleName, payloadName);
         }
         
         public DeepSpaceNetwork.BackendServiceReference.Vehicle[] GetAddedSpacecraft() {
@@ -277,12 +464,52 @@ namespace DeepSpaceNetwork.BackendServiceReference {
             return base.Channel.GetAddedSpacecraftAsync();
         }
         
-        public void UpdateSpacecraft(string vehicleName, string status) {
-            base.Channel.UpdateSpacecraft(vehicleName, status);
+        public void UpdateSpacecraft(string vehicleName, string column, string status) {
+            base.Channel.UpdateSpacecraft(vehicleName, column, status);
         }
         
-        public System.Threading.Tasks.Task UpdateSpacecraftAsync(string vehicleName, string status) {
-            return base.Channel.UpdateSpacecraftAsync(vehicleName, status);
+        public System.Threading.Tasks.Task UpdateSpacecraftAsync(string vehicleName, string column, string status) {
+            return base.Channel.UpdateSpacecraftAsync(vehicleName, column, status);
+        }
+        
+        public DeepSpaceNetwork.BackendServiceReference.Vehicle[] GetAllOnlineSpacecraft() {
+            return base.Channel.GetAllOnlineSpacecraft();
+        }
+        
+        public System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle[]> GetAllOnlineSpacecraftAsync() {
+            return base.Channel.GetAllOnlineSpacecraftAsync();
+        }
+        
+        public DeepSpaceNetwork.BackendServiceReference.Vehicle GetSpacecraft(string vehicleName) {
+            return base.Channel.GetSpacecraft(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle> GetSpacecraftAsync(string vehicleName) {
+            return base.Channel.GetSpacecraftAsync(vehicleName);
+        }
+        
+        public DeepSpaceNetwork.BackendServiceReference.Vehicle[] GetAllOnlinePayload() {
+            return base.Channel.GetAllOnlinePayload();
+        }
+        
+        public System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle[]> GetAllOnlinePayloadAsync() {
+            return base.Channel.GetAllOnlinePayloadAsync();
+        }
+        
+        public void UpdateTelemetryMap(string vehicleName, DeepSpaceNetwork.BackendServiceReference.Telemetry telemetry) {
+            base.Channel.UpdateTelemetryMap(vehicleName, telemetry);
+        }
+        
+        public System.Threading.Tasks.Task UpdateTelemetryMapAsync(string vehicleName, DeepSpaceNetwork.BackendServiceReference.Telemetry telemetry) {
+            return base.Channel.UpdateTelemetryMapAsync(vehicleName, telemetry);
+        }
+        
+        public DeepSpaceNetwork.BackendServiceReference.Telemetry GetTelemetryOfVehicle(string vehicleName) {
+            return base.Channel.GetTelemetryOfVehicle(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Telemetry> GetTelemetryOfVehicleAsync(string vehicleName) {
+            return base.Channel.GetTelemetryOfVehicleAsync(vehicleName);
         }
     }
 }

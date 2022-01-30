@@ -1,6 +1,8 @@
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\bin\Debug\LaunchVehicle.exe.config
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\bin\Debug\LaunchVehicle.exe
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\bin\Debug\LaunchVehicle.pdb
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\bin\Debug\log4net.dll
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\bin\Debug\log4net.xml
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\LaunchVehicle.csproj.AssemblyReference.cache
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\LaunchVehicle.csproj.SuggestedBindingRedirects.cache
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\MainWindow.g.cs
@@ -12,5 +14,6 @@ C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\LaunchVehicle.Properties.Resources.resources
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\LaunchVehicle.csproj.GenerateResource.cache
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\LaunchVehicle.csproj.CoreCompileInputs.cache
+C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\LaunchVehicle.csproj.CopyComplete
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\LaunchVehicle.exe
 C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\obj\Debug\LaunchVehicle.pdb

@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MissionControlSystem" Height="500" Width="800">
     <Grid Background="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Button Content="Add Spacecraft" FontSize="30" HorizontalAlignment="Center" Margin="0,141,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Add_Spacecraft" />
         <Button Content="Launch Spacecraft" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="550" Height="82" Click="Launch_Spacecraft" Margin="0,242,0,0"/>
         <Button Content="View Spacecraft Details" FontSize="30" HorizontalAlignment="Center" Margin="0,347,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_DSN_Dashboard" />
