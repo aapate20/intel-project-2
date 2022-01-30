@@ -26,4 +26,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfVehicle" nillable="true" type="tns:ArrayOfVehicle" />
+  <xs:complexType name="Telemetry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+      <xs:element minOccurs="0" name="TimeToOrbit" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Telemetry" nillable="true" type="tns:Telemetry" />
 </xs:schema>

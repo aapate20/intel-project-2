@@ -35,5 +35,11 @@ namespace Backend
 
         [OperationContract]
         List<Vehicle> GetAllOnlinePayload();
+
+        [OperationContract]
+        void UpdateTelemetryMap(string vehicleName, Telemetry telemetry);
+
+        [OperationContract]
+        Telemetry GetTelemetryOfVehicle(string vehicleName);
     }
 }

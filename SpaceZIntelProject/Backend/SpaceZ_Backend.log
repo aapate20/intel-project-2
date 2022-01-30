@@ -173,3 +173,182 @@
 2022-01-29 20:13:24,051 [236] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Decommission
 2022-01-29 20:13:24,110 [236] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Offline
 2022-01-29 20:13:54,858 [236] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-01-29 22:19:46,324 [185] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA GPM
+2022-01-29 22:19:46,473 [185] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-01-29 22:19:48,265 [186] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-29 22:19:50,940 [185] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launch Initiated
+2022-01-29 22:19:50,998 [185] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 22:19:51,141 [185] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 22:20:01,223 [184] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launched
+2022-01-29 22:20:01,283 [185] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 22:20:01,345 [185] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Air
+2022-01-29 22:21:17,280 [186] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Mission Aborted
+2022-01-29 22:21:17,337 [186] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Offline
+2022-01-29 22:21:17,394 [186] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Mission Aborted
+2022-01-29 22:23:53,751 [200] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA GPM
+2022-01-29 22:23:53,909 [229] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-01-29 22:23:55,507 [228] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-29 22:23:57,065 [228] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launch Initiated
+2022-01-29 22:23:57,129 [229] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 22:23:57,304 [229] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 22:24:07,376 [229] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launched
+2022-01-29 22:24:07,437 [229] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 22:24:07,496 [227] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Air
+2022-01-29 22:24:27,616 [228] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Orbit Reached
+2022-01-29 22:24:27,677 [228] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launch Initiated
+2022-01-29 22:24:27,756 [228] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 22:30:23,014 [266] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 1 for vehicle: SpaceA GPM
+2022-01-29 22:30:42,886 [267] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA GPM
+2022-01-29 22:30:42,950 [260] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-01-29 22:30:49,243 [267] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft(), Return successful with documents: System.Collections.Generic.List`1[Backend.Vehicle]
+2022-01-29 22:30:52,008 [267] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-29 22:31:00,026 [267] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launch Initiated
+2022-01-29 22:31:00,084 [267] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 22:31:00,217 [267] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 22:31:10,291 [257] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launched
+2022-01-29 22:31:10,353 [257] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 22:31:10,418 [259] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Air
+2022-01-29 22:31:30,549 [266] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Orbit Reached
+2022-01-29 22:31:30,613 [266] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launch Initiated
+2022-01-29 22:31:30,674 [266] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 22:32:31,722 [267] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-01-29 22:32:33,414 [266] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 22:32:34,303 [256] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 22:37:34,902 [224] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA GPM
+2022-01-29 22:37:35,055 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-01-29 22:37:36,576 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-29 22:37:37,984 [192] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launch Initiated
+2022-01-29 22:37:38,043 [192] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 22:37:38,163 [192] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 22:37:48,244 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launched
+2022-01-29 22:37:48,307 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 22:37:48,369 [196] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Air
+2022-01-29 22:38:08,500 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Orbit Reached
+2022-01-29 22:38:08,558 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launch Initiated
+2022-01-29 22:38:08,621 [191] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 22:41:02,254 [201] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-01-29 22:41:15,276 [224] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 22:42:43,014 [252] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-01-29 22:42:44,568 [252] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 22:42:48,676 [245] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:21:55,668 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA GPM
+2022-01-29 23:21:55,754 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-01-29 23:21:58,043 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-29 23:21:59,587 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launch Initiated
+2022-01-29 23:21:59,647 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 23:21:59,780 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:02,566 [38] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-01-29 23:22:08,154 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:09,844 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launched
+2022-01-29 23:22:09,905 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 23:22:09,964 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Air
+2022-01-29 23:22:14,279 [36] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:20,395 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:27,882 [38] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:30,082 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Orbit Reached
+2022-01-29 23:22:30,146 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launch Initiated
+2022-01-29 23:22:30,207 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 23:22:34,514 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:40,339 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:46,827 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:52,860 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:22:58,644 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:04,840 [34] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:10,308 [34] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:15,921 [39] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:21,474 [34] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:27,066 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:32,254 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:38,049 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:43,711 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:44,449 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:23:44,510 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Offline
+2022-01-29 23:23:44,581 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Deorbit
+2022-01-29 23:23:44,643 [140] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Offline
+2022-01-29 23:23:44,705 [140] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Decommission
+2022-01-29 23:23:50,136 [140] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:33:32,389 [245] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA GPM
+2022-01-29 23:33:32,593 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-01-29 23:33:34,055 [259] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-29 23:33:36,155 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launch Initiated
+2022-01-29 23:33:36,234 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 23:33:36,327 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:33:40,461 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-01-29 23:33:45,955 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:33:46,065 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:33:46,401 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launched
+2022-01-29 23:33:46,464 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 23:33:46,528 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Air
+2022-01-29 23:33:52,050 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:33:57,821 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:03,760 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:09,274 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:14,428 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:21,148 [261] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:26,687 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:32,599 [259] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:38,959 [259] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-01-29 23:34:39,074 [259] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:44,348 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:45,425 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:49,883 [259] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:51,004 [259] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:56,461 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:34:57,470 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:02,991 [259] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:04,183 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:08,353 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:09,354 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:13,985 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:14,980 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:20,376 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:21,461 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:26,205 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:27,361 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:28,852 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:32,794 [249] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:33,892 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:36,893 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Orbit Reached
+2022-01-29 23:35:36,965 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launch Initiated
+2022-01-29 23:35:37,027 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 23:35:39,248 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:40,249 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:44,009 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:44,088 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launched
+2022-01-29 23:35:44,150 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 23:35:44,266 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:45,249 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:35:46,718 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:36:02,660 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Decommission
+2022-01-29 23:36:02,767 [250] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Offline
+2022-01-29 23:36:08,889 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:36:08,960 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launched
+2022-01-29 23:36:09,025 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 23:36:09,128 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:46:52,625 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA GPM
+2022-01-29 23:46:52,706 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-01-29 23:46:55,492 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-01-29 23:46:57,790 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launch Initiated
+2022-01-29 23:46:57,882 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 23:46:58,571 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:04,225 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-01-29 23:47:08,664 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Launched
+2022-01-29 23:47:08,734 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Online
+2022-01-29 23:47:08,792 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Air
+2022-01-29 23:47:10,132 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:15,870 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:19,907 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Orbit Reached
+2022-01-29 23:47:19,974 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launch Initiated
+2022-01-29 23:47:20,034 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 23:47:22,458 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:25,328 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:25,404 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Launched
+2022-01-29 23:47:25,467 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Online
+2022-01-29 23:47:25,573 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:27,830 [48] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:29,180 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status Decommission
+2022-01-29 23:47:29,236 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.PayloadStatus Offline
+2022-01-29 23:47:32,264 [51] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:36,502 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-01-29 23:47:36,584 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus Offline
+2022-01-29 23:47:36,648 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status Deorbit

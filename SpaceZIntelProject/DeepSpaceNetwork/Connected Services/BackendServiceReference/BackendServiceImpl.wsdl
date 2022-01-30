@@ -55,6 +55,18 @@
   <wsdl:message name="BackendServices_GetAllOnlinePayload_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllOnlinePayloadResponse" />
   </wsdl:message>
+  <wsdl:message name="BackendServices_UpdateTelemetryMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTelemetryMap" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_UpdateTelemetryMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTelemetryMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetTelemetryOfVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelemetryOfVehicle" />
+  </wsdl:message>
+  <wsdl:message name="BackendServices_GetTelemetryOfVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelemetryOfVehicleResponse" />
+  </wsdl:message>
   <wsdl:portType name="BackendServices">
     <wsdl:operation name="AddSpaceCraft">
       <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/AddSpaceCraft" message="tns:BackendServices_AddSpaceCraft_InputMessage" />
@@ -87,6 +99,14 @@
     <wsdl:operation name="GetAllOnlinePayload">
       <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlinePayload" message="tns:BackendServices_GetAllOnlinePayload_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetAllOnlinePayloadResponse" message="tns:BackendServices_GetAllOnlinePayload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTelemetryMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/UpdateTelemetryMap" message="tns:BackendServices_UpdateTelemetryMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/UpdateTelemetryMapResponse" message="tns:BackendServices_UpdateTelemetryMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelemetryOfVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/BackendServices/GetTelemetryOfVehicle" message="tns:BackendServices_GetTelemetryOfVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/BackendServices/GetTelemetryOfVehicleResponse" message="tns:BackendServices_GetTelemetryOfVehicle_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_BackendServices" type="tns:BackendServices">
@@ -156,6 +176,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllOnlinePayload">
       <soap:operation soapAction="http://tempuri.org/BackendServices/GetAllOnlinePayload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTelemetryMap">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/UpdateTelemetryMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelemetryOfVehicle">
+      <soap:operation soapAction="http://tempuri.org/BackendServices/GetTelemetryOfVehicle" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

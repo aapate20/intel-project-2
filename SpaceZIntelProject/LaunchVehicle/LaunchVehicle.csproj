@@ -104,6 +104,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Connected Services\BackendServiceReference\BackendServiceImpl.wsdl" />
+    <None Include="Connected Services\BackendServiceReference\LaunchVehicle.BackendServiceReference.Telemetry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\BackendServiceReference\LaunchVehicle.BackendServiceReference.Vehicle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

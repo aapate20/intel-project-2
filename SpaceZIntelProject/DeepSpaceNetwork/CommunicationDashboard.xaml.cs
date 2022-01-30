@@ -25,18 +25,30 @@ namespace DeepSpaceNetwork
         private readonly BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle vehicle;
         private DispatcherTimer refreshTimer;
-        private int refreshSecond = 4;
+        private DispatcherTimer telemetryTimer;
+        private int refreshSecond = 1;
+        private BackendServiceReference.Telemetry telemetryObject;
         public CommunicationDashboard(BackendServiceReference.Vehicle vehicle)
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
             this.vehicle = vehicle;
             this.backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            this.Configured_Dashboard();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.spaceCraftName.Content = vehicle.Name + " " + "Communication Dashboard";
             this.payloadName.Content = vehicle.Payload.Name;
             this.payloadType.Content = vehicle.Payload.Type;
             this.Refresh_Window();
+            this.telemetryTimer = new DispatcherTimer();
+            this.telemetryTimer.Interval = TimeSpan.FromSeconds(1);
+            this.telemetryTimer.Tick += Telemetry_Window_Ticker;
+
+            if (Constants.STATUS_ORBIT_REACHED.Equals(this.vehicle.Status))
+            {
+                this.stopTelemetry.IsEnabled = false;
+            }
+
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
@@ -91,7 +103,6 @@ namespace DeepSpaceNetwork
                     this.refreshTimer.Stop();
                     log.Info("Spacecraft CommunicationDashboard -> Refresh Screen Timer Stoped.");
                 }
-
             }
             catch (Exception ex)
             {
@@ -135,6 +146,11 @@ namespace DeepSpaceNetwork
                         backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_OFFLINE);
                         backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_DECOMMISSION);
                     }
+
+                    this.TelemetryBox.Text = "";
+                    this.CommunicationBox.Text = "Lost Connection to spacecraft.";
+                    this.TelemetryBox.IsEnabled = false;
+                    this.CommunicationBox.IsEnabled = false;
                 }
                 else 
                     MessageBox.Show("Operation Not Allowed, Unknown Status: " + this.vehicle.SpacecraftStatus, "Message", MessageBoxButton.OK, MessageBoxImage.Warning); 
@@ -154,9 +170,14 @@ namespace DeepSpaceNetwork
                     MessageBox.Show("Operation Not Allowed, Spacecraft not luanched yet!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
                 else if (Constants.STATUS_LAUNCHED.Equals(this.vehicle.Status))
                     MessageBox.Show("Operation Not Allowed, Spacecraft not reached orbit yet!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
-                else if (Constants.STATUS_ORBIT_REACHED.Equals(this.vehicle.Status)) {
-                    log.Info("Launched Payload.");
-                    this.launchPayload();
+                else if (Constants.STATUS_ORBIT_REACHED.Equals(this.vehicle.Status) && Constants.STATUS_ONLINE.Equals(this.vehicle.Payload.PayloadStatus)) {
+                    log.Info("Launched Payload: " + this.vehicle.Payload.Name);
+                    this.Launch_Payload();
+                }
+                else if(Constants.STATUS_DECOMMISSION.Equals(this.vehicle.Payload.Status))
+                {
+                    this.customPayloadBtn.IsEnabled = false;
+                    MessageBox.Show("Payload has been decommissioned.", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else 
                     MessageBox.Show("Operation Not Allowed, Unknown Status: " + this.vehicle.SpacecraftStatus, "Message", MessageBoxButton.OK, MessageBoxImage.Warning); 
@@ -169,7 +190,7 @@ namespace DeepSpaceNetwork
             
         }
 
-        private void launchPayload()
+        private void Launch_Payload()
         {
             Mouse.OverrideCursor = Cursors.Wait;
             try
@@ -210,6 +231,55 @@ namespace DeepSpaceNetwork
             var communicationSystem = new CommunicationSystem();
             communicationSystem.Show();
             this.Close();
+        }
+
+        private void Start_Telemetry_Function(object sender, RoutedEventArgs e)
+        {
+            if (Constants.STATUS_LAUNCHED.Equals(this.vehicle.Status) && Constants.STATUS_ONLINE.Equals(this.vehicle.SpacecraftStatus)) 
+                this.telemetryTimer.Start(); 
+            else if (Constants.STATUS_LAUNCH_INITIATED.Equals(this.vehicle.Status)) 
+                MessageBox.Show("Operation Not Allowed, Spacecraft not luanched yet!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning); 
+            else  
+                MessageBox.Show("Operation Not Allowed, Unknown Status: " + this.vehicle.SpacecraftStatus, "Message", MessageBoxButton.OK, MessageBoxImage.Warning); 
+        }
+
+        private void Telemetry_Window_Ticker(object sender, EventArgs e)
+        {
+            try
+            {
+                this.telemetryObject = backendServicesClient.GetTelemetryOfVehicle(this.vehicle.Name);
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append('{').Append("\n");
+                sb.Append("\t").Append("\"").Append("Altitude").Append("\":  ").Append(this.telemetryObject.Altitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Longitude").Append("\":  ").Append(this.telemetryObject.Longitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Latitude").Append("\":  ").Append(this.telemetryObject.Latitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Temperature").Append("\":  ").Append(this.telemetryObject.Temperature).Append("\n");
+                
+                if (telemetryObject.TimeToOrbit == 0)
+                {
+                    this.telemetryTimer.Stop();
+                    sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append("Orbit Reached").Append("\n");
+                    this.startTelemetry.IsEnabled = false;
+                    this.stopTelemetry.IsEnabled = false;   
+                }
+                else
+                    sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append(this.telemetryObject.TimeToOrbit).Append("\n"); 
+
+                sb.Append('}').Append("\n");
+                this.TelemetryBox.Text += sb.ToString();
+                this.TelemetryBox.ScrollToEnd();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Telemetry_Window_Ticker(), Did not receive Vehicle object.", ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Stop_Telemetry_Function(object sender, RoutedEventArgs e)
+        {
+            this.telemetryTimer.Stop();
         }
     }
 }

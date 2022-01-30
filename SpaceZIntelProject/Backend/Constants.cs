@@ -13,7 +13,6 @@ namespace Backend
         public const string STATUS_LAUNCHED = "Launched";
         public const string STATUS_ONLINE = "Online";
         public const string STATUS_OFFLINE = "Offline";
-        public const string STATUS_REACHED = "Reached";
         public const string STATUS_DEORBIT = "Deorbit";
         public const string STATUS_DECOMMISSION = "Decommission";
         public const string STATUS_ADDED = "Added";

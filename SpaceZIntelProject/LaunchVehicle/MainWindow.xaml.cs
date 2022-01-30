@@ -25,15 +25,22 @@ namespace LaunchVehicle
         private readonly string spaceCraftName;
         private readonly BackendServiceReference.BackendServicesClient client;
         private readonly BackendServiceReference.Vehicle vehicle;
+        private readonly BackendServiceReference.Telemetry telemetry;
         private DispatcherTimer launchTimer;
         private DispatcherTimer orbitTimer;
         private int launchSequenceSecond = 10;
         private int timeToOrbitSeconds = 0;
+        Random random;
+        private double distanceCoveredinOneSec = 0;
+        private double temperatureReduceInOneSec = 0;
         public MainWindow(string spaceCraftName)
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
             client = new BackendServiceReference.BackendServicesClient();
+            this.telemetry = new BackendServiceReference.Telemetry();
+            this.telemetry.Temperature = 340;
+            random = new Random();
             this.spaceCraftName = spaceCraftName;
             this.SpaceCraftLabel.Content = this.spaceCraftName + " Dashboard";
             try
@@ -44,7 +51,6 @@ namespace LaunchVehicle
                     this.OrbitRadius.Content = vehicle.OrbitRadius;
                     this.PayloadName.Content = vehicle.Payload.Name;
                     this.PayloadType.Content = vehicle.Payload.Type;
-                    this.CalculateTimeToOrbit();
                     if (Constants.STATUS_LAUNCH_INITIATED.Equals(vehicle.Status))
                     {
                         this.CalculateTimeToOrbit();
@@ -125,6 +131,31 @@ namespace LaunchVehicle
                 this.orbitTimer.Stop();
                 this.LaunchPayload();
             }
+
+            this.UpdateTelemetry();
+        }
+
+        private void UpdateTelemetry()
+        {
+            this.telemetry.Altitude += this.distanceCoveredinOneSec;
+            this.telemetry.Longitude = random.Next(-90, 90);
+            this.telemetry.Latitude = random.Next(-180, 180);
+            this.telemetry.Temperature -= this.temperatureReduceInOneSec;
+            this.telemetry.TimeToOrbit = this.timeToOrbitSeconds;
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append('{').Append("\n");
+            sb.Append("\t").Append("\"").Append("Altitude").Append("\":  ").Append(this.telemetry.Altitude).Append("\n");
+            sb.Append("\t").Append("\"").Append("Longitude").Append("\":  ").Append(this.telemetry.Longitude).Append("\n");
+            sb.Append("\t").Append("\"").Append("Latitude").Append("\":  ").Append(this.telemetry.Latitude).Append("\n");
+            sb.Append("\t").Append("\"").Append("Temperature").Append("\":  ").Append(this.telemetry.Temperature).Append("\n");
+            sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append(this.TimeToOrbit.Content).Append("\n");
+            sb.Append('}').Append("\n");
+
+            this.TelemetryBox.Text = sb.ToString();
+            this.TelemetryBox.ScrollToEnd();
+            this.client.UpdateTelemetryMap(this.vehicle.Name, this.telemetry);
         }
 
         private void LaunchPayload()
@@ -147,6 +178,8 @@ namespace LaunchVehicle
             try
             {
                 this.timeToOrbitSeconds = (int)Math.Ceiling((this.vehicle.OrbitRadius / 3600) + 10);
+                this.temperatureReduceInOneSec = 340 / this.timeToOrbitSeconds;
+                this.distanceCoveredinOneSec = this.vehicle.OrbitRadius / this.timeToOrbitSeconds;
                 this.TimeToOrbit.Content = this.timeToOrbitSeconds.ToString();
             }
             catch (Exception ex)

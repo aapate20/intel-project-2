@@ -21,6 +21,7 @@ namespace Backend
         private static string connStr = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
         private static readonly MongoClientSettings settings = MongoClientSettings.FromConnectionString(connStr);
         private static readonly MongoClient client = new MongoClient(settings);
+        private Dictionary<string, Telemetry> telemetryDictionary = new Dictionary<string, Telemetry>();  
         public string AddSpaceCraft(Vehicle vehicle)
         {
             try
@@ -185,6 +186,24 @@ namespace Backend
             {
                 log.Error("Backend, UpdateSpacecraft(string vehicleName) Error.", ex);
                 return null;
+            }
+        }
+
+        public void UpdateTelemetryMap(string vehicleName, Telemetry telemetry)
+        {
+            this.telemetryDictionary[vehicleName] = telemetry;
+        }
+
+        public Telemetry GetTelemetryOfVehicle(string vehicleName)
+        {
+            try
+            {
+                return this.telemetryDictionary[vehicleName];
+            }
+            catch(Exception ex)
+            {
+                log.Error("Backend, GetTelemetryOfVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return new Telemetry();
             }
         }
     }

@@ -231,6 +231,115 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Telemetry", Namespace="http://schemas.datacontract.org/2004/07/Backend")]
+    [System.SerializableAttribute()]
+    public partial class Telemetry : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AltitudeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double LatitudeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double LongitudeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double TemperatureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeToOrbitField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Altitude {
+            get {
+                return this.AltitudeField;
+            }
+            set {
+                if ((this.AltitudeField.Equals(value) != true)) {
+                    this.AltitudeField = value;
+                    this.RaisePropertyChanged("Altitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Latitude {
+            get {
+                return this.LatitudeField;
+            }
+            set {
+                if ((this.LatitudeField.Equals(value) != true)) {
+                    this.LatitudeField = value;
+                    this.RaisePropertyChanged("Latitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Longitude {
+            get {
+                return this.LongitudeField;
+            }
+            set {
+                if ((this.LongitudeField.Equals(value) != true)) {
+                    this.LongitudeField = value;
+                    this.RaisePropertyChanged("Longitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Temperature {
+            get {
+                return this.TemperatureField;
+            }
+            set {
+                if ((this.TemperatureField.Equals(value) != true)) {
+                    this.TemperatureField = value;
+                    this.RaisePropertyChanged("Temperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeToOrbit {
+            get {
+                return this.TimeToOrbitField;
+            }
+            set {
+                if ((this.TimeToOrbitField.Equals(value) != true)) {
+                    this.TimeToOrbitField = value;
+                    this.RaisePropertyChanged("TimeToOrbit");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendServiceReference.BackendServices")]
     public interface BackendServices {
@@ -282,6 +391,18 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlinePayload", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlinePayloadResponse")]
         System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle[]> GetAllOnlinePayloadAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateTelemetryMap", ReplyAction="http://tempuri.org/BackendServices/UpdateTelemetryMapResponse")]
+        void UpdateTelemetryMap(string vehicleName, DeepSpaceNetwork.BackendServiceReference.Telemetry telemetry);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateTelemetryMap", ReplyAction="http://tempuri.org/BackendServices/UpdateTelemetryMapResponse")]
+        System.Threading.Tasks.Task UpdateTelemetryMapAsync(string vehicleName, DeepSpaceNetwork.BackendServiceReference.Telemetry telemetry);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/BackendServices/GetTelemetryOfVehicleResponse")]
+        DeepSpaceNetwork.BackendServiceReference.Telemetry GetTelemetryOfVehicle(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/BackendServices/GetTelemetryOfVehicleResponse")]
+        System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Telemetry> GetTelemetryOfVehicleAsync(string vehicleName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -373,6 +494,22 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         
         public System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Vehicle[]> GetAllOnlinePayloadAsync() {
             return base.Channel.GetAllOnlinePayloadAsync();
+        }
+        
+        public void UpdateTelemetryMap(string vehicleName, DeepSpaceNetwork.BackendServiceReference.Telemetry telemetry) {
+            base.Channel.UpdateTelemetryMap(vehicleName, telemetry);
+        }
+        
+        public System.Threading.Tasks.Task UpdateTelemetryMapAsync(string vehicleName, DeepSpaceNetwork.BackendServiceReference.Telemetry telemetry) {
+            return base.Channel.UpdateTelemetryMapAsync(vehicleName, telemetry);
+        }
+        
+        public DeepSpaceNetwork.BackendServiceReference.Telemetry GetTelemetryOfVehicle(string vehicleName) {
+            return base.Channel.GetTelemetryOfVehicle(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task<DeepSpaceNetwork.BackendServiceReference.Telemetry> GetTelemetryOfVehicleAsync(string vehicleName) {
+            return base.Channel.GetTelemetryOfVehicleAsync(vehicleName);
         }
     }
 }
