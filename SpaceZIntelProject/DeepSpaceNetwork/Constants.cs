@@ -25,5 +25,6 @@ namespace DeepSpaceNetwork
         public const string STATUS_ORBIT_REACHED = "Orbit Reached";
         public const string LAUNCH_VEHICLE_DIRECTORY = "LaunchVehicle\\bin\\Debug\\LaunchVehicle.exe";
         public const string PAYLOAD_DIRECTORY = "PayloadSystem\\bin\\Debug\\PayloadSystem.exe";
+        public const string SERVICE_END_POINT = "CommunicationServiceEndpoint";
     }
 }

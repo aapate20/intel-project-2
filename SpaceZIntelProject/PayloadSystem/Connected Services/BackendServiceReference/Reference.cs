@@ -341,95 +341,142 @@ namespace PayloadSystem.BackendServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendServiceReference.BackendServices")]
-    public interface BackendServices {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendServiceReference.IBackendServices", CallbackContract=typeof(PayloadSystem.BackendServiceReference.IBackendServicesCallback))]
+    public interface IBackendServices {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/AddSpaceCraft", ReplyAction="http://tempuri.org/BackendServices/AddSpaceCraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/AddSpaceCraft", ReplyAction="http://tempuri.org/IBackendServices/AddSpaceCraftResponse")]
         string AddSpaceCraft(PayloadSystem.BackendServiceReference.Vehicle vehicle);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/AddSpaceCraft", ReplyAction="http://tempuri.org/BackendServices/AddSpaceCraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/AddSpaceCraft", ReplyAction="http://tempuri.org/IBackendServices/AddSpaceCraftResponse")]
         System.Threading.Tasks.Task<string> AddSpaceCraftAsync(PayloadSystem.BackendServiceReference.Vehicle vehicle);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAllSpacecraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetAllSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/GetAllSpacecraftResponse")]
         PayloadSystem.BackendServiceReference.Vehicle[] GetAllSpacecraft();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAllSpacecraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetAllSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/GetAllSpacecraftResponse")]
         System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Vehicle[]> GetAllSpacecraftAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/CheckSpacecraftExists", ReplyAction="http://tempuri.org/BackendServices/CheckSpacecraftExistsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/CheckSpacecraftExists", ReplyAction="http://tempuri.org/IBackendServices/CheckSpacecraftExistsResponse")]
         long CheckSpacecraftExists(string vehicleName, string payloadName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/CheckSpacecraftExists", ReplyAction="http://tempuri.org/BackendServices/CheckSpacecraftExistsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/CheckSpacecraftExists", ReplyAction="http://tempuri.org/IBackendServices/CheckSpacecraftExistsResponse")]
         System.Threading.Tasks.Task<long> CheckSpacecraftExistsAsync(string vehicleName, string payloadName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAddedSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAddedSpacecraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetAddedSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/GetAddedSpacecraftResponse")]
         PayloadSystem.BackendServiceReference.Vehicle[] GetAddedSpacecraft();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAddedSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAddedSpacecraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetAddedSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/GetAddedSpacecraftResponse")]
         System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Vehicle[]> GetAddedSpacecraftAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateSpacecraft", ReplyAction="http://tempuri.org/BackendServices/UpdateSpacecraftResponse")]
-        void UpdateSpacecraft(string vehicleName, string column, string status);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateSpacecraft1", ReplyAction="http://tempuri.org/IBackendServices/UpdateSpacecraft1Response")]
+        void UpdateSpacecraft1(string vehicleName, string column, string status);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateSpacecraft", ReplyAction="http://tempuri.org/BackendServices/UpdateSpacecraftResponse")]
-        System.Threading.Tasks.Task UpdateSpacecraftAsync(string vehicleName, string column, string status);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateSpacecraft1", ReplyAction="http://tempuri.org/IBackendServices/UpdateSpacecraft1Response")]
+        System.Threading.Tasks.Task UpdateSpacecraft1Async(string vehicleName, string column, string status);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlineSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlineSpacecraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateSpacecraft2", ReplyAction="http://tempuri.org/IBackendServices/UpdateSpacecraft2Response")]
+        void UpdateSpacecraft2(string vehicleName, string column1, string value1, string column2, string value2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateSpacecraft2", ReplyAction="http://tempuri.org/IBackendServices/UpdateSpacecraft2Response")]
+        System.Threading.Tasks.Task UpdateSpacecraft2Async(string vehicleName, string column1, string value1, string column2, string value2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateSpacecraft3", ReplyAction="http://tempuri.org/IBackendServices/UpdateSpacecraft3Response")]
+        void UpdateSpacecraft3(string vehicleName, string column1, string value1, string column2, string value2, string column3, string value3);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateSpacecraft3", ReplyAction="http://tempuri.org/IBackendServices/UpdateSpacecraft3Response")]
+        System.Threading.Tasks.Task UpdateSpacecraft3Async(string vehicleName, string column1, string value1, string column2, string value2, string column3, string value3);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/LaunchSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/LaunchSpacecraftResponse")]
+        void LaunchSpacecraft(string vehicleName, string dsnDashboardName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/LaunchSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/LaunchSpacecraftResponse")]
+        System.Threading.Tasks.Task LaunchSpacecraftAsync(string vehicleName, string dsnDashboardName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetAllOnlineSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/GetAllOnlineSpacecraftResponse")]
         PayloadSystem.BackendServiceReference.Vehicle[] GetAllOnlineSpacecraft();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlineSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlineSpacecraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetAllOnlineSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/GetAllOnlineSpacecraftResponse")]
         System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Vehicle[]> GetAllOnlineSpacecraftAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetSpacecraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/GetSpacecraftResponse")]
         PayloadSystem.BackendServiceReference.Vehicle GetSpacecraft(string vehicleName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetSpacecraft", ReplyAction="http://tempuri.org/BackendServices/GetSpacecraftResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetSpacecraft", ReplyAction="http://tempuri.org/IBackendServices/GetSpacecraftResponse")]
         System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Vehicle> GetSpacecraftAsync(string vehicleName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlinePayload", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlinePayloadResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetAllOnlinePayload", ReplyAction="http://tempuri.org/IBackendServices/GetAllOnlinePayloadResponse")]
         PayloadSystem.BackendServiceReference.Vehicle[] GetAllOnlinePayload();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetAllOnlinePayload", ReplyAction="http://tempuri.org/BackendServices/GetAllOnlinePayloadResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetAllOnlinePayload", ReplyAction="http://tempuri.org/IBackendServices/GetAllOnlinePayloadResponse")]
         System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Vehicle[]> GetAllOnlinePayloadAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateTelemetryMap", ReplyAction="http://tempuri.org/BackendServices/UpdateTelemetryMapResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateTelemetryMap", ReplyAction="http://tempuri.org/IBackendServices/UpdateTelemetryMapResponse")]
         void UpdateTelemetryMap(string vehicleName, PayloadSystem.BackendServiceReference.Telemetry telemetry);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/UpdateTelemetryMap", ReplyAction="http://tempuri.org/BackendServices/UpdateTelemetryMapResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateTelemetryMap", ReplyAction="http://tempuri.org/IBackendServices/UpdateTelemetryMapResponse")]
         System.Threading.Tasks.Task UpdateTelemetryMapAsync(string vehicleName, PayloadSystem.BackendServiceReference.Telemetry telemetry);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/BackendServices/GetTelemetryOfVehicleResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetTelemetryOfVehicleResponse")]
         PayloadSystem.BackendServiceReference.Telemetry GetTelemetryOfVehicle(string vehicleName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/BackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/BackendServices/GetTelemetryOfVehicleResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetTelemetryOfVehicleResponse")]
         System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Telemetry> GetTelemetryOfVehicleAsync(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicleResponse")]
+        void RequestTelemetryOfVehicle(PayloadSystem.BackendServiceReference.Vehicle vehicle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicleResponse")]
+        System.Threading.Tasks.Task RequestTelemetryOfVehicleAsync(PayloadSystem.BackendServiceReference.Vehicle vehicle);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/SendCommandToVehicle", ReplyAction="http://tempuri.org/IBackendServices/SendCommandToVehicleResponse")]
+        void SendCommandToVehicle(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/SendCommandToVehicle", ReplyAction="http://tempuri.org/IBackendServices/SendCommandToVehicleResponse")]
+        System.Threading.Tasks.Task SendCommandToVehicleAsync(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/ConnectToBackend", ReplyAction="http://tempuri.org/IBackendServices/ConnectToBackendResponse")]
+        void ConnectToBackend(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/ConnectToBackend", ReplyAction="http://tempuri.org/IBackendServices/ConnectToBackendResponse")]
+        System.Threading.Tasks.Task ConnectToBackendAsync(string vehicleName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface BackendServicesChannel : PayloadSystem.BackendServiceReference.BackendServices, System.ServiceModel.IClientChannel {
+    public interface IBackendServicesCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/ReceiveCommand", ReplyAction="http://tempuri.org/IBackendServices/ReceiveCommandResponse")]
+        void ReceiveCommand(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/SendCommand", ReplyAction="http://tempuri.org/IBackendServices/SendCommandResponse")]
+        void SendCommand(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IBackendServicesChannel : PayloadSystem.BackendServiceReference.IBackendServices, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class BackendServicesClient : System.ServiceModel.ClientBase<PayloadSystem.BackendServiceReference.BackendServices>, PayloadSystem.BackendServiceReference.BackendServices {
+    public partial class BackendServicesClient : System.ServiceModel.DuplexClientBase<PayloadSystem.BackendServiceReference.IBackendServices>, PayloadSystem.BackendServiceReference.IBackendServices {
         
-        public BackendServicesClient() {
+        public BackendServicesClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public BackendServicesClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public BackendServicesClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public BackendServicesClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public BackendServicesClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public BackendServicesClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public BackendServicesClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public BackendServicesClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public BackendServicesClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
         public string AddSpaceCraft(PayloadSystem.BackendServiceReference.Vehicle vehicle) {
@@ -464,12 +511,36 @@ namespace PayloadSystem.BackendServiceReference {
             return base.Channel.GetAddedSpacecraftAsync();
         }
         
-        public void UpdateSpacecraft(string vehicleName, string column, string status) {
-            base.Channel.UpdateSpacecraft(vehicleName, column, status);
+        public void UpdateSpacecraft1(string vehicleName, string column, string status) {
+            base.Channel.UpdateSpacecraft1(vehicleName, column, status);
         }
         
-        public System.Threading.Tasks.Task UpdateSpacecraftAsync(string vehicleName, string column, string status) {
-            return base.Channel.UpdateSpacecraftAsync(vehicleName, column, status);
+        public System.Threading.Tasks.Task UpdateSpacecraft1Async(string vehicleName, string column, string status) {
+            return base.Channel.UpdateSpacecraft1Async(vehicleName, column, status);
+        }
+        
+        public void UpdateSpacecraft2(string vehicleName, string column1, string value1, string column2, string value2) {
+            base.Channel.UpdateSpacecraft2(vehicleName, column1, value1, column2, value2);
+        }
+        
+        public System.Threading.Tasks.Task UpdateSpacecraft2Async(string vehicleName, string column1, string value1, string column2, string value2) {
+            return base.Channel.UpdateSpacecraft2Async(vehicleName, column1, value1, column2, value2);
+        }
+        
+        public void UpdateSpacecraft3(string vehicleName, string column1, string value1, string column2, string value2, string column3, string value3) {
+            base.Channel.UpdateSpacecraft3(vehicleName, column1, value1, column2, value2, column3, value3);
+        }
+        
+        public System.Threading.Tasks.Task UpdateSpacecraft3Async(string vehicleName, string column1, string value1, string column2, string value2, string column3, string value3) {
+            return base.Channel.UpdateSpacecraft3Async(vehicleName, column1, value1, column2, value2, column3, value3);
+        }
+        
+        public void LaunchSpacecraft(string vehicleName, string dsnDashboardName) {
+            base.Channel.LaunchSpacecraft(vehicleName, dsnDashboardName);
+        }
+        
+        public System.Threading.Tasks.Task LaunchSpacecraftAsync(string vehicleName, string dsnDashboardName) {
+            return base.Channel.LaunchSpacecraftAsync(vehicleName, dsnDashboardName);
         }
         
         public PayloadSystem.BackendServiceReference.Vehicle[] GetAllOnlineSpacecraft() {
@@ -510,6 +581,30 @@ namespace PayloadSystem.BackendServiceReference {
         
         public System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Telemetry> GetTelemetryOfVehicleAsync(string vehicleName) {
             return base.Channel.GetTelemetryOfVehicleAsync(vehicleName);
+        }
+        
+        public void RequestTelemetryOfVehicle(PayloadSystem.BackendServiceReference.Vehicle vehicle) {
+            base.Channel.RequestTelemetryOfVehicle(vehicle);
+        }
+        
+        public System.Threading.Tasks.Task RequestTelemetryOfVehicleAsync(PayloadSystem.BackendServiceReference.Vehicle vehicle) {
+            return base.Channel.RequestTelemetryOfVehicleAsync(vehicle);
+        }
+        
+        public void SendCommandToVehicle(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command) {
+            base.Channel.SendCommandToVehicle(vehicle, command);
+        }
+        
+        public System.Threading.Tasks.Task SendCommandToVehicleAsync(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command) {
+            return base.Channel.SendCommandToVehicleAsync(vehicle, command);
+        }
+        
+        public void ConnectToBackend(string vehicleName) {
+            base.Channel.ConnectToBackend(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task ConnectToBackendAsync(string vehicleName) {
+            return base.Channel.ConnectToBackendAsync(vehicleName);
         }
     }
 }

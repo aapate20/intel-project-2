@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,9 +22,10 @@ namespace DeepSpaceNetwork
     public partial class CommunicationSystem : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
         private Dictionary<string, BackendServiceReference.Vehicle> spacecraftDirectory = new Dictionary<string, BackendServiceReference.Vehicle>();
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public CommunicationSystem()
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -38,11 +40,11 @@ namespace DeepSpaceNetwork
             LaunchSpacecraftList.Items.Clear();
             LaunchSpacecraftList.Items.Add("Select");
             LaunchSpacecraftList.SelectedIndex = 0;
-            backendServicesClient = new BackendServiceReference.BackendServicesClient();
-
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
             try
             {
-                Arr = backendServicesClient.GetAllOnlineSpacecraft();
+                Arr = this.backendService.GetAllOnlineSpacecraft();
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
                     LaunchSpacecraftList.Items.Add(v.Name);

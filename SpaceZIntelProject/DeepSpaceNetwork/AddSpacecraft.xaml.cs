@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
+using System.ServiceModel;
 
 namespace DeepSpaceNetwork
 {
@@ -21,14 +22,16 @@ namespace DeepSpaceNetwork
     /// </summary>
     public partial class AddSpacecraft : Window
     {
-        private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle vehicle;
         private BackendServiceReference.Payload payload;
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public AddSpacecraft()
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
             vehicle = new BackendServiceReference.Vehicle();
             payload = new BackendServiceReference.Payload();
         }
@@ -42,7 +45,7 @@ namespace DeepSpaceNetwork
                 && payload.Name != "" && payload.Type != null && payload.Type != "")
                 {
                     vehicle.Name = spaceCraftName.Text;
-                    long count = backendServicesClient.CheckSpacecraftExists(vehicle.Name, payload.Name);
+                    long count = backendService.CheckSpacecraftExists(vehicle.Name, payload.Name);
                     if (count > 0)
                     {
                         throw new Exception("Spacecraft or Payload already exist. " + count.ToString());
@@ -62,7 +65,7 @@ namespace DeepSpaceNetwork
                     payload.PayloadStatus = Constants.STATUS_OFFLINE;
                     vehicle.Payload = payload;
                     
-                    string msg = backendServicesClient.AddSpaceCraft(vehicle);
+                    string msg = backendService.AddSpaceCraft(vehicle);
                     MessageBox.Show(msg + " " + count.ToString(), "Status", MessageBoxButton.OK, MessageBoxImage.Information);
                     var missionControlSystem = new MissionControlSystem(); //create your new form.
                     missionControlSystem.Show(); //show the new form.

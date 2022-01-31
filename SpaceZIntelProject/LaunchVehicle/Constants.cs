@@ -23,5 +23,6 @@ namespace LaunchVehicle
         public const string STATUS_OFFLINE = "Offline";
         public const string COLUMN_SPACECRAFT_STATUS = "SpacecraftStatus";
         public const string LAUNCH_VEHICLE_DIRECTORY = "LaunchVehicle\\bin\\Debug\\LaunchVehicle.exe";
+        public const string SERVICE_END_POINT = "CommunicationServiceEndpoint";
     }
 }

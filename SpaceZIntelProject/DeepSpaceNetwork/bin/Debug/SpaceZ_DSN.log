@@ -89,3 +89,57 @@ System.InvalidOperationException: Cannot process request because the process has
 2022-01-29 23:47:25,330 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
 2022-01-29 23:47:27,831 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft CommunicationDashboard: Payload(launched)  -> Refresh Screen Timer Stoped.
 2022-01-29 23:47:36,503 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: SpaceA
+2022-01-30 00:12:26,196 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 00:12:26,252 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 00:13:21,988 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 00:13:22,059 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 00:13:36,247 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 00:14:06,602 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
+2022-01-30 00:14:08,082 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft CommunicationDashboard: Payload(launched)  -> Refresh Screen Timer Stoped.
+2022-01-30 00:20:53,040 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 00:20:53,115 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 00:21:01,129 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 00:52:07,574 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 00:52:07,650 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 00:54:00,486 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 00:54:31,367 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
+2022-01-30 00:54:33,941 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft CommunicationDashboard: Payload(launched)  -> Refresh Screen Timer Stoped.
+2022-01-30 00:55:42,273 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: SpaceA
+2022-01-30 01:13:40,959 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 01:13:41,043 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 01:13:54,723 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 01:14:17,009 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
+2022-01-30 01:14:17,680 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft CommunicationDashboard: Payload(launched)  -> Refresh Screen Timer Stoped.
+2022-01-30 01:14:31,934 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: SpaceA
+2022-01-30 01:16:38,063 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 01:16:38,131 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 01:16:52,729 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 01:16:55,988 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationSystem.xaml.cs - Communication_Dashboard() error
+System.Exception: Please select one from available spacecraft.
+   at DeepSpaceNetwork.CommunicationSystem.Communication_Dashboard(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationSystem.xaml.cs:line 67
+2022-01-30 01:17:21,422 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
+2022-01-30 01:17:22,479 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft CommunicationDashboard: Payload(launched)  -> Refresh Screen Timer Stoped.
+2022-01-30 01:17:30,789 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: SpaceA
+2022-01-30 14:37:20,015 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 14:41:07,364 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 14:41:45,807 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 14:42:11,293 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 14:43:06,395 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 14:43:06,597 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 15:00:33,488 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-30 15:00:33,560 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 15:00:55,086 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-30 15:01:30,033 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
+2022-01-30 15:01:30,951 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft CommunicationDashboard: Payload(launched)  -> Refresh Screen Timer Stoped.
+2022-01-30 15:01:41,399 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: SpaceA
+2022-01-31 01:13:56,359 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-31 01:13:56,876 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-31 01:14:51,708 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-31 01:14:51,773 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-31 01:15:05,350 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-31 01:15:30,342 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
+2022-01-31 01:15:30,620 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft CommunicationDashboard: Payload(launched)  -> Refresh Screen Timer Stoped.
+2022-01-31 01:15:37,891 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: SpaceA
+2022-01-31 02:54:18,926 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-01-31 02:54:19,027 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-01-31 02:54:33,343 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started

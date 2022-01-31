@@ -9,8 +9,8 @@ using System.Text;
 namespace Backend
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "BackendServices" in both code and config file together.
-    [ServiceContract]
-    public interface BackendServices
+    [ServiceContract(CallbackContract = typeof(IBackendCallback))]
+    public interface IBackendServices
     {
         [OperationContract]
         string AddSpaceCraft(Vehicle vehicle);
@@ -25,7 +25,16 @@ namespace Backend
         List<Vehicle> GetAddedSpacecraft();
 
         [OperationContract]
-        void UpdateSpacecraft(string vehicleName, string column, string status);
+        void UpdateSpacecraft1(string vehicleName, string column, string status);
+
+        [OperationContract]
+        void UpdateSpacecraft2(string vehicleName, string column1, string value1, string column2, string value2);
+
+        [OperationContract]
+        void UpdateSpacecraft3(string vehicleName, string column1, string value1, string column2, string value2, string column3, string value3);
+
+        [OperationContract]
+        void LaunchSpacecraft(string vehicleName, string dsnDashboardName);
 
         [OperationContract]
         List<Vehicle> GetAllOnlineSpacecraft();
@@ -41,5 +50,14 @@ namespace Backend
 
         [OperationContract]
         Telemetry GetTelemetryOfVehicle(string vehicleName);
+
+        [OperationContract]
+        void RequestTelemetryOfVehicle(Vehicle vehicle);
+
+        [OperationContract]
+        void SendCommandToVehicle(Vehicle vehicle, string command);
+
+        [OperationContract]
+        void ConnectToBackend(string vehicleName);
     }
 }

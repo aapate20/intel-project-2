@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,14 +22,16 @@ namespace DeepSpaceNetwork
     public partial class PayloadCommunicationDashboard : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private readonly BackendServiceReference.BackendServicesClient backendServicesClient;
         private readonly BackendServiceReference.Vehicle vehicle;
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public PayloadCommunicationDashboard(BackendServiceReference.Vehicle vehicle)
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
             this.vehicle = vehicle;
-            this.backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
             this.payloadCommunicationSystemLabel.Content = this.vehicle.Payload.Name + " " + "Communication Dashboard";
             this.payloadType.Content = this.vehicle.Payload.Type;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -45,13 +48,13 @@ namespace DeepSpaceNetwork
         {
             try
             {
-                backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_DECOMMISSION);
-                backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_OFFLINE);
+                this.backendService.UpdateSpacecraft2(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_DECOMMISSION, 
+                    Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_OFFLINE);
                 MainWindow.processDirectorySpacecraft.TryGetValue(this.vehicle.Payload.Name, out Process currentProcess);
                 if (currentProcess != null && !currentProcess.HasExited)
                 {
                     currentProcess.Kill();
-                    MainWindow.processDirectorySpacecraft.Remove(this.vehicle.Name);
+                    MainWindow.processDirectorySpacecraft.Remove(this.vehicle.Payload.Name);
                 }
                 startTelemetryBtn.IsEnabled = false;
                 stopTelemetryBtn.IsEnabled = false;

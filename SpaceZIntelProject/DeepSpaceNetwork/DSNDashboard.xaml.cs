@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,21 +22,23 @@ namespace DeepSpaceNetwork
     public partial class DSNDashboard : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
-        private Dictionary<string, BackendServiceReference.Vehicle> SpaceCraftDir;   
+        private Dictionary<string, BackendServiceReference.Vehicle> SpaceCraftDir;
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public DSNDashboard()
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             SpaceCraftDir = new Dictionary<string, BackendServiceReference.Vehicle>();
-            backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
             ActiveSpaceCraftList.Items.Clear();
             NewSpaceCraftList.Items.Clear();
             try
             {
-                Arr = backendServicesClient.GetAllSpacecraft();
+                Arr = this.backendService.GetAllSpacecraft();
 
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {

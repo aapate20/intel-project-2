@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,9 +22,10 @@ namespace DeepSpaceNetwork
     public partial class PayloadCommunicationSystem : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
         private Dictionary<string, BackendServiceReference.Vehicle> sapceCraftDirectory = new Dictionary<string, BackendServiceReference.Vehicle>();
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public PayloadCommunicationSystem()
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -38,11 +40,12 @@ namespace DeepSpaceNetwork
             this.LaunchPayloadList.Items.Clear();
             LaunchPayloadList.Items.Add("Select");
             LaunchPayloadList.SelectedIndex = 0;
-            backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
 
             try
             {
-                Arr = backendServicesClient.GetAllOnlinePayload();
+                Arr = this.backendService.GetAllOnlinePayload();
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
                     LaunchPayloadList.Items.Add(v.Payload.Name);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,18 +23,20 @@ namespace DeepSpaceNetwork
     public partial class CommunicationDashboard : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private readonly BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle vehicle;
         private DispatcherTimer refreshTimer;
         private DispatcherTimer telemetryTimer;
         private int refreshSecond = 1;
         private BackendServiceReference.Telemetry telemetryObject;
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public CommunicationDashboard(BackendServiceReference.Vehicle vehicle)
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
             this.vehicle = vehicle;
-            this.backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel(); 
             this.Configured_Dashboard();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.spaceCraftName.Content = vehicle.Name + " " + "Communication Dashboard";
@@ -68,7 +71,7 @@ namespace DeepSpaceNetwork
                 this.refreshSecond++;
                 if (this.refreshSecond % 5 == 0)
                 {
-                    this.vehicle = backendServicesClient.GetSpacecraft(this.vehicle.Name);
+                    this.vehicle = this.backendService.GetSpacecraft(this.vehicle.Name);
                     this.Configured_Dashboard();
                 }
             }
@@ -116,7 +119,7 @@ namespace DeepSpaceNetwork
         {
             try
             {
-                this.vehicle = backendServicesClient.GetSpacecraft(this.vehicle.Name);
+                this.vehicle = this.backendService.GetSpacecraft(this.vehicle.Name);
 
                 if (Constants.STATUS_LAUNCH_INITIATED.Equals(this.vehicle.Status)) 
                     MessageBox.Show("Operation Not Allowed, Spacecraft not luanched yet!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning); 
@@ -126,8 +129,8 @@ namespace DeepSpaceNetwork
                 {
                     log.Info("Spacecraft Deorbited: " + this.vehicle.Name);
                     this.deorbitSpacecraft.IsEnabled = false;
-                    backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE);
-                    backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_DEORBIT);
+                    this.backendService.UpdateSpacecraft2(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE, 
+                        Constants.COLUMN_STATUS, Constants.STATUS_DEORBIT);
 
                     MainWindow.processDirectorySpacecraft.TryGetValue(this.vehicle.Name, out Process currentProcess);
                     if (currentProcess != null && !currentProcess.HasExited)
@@ -143,8 +146,8 @@ namespace DeepSpaceNetwork
                     {
                         this.customPayloadBtn.IsEnabled = false;
                         this.payloadWarning.Content = "Cannot launch Payload!, Spacecraft Deorbited.";
-                        backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_OFFLINE);
-                        backendServicesClient.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_DECOMMISSION);
+                        this.backendService.UpdateSpacecraft2(this.vehicle.Name, Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, 
+                            Constants.STATUS_OFFLINE, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_DECOMMISSION);
                     }
 
                     this.TelemetryBox.Text = "";
@@ -165,7 +168,7 @@ namespace DeepSpaceNetwork
         {
             try
             {
-                this.vehicle = backendServicesClient.GetSpacecraft(this.vehicle.Name);
+                this.vehicle = this.backendService.GetSpacecraft(this.vehicle.Name);
                 if (Constants.STATUS_LAUNCH_INITIATED.Equals(this.vehicle.Status))
                     MessageBox.Show("Operation Not Allowed, Spacecraft not luanched yet!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
                 else if (Constants.STATUS_LAUNCHED.Equals(this.vehicle.Status))
@@ -209,8 +212,8 @@ namespace DeepSpaceNetwork
                     process.StartInfo.Arguments = spaceCraftName;
                     MainWindow.processDirectorySpacecraft[spacecraftPayloadName] = process;
                     process.Start();
-                    backendServicesClient.UpdateSpacecraft(spaceCraftName, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_LAUNCHED);
-                    backendServicesClient.UpdateSpacecraft(spaceCraftName, Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_ONLINE);
+                    this.backendService.UpdateSpacecraft2(spaceCraftName, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_LAUNCHED, 
+                        Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_ONLINE);
                 }
                 var payloadCommunicationDashboard = new PayloadCommunicationDashboard(this.vehicle);
                 payloadCommunicationDashboard.Show();
@@ -235,8 +238,11 @@ namespace DeepSpaceNetwork
 
         private void Start_Telemetry_Function(object sender, RoutedEventArgs e)
         {
-            if (Constants.STATUS_LAUNCHED.Equals(this.vehicle.Status) && Constants.STATUS_ONLINE.Equals(this.vehicle.SpacecraftStatus)) 
-                this.telemetryTimer.Start(); 
+            if (Constants.STATUS_LAUNCHED.Equals(this.vehicle.Status) && Constants.STATUS_ONLINE.Equals(this.vehicle.SpacecraftStatus))
+            {
+                this.backendService.SendCommandToVehicle(this.vehicle, "Start Telemetry.");
+                this.telemetryTimer.Start();
+            } 
             else if (Constants.STATUS_LAUNCH_INITIATED.Equals(this.vehicle.Status)) 
                 MessageBox.Show("Operation Not Allowed, Spacecraft not luanched yet!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning); 
             else  
@@ -247,7 +253,7 @@ namespace DeepSpaceNetwork
         {
             try
             {
-                this.telemetryObject = backendServicesClient.GetTelemetryOfVehicle(this.vehicle.Name);
+                this.telemetryObject = this.backendService.GetTelemetryOfVehicle(this.vehicle.Name);
                 StringBuilder sb = new StringBuilder();
 
                 sb.Append('{').Append("\n");
@@ -280,6 +286,12 @@ namespace DeepSpaceNetwork
         private void Stop_Telemetry_Function(object sender, RoutedEventArgs e)
         {
             this.telemetryTimer.Stop();
+        }
+
+        public void UpdateCommunicationBoard(string message, string vehicleName)
+        {
+            this.CommunicationBox.Text += vehicleName + ": " + message;
+            this.CommunicationBox.ScrollToEnd();
         }
     }
 }

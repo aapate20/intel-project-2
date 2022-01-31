@@ -274,6 +274,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Callback.cs" />
     <Compile Include="CommunicationDashboard.xaml.cs">
       <DependentUpon>CommunicationDashboard.xaml</DependentUpon>
     </Compile>

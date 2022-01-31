@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,10 +22,10 @@ namespace DeepSpaceNetwork
     public partial class LaunchSpacecraft : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
         private Dictionary<string, BackendServiceReference.Vehicle> spacecraftDirectory = new Dictionary<string, BackendServiceReference.Vehicle>();
-
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public LaunchSpacecraft()
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -39,11 +40,12 @@ namespace DeepSpaceNetwork
             SpacecraftList.Items.Clear();
             SpacecraftList.Items.Add("Select");
             SpacecraftList.SelectedIndex = 0;
-            backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
 
             try
             {
-                Arr = backendServicesClient.GetAddedSpacecraft();
+                Arr = this.backendService.GetAddedSpacecraft();
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
                     SpacecraftList.Items.Add(v.Name);
@@ -87,8 +89,7 @@ namespace DeepSpaceNetwork
                         process.StartInfo.Arguments = selectedSpacecraft;
                         MainWindow.processDirectorySpacecraft[selectedSpacecraft] = process;
                         process.Start();
-                        backendServicesClient.UpdateSpacecraft(selectedSpacecraft, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCH_INITIATED);
-                        backendServicesClient.UpdateSpacecraft(selectedSpacecraft, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
+                        this.backendService.LaunchSpacecraft(selectedSpacecraft, "DSN_" + selectedSpacecraft);
                     }
                     var mainWindow = new MainWindow();
                     mainWindow.Show();
