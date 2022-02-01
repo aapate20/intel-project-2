@@ -50,14 +50,35 @@ namespace Backend
 
         [OperationContract]
         Telemetry GetTelemetryOfVehicle(string vehicleName);
+        
+        [OperationContract]
+        void UpdateCommMap(string vehicleName, Comm comm);
 
         [OperationContract]
-        void RequestTelemetryOfVehicle(Vehicle vehicle);
+        Comm GetCommDataOfVehicle(string vehicleName);
+        
+        [OperationContract]
+        void UpdateWeatherMap(string vehicleName, Weather weather);
+
+        [OperationContract]
+        Weather GetWeatherDataOfVehicle(string vehicleName);
+        
+        [OperationContract]
+        void UpdateSpyMap(string vehicleName, Spy spy);
+
+        [OperationContract]
+        Spy GetSpyDataOfVehicle(string vehicleName);
 
         [OperationContract]
         void SendCommandToVehicle(Vehicle vehicle, string command);
 
         [OperationContract]
+        void SendCommandToPayloadVehicle(string vehicleName, string command);
+
+        [OperationContract]
         void ConnectToBackend(string vehicleName);
+
+        [OperationContract]
+        void DisconnectFromBackend(string vehicleName);
     }
 }

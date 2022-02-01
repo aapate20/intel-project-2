@@ -82,6 +82,8 @@ namespace DeepSpaceNetwork
                         MainWindow.processDirectorySpacecraft[selectedSpacecraft] = process;
                         process.Start();
                     }
+                    var mainWindow = new MainWindow();
+                    mainWindow.Show();
                     var communicationDashboard = new CommunicationDashboard(spacecraftDirectory[selectedSpacecraft]);
                     communicationDashboard.Show();
                     this.Close();

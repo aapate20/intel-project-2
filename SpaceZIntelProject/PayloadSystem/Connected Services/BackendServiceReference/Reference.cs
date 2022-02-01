@@ -340,6 +340,221 @@ namespace PayloadSystem.BackendServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Comm", Namespace="http://schemas.datacontract.org/2004/07/Backend")]
+    [System.SerializableAttribute()]
+    public partial class Comm : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ActiveTransponderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DownlinkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UplinkField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ActiveTransponder {
+            get {
+                return this.ActiveTransponderField;
+            }
+            set {
+                if ((this.ActiveTransponderField.Equals(value) != true)) {
+                    this.ActiveTransponderField = value;
+                    this.RaisePropertyChanged("ActiveTransponder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Downlink {
+            get {
+                return this.DownlinkField;
+            }
+            set {
+                if ((this.DownlinkField.Equals(value) != true)) {
+                    this.DownlinkField = value;
+                    this.RaisePropertyChanged("Downlink");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Uplink {
+            get {
+                return this.UplinkField;
+            }
+            set {
+                if ((this.UplinkField.Equals(value) != true)) {
+                    this.UplinkField = value;
+                    this.RaisePropertyChanged("Uplink");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Weather", Namespace="http://schemas.datacontract.org/2004/07/Backend")]
+    [System.SerializableAttribute()]
+    public partial class Weather : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HumidityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RainfallField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SnowField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Humidity {
+            get {
+                return this.HumidityField;
+            }
+            set {
+                if ((this.HumidityField.Equals(value) != true)) {
+                    this.HumidityField = value;
+                    this.RaisePropertyChanged("Humidity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rainfall {
+            get {
+                return this.RainfallField;
+            }
+            set {
+                if ((this.RainfallField.Equals(value) != true)) {
+                    this.RainfallField = value;
+                    this.RaisePropertyChanged("Rainfall");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Snow {
+            get {
+                return this.SnowField;
+            }
+            set {
+                if ((this.SnowField.Equals(value) != true)) {
+                    this.SnowField = value;
+                    this.RaisePropertyChanged("Snow");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Spy", Namespace="http://schemas.datacontract.org/2004/07/Backend")]
+    [System.SerializableAttribute()]
+    public partial class Spy : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LatitudeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LongitudeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Latitude {
+            get {
+                return this.LatitudeField;
+            }
+            set {
+                if ((this.LatitudeField.Equals(value) != true)) {
+                    this.LatitudeField = value;
+                    this.RaisePropertyChanged("Latitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Longitude {
+            get {
+                return this.LongitudeField;
+            }
+            set {
+                if ((this.LongitudeField.Equals(value) != true)) {
+                    this.LongitudeField = value;
+                    this.RaisePropertyChanged("Longitude");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BackendServiceReference.IBackendServices", CallbackContract=typeof(PayloadSystem.BackendServiceReference.IBackendServicesCallback))]
     public interface IBackendServices {
@@ -422,11 +637,41 @@ namespace PayloadSystem.BackendServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetTelemetryOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetTelemetryOfVehicleResponse")]
         System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Telemetry> GetTelemetryOfVehicleAsync(string vehicleName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicleResponse")]
-        void RequestTelemetryOfVehicle(PayloadSystem.BackendServiceReference.Vehicle vehicle);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateCommMap", ReplyAction="http://tempuri.org/IBackendServices/UpdateCommMapResponse")]
+        void UpdateCommMap(string vehicleName, PayloadSystem.BackendServiceReference.Comm comm);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicleResponse")]
-        System.Threading.Tasks.Task RequestTelemetryOfVehicleAsync(PayloadSystem.BackendServiceReference.Vehicle vehicle);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateCommMap", ReplyAction="http://tempuri.org/IBackendServices/UpdateCommMapResponse")]
+        System.Threading.Tasks.Task UpdateCommMapAsync(string vehicleName, PayloadSystem.BackendServiceReference.Comm comm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetCommDataOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetCommDataOfVehicleResponse")]
+        PayloadSystem.BackendServiceReference.Comm GetCommDataOfVehicle(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetCommDataOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetCommDataOfVehicleResponse")]
+        System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Comm> GetCommDataOfVehicleAsync(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateWeatherMap", ReplyAction="http://tempuri.org/IBackendServices/UpdateWeatherMapResponse")]
+        void UpdateWeatherMap(string vehicleName, PayloadSystem.BackendServiceReference.Weather weather);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateWeatherMap", ReplyAction="http://tempuri.org/IBackendServices/UpdateWeatherMapResponse")]
+        System.Threading.Tasks.Task UpdateWeatherMapAsync(string vehicleName, PayloadSystem.BackendServiceReference.Weather weather);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetWeatherDataOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetWeatherDataOfVehicleResponse")]
+        PayloadSystem.BackendServiceReference.Weather GetWeatherDataOfVehicle(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetWeatherDataOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetWeatherDataOfVehicleResponse")]
+        System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Weather> GetWeatherDataOfVehicleAsync(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateSpyMap", ReplyAction="http://tempuri.org/IBackendServices/UpdateSpyMapResponse")]
+        void UpdateSpyMap(string vehicleName, PayloadSystem.BackendServiceReference.Spy spy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/UpdateSpyMap", ReplyAction="http://tempuri.org/IBackendServices/UpdateSpyMapResponse")]
+        System.Threading.Tasks.Task UpdateSpyMapAsync(string vehicleName, PayloadSystem.BackendServiceReference.Spy spy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetSpyDataOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetSpyDataOfVehicleResponse")]
+        PayloadSystem.BackendServiceReference.Spy GetSpyDataOfVehicle(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/GetSpyDataOfVehicle", ReplyAction="http://tempuri.org/IBackendServices/GetSpyDataOfVehicleResponse")]
+        System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Spy> GetSpyDataOfVehicleAsync(string vehicleName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/SendCommandToVehicle", ReplyAction="http://tempuri.org/IBackendServices/SendCommandToVehicleResponse")]
         void SendCommandToVehicle(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command);
@@ -434,21 +679,30 @@ namespace PayloadSystem.BackendServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/SendCommandToVehicle", ReplyAction="http://tempuri.org/IBackendServices/SendCommandToVehicleResponse")]
         System.Threading.Tasks.Task SendCommandToVehicleAsync(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/SendCommandToPayloadVehicle", ReplyAction="http://tempuri.org/IBackendServices/SendCommandToPayloadVehicleResponse")]
+        void SendCommandToPayloadVehicle(string vehicleName, string command);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/SendCommandToPayloadVehicle", ReplyAction="http://tempuri.org/IBackendServices/SendCommandToPayloadVehicleResponse")]
+        System.Threading.Tasks.Task SendCommandToPayloadVehicleAsync(string vehicleName, string command);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/ConnectToBackend", ReplyAction="http://tempuri.org/IBackendServices/ConnectToBackendResponse")]
         void ConnectToBackend(string vehicleName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/ConnectToBackend", ReplyAction="http://tempuri.org/IBackendServices/ConnectToBackendResponse")]
         System.Threading.Tasks.Task ConnectToBackendAsync(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/DisconnectFromBackend", ReplyAction="http://tempuri.org/IBackendServices/DisconnectFromBackendResponse")]
+        void DisconnectFromBackend(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/DisconnectFromBackend", ReplyAction="http://tempuri.org/IBackendServices/DisconnectFromBackendResponse")]
+        System.Threading.Tasks.Task DisconnectFromBackendAsync(string vehicleName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IBackendServicesCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/ReceiveCommand", ReplyAction="http://tempuri.org/IBackendServices/ReceiveCommandResponse")]
-        void ReceiveCommand(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/SendCommand", ReplyAction="http://tempuri.org/IBackendServices/SendCommandResponse")]
-        void SendCommand(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command);
+        void ReceiveCommand(string command);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -583,12 +837,52 @@ namespace PayloadSystem.BackendServiceReference {
             return base.Channel.GetTelemetryOfVehicleAsync(vehicleName);
         }
         
-        public void RequestTelemetryOfVehicle(PayloadSystem.BackendServiceReference.Vehicle vehicle) {
-            base.Channel.RequestTelemetryOfVehicle(vehicle);
+        public void UpdateCommMap(string vehicleName, PayloadSystem.BackendServiceReference.Comm comm) {
+            base.Channel.UpdateCommMap(vehicleName, comm);
         }
         
-        public System.Threading.Tasks.Task RequestTelemetryOfVehicleAsync(PayloadSystem.BackendServiceReference.Vehicle vehicle) {
-            return base.Channel.RequestTelemetryOfVehicleAsync(vehicle);
+        public System.Threading.Tasks.Task UpdateCommMapAsync(string vehicleName, PayloadSystem.BackendServiceReference.Comm comm) {
+            return base.Channel.UpdateCommMapAsync(vehicleName, comm);
+        }
+        
+        public PayloadSystem.BackendServiceReference.Comm GetCommDataOfVehicle(string vehicleName) {
+            return base.Channel.GetCommDataOfVehicle(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Comm> GetCommDataOfVehicleAsync(string vehicleName) {
+            return base.Channel.GetCommDataOfVehicleAsync(vehicleName);
+        }
+        
+        public void UpdateWeatherMap(string vehicleName, PayloadSystem.BackendServiceReference.Weather weather) {
+            base.Channel.UpdateWeatherMap(vehicleName, weather);
+        }
+        
+        public System.Threading.Tasks.Task UpdateWeatherMapAsync(string vehicleName, PayloadSystem.BackendServiceReference.Weather weather) {
+            return base.Channel.UpdateWeatherMapAsync(vehicleName, weather);
+        }
+        
+        public PayloadSystem.BackendServiceReference.Weather GetWeatherDataOfVehicle(string vehicleName) {
+            return base.Channel.GetWeatherDataOfVehicle(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Weather> GetWeatherDataOfVehicleAsync(string vehicleName) {
+            return base.Channel.GetWeatherDataOfVehicleAsync(vehicleName);
+        }
+        
+        public void UpdateSpyMap(string vehicleName, PayloadSystem.BackendServiceReference.Spy spy) {
+            base.Channel.UpdateSpyMap(vehicleName, spy);
+        }
+        
+        public System.Threading.Tasks.Task UpdateSpyMapAsync(string vehicleName, PayloadSystem.BackendServiceReference.Spy spy) {
+            return base.Channel.UpdateSpyMapAsync(vehicleName, spy);
+        }
+        
+        public PayloadSystem.BackendServiceReference.Spy GetSpyDataOfVehicle(string vehicleName) {
+            return base.Channel.GetSpyDataOfVehicle(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task<PayloadSystem.BackendServiceReference.Spy> GetSpyDataOfVehicleAsync(string vehicleName) {
+            return base.Channel.GetSpyDataOfVehicleAsync(vehicleName);
         }
         
         public void SendCommandToVehicle(PayloadSystem.BackendServiceReference.Vehicle vehicle, string command) {
@@ -599,12 +893,28 @@ namespace PayloadSystem.BackendServiceReference {
             return base.Channel.SendCommandToVehicleAsync(vehicle, command);
         }
         
+        public void SendCommandToPayloadVehicle(string vehicleName, string command) {
+            base.Channel.SendCommandToPayloadVehicle(vehicleName, command);
+        }
+        
+        public System.Threading.Tasks.Task SendCommandToPayloadVehicleAsync(string vehicleName, string command) {
+            return base.Channel.SendCommandToPayloadVehicleAsync(vehicleName, command);
+        }
+        
         public void ConnectToBackend(string vehicleName) {
             base.Channel.ConnectToBackend(vehicleName);
         }
         
         public System.Threading.Tasks.Task ConnectToBackendAsync(string vehicleName) {
             return base.Channel.ConnectToBackendAsync(vehicleName);
+        }
+        
+        public void DisconnectFromBackend(string vehicleName) {
+            base.Channel.DisconnectFromBackend(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task DisconnectFromBackendAsync(string vehicleName) {
+            return base.Channel.DisconnectFromBackendAsync(vehicleName);
         }
     }
 }

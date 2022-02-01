@@ -35,6 +35,7 @@ namespace LaunchVehicle
         Random random;
         private double distanceCoveredinOneSec = 0;
         private double temperatureReduceInOneSec = 0;
+        private string command = "";
         public MainWindow(string spaceCraftName)
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -77,7 +78,6 @@ namespace LaunchVehicle
                 log.Error("Error Initializing LaunchVehicle Window.", ex);
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
@@ -147,18 +147,20 @@ namespace LaunchVehicle
             this.telemetry.Temperature -= this.temperatureReduceInOneSec;
             this.telemetry.TimeToOrbit = this.timeToOrbitSeconds;
 
-            StringBuilder sb = new StringBuilder();
+            if (Constants.START_TELEMETRY.Equals(this.command))
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append('{').Append("\n");
+                sb.Append("\t").Append("\"").Append("Altitude").Append("\":  ").Append(this.telemetry.Altitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Longitude").Append("\":  ").Append(this.telemetry.Longitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Latitude").Append("\":  ").Append(this.telemetry.Latitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Temperature").Append("\":  ").Append(this.telemetry.Temperature).Append("\n");
+                sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append(this.TimeToOrbit.Content).Append("\n");
+                sb.Append('}').Append("\n");
 
-            sb.Append('{').Append("\n");
-            sb.Append("\t").Append("\"").Append("Altitude").Append("\":  ").Append(this.telemetry.Altitude).Append("\n");
-            sb.Append("\t").Append("\"").Append("Longitude").Append("\":  ").Append(this.telemetry.Longitude).Append("\n");
-            sb.Append("\t").Append("\"").Append("Latitude").Append("\":  ").Append(this.telemetry.Latitude).Append("\n");
-            sb.Append("\t").Append("\"").Append("Temperature").Append("\":  ").Append(this.telemetry.Temperature).Append("\n");
-            sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append(this.TimeToOrbit.Content).Append("\n");
-            sb.Append('}').Append("\n");
-
-            this.TelemetryBox.Text = sb.ToString();
-            this.TelemetryBox.ScrollToEnd();
+                this.TelemetryBox.Text = sb.ToString();
+                this.TelemetryBox.ScrollToEnd();
+            }
             this.backendService.UpdateTelemetryMap(this.vehicle.Name, this.telemetry);
         }
 
@@ -200,10 +202,15 @@ namespace LaunchVehicle
             {
                 e.Cancel = true;
             }
+            else
+            {
+                this.backendService.DisconnectFromBackend(this.vehicle.Name);
+            }
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            
             if(this.launchSequenceSecond > 0)
             {
                 this.launchTimer.Stop();
@@ -222,10 +229,45 @@ namespace LaunchVehicle
             }
         }
 
-        public void UpdateCommunicationBoard(string message, string vehicleName)
+        public void UpdateCommunicationBoard(string command)
         {
-            this.CommunicationBox.Text += "DSN" + ": " + message;
+            this.command = command;
+            this.CommunicationBox.Text += Constants.RECEIVE_COMMAND + command + "\n";
             this.CommunicationBox.ScrollToEnd();
+            this.ProcessCommand(command);
+        }
+
+        private void ProcessCommand(string command)
+        {
+            try
+            {
+                if (Constants.START_TELEMETRY.Equals(command))
+                {
+                    this.CommunicationBox.Text += this.vehicle.Name + ": " + Constants.SENDING_TELEMETRY + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                }
+                else if (Constants.LAUNCH_PAYLOAD.Equals(command))
+                {
+                    this.CommunicationBox.Text += this.vehicle.Name + ": " + Constants.LAUNCHING_PAYLOAD + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                }
+                else if (Constants.STOP_TELEMETRY.Equals(command))
+                {
+                    this.CommunicationBox.Text += this.vehicle.Name + ": " + Constants.STOP_TELEMETRY + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                }
+                else if (Constants.DEORBIT_VEHICLE.Equals(command))
+                {
+                    this.CommunicationBox.Text += this.vehicle.Name + ": " + Constants.DEORBITING_VEHICLE + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                this.TelemetryBox.Text = "";
+                this.CommunicationBox.Text += Constants.SEND_COMMAND + ": " + Constants.COMMAND_FAILURE + "\n";
+            }
         }
 
     }

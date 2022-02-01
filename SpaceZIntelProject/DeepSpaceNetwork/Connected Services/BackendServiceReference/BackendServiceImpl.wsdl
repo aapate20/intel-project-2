@@ -701,7 +701,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_RequestTelemetryOfVehicle_Input_policy">
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_UpdateCommMap_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -724,7 +724,237 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_RequestTelemetryOfVehicle_output_policy">
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_UpdateCommMap_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_GetCommDataOfVehicle_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_GetCommDataOfVehicle_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_UpdateWeatherMap_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_UpdateWeatherMap_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_GetWeatherDataOfVehicle_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_GetWeatherDataOfVehicle_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_UpdateSpyMap_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_UpdateSpyMap_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_GetSpyDataOfVehicle_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_GetSpyDataOfVehicle_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -793,6 +1023,144 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_SendCommandToPayloadVehicle_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_SendCommandToPayloadVehicle_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_ConnectToBackend_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_ConnectToBackend_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_DisconnectFromBackend_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_DisconnectFromBackend_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="CommunicationServiceEndpoint_ReceiveCommand_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -817,52 +1185,6 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="CommunicationServiceEndpoint_ReceiveCommand_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_SendCommand_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_SendCommand_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -970,11 +1292,41 @@
   <wsdl:message name="IBackendServices_GetTelemetryOfVehicle_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTelemetryOfVehicleResponse" />
   </wsdl:message>
-  <wsdl:message name="IBackendServices_RequestTelemetryOfVehicle_InputMessage">
-    <wsdl:part name="parameters" element="tns:RequestTelemetryOfVehicle" />
+  <wsdl:message name="IBackendServices_UpdateCommMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCommMap" />
   </wsdl:message>
-  <wsdl:message name="IBackendServices_RequestTelemetryOfVehicle_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RequestTelemetryOfVehicleResponse" />
+  <wsdl:message name="IBackendServices_UpdateCommMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCommMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_GetCommDataOfVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommDataOfVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_GetCommDataOfVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommDataOfVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_UpdateWeatherMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWeatherMap" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_UpdateWeatherMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWeatherMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_GetWeatherDataOfVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWeatherDataOfVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_GetWeatherDataOfVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWeatherDataOfVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_UpdateSpyMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSpyMap" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_UpdateSpyMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSpyMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_GetSpyDataOfVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpyDataOfVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_GetSpyDataOfVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpyDataOfVehicleResponse" />
   </wsdl:message>
   <wsdl:message name="IBackendServices_SendCommandToVehicle_InputMessage">
     <wsdl:part name="parameters" element="tns:SendCommandToVehicle" />
@@ -982,17 +1334,29 @@
   <wsdl:message name="IBackendServices_SendCommandToVehicle_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendCommandToVehicleResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendServices_SendCommandToPayloadVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendCommandToPayloadVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_SendCommandToPayloadVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendCommandToPayloadVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_ConnectToBackend_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectToBackend" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_ConnectToBackend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectToBackendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_DisconnectFromBackend_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectFromBackend" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_DisconnectFromBackend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectFromBackendResponse" />
+  </wsdl:message>
   <wsdl:message name="IBackendServices_ReceiveCommand_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ReceiveCommand" />
   </wsdl:message>
   <wsdl:message name="IBackendServices_ReceiveCommand_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ReceiveCommandResponse" />
-  </wsdl:message>
-  <wsdl:message name="IBackendServices_SendCommand_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:SendCommand" />
-  </wsdl:message>
-  <wsdl:message name="IBackendServices_SendCommand_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:SendCommandResponse" />
   </wsdl:message>
   <wsdl:portType name="IBackendServices">
     <wsdl:operation name="AddSpaceCraft">
@@ -1047,21 +1411,49 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/GetTelemetryOfVehicle" message="tns:IBackendServices_GetTelemetryOfVehicle_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/GetTelemetryOfVehicleResponse" message="tns:IBackendServices_GetTelemetryOfVehicle_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="RequestTelemetryOfVehicle">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicle" message="tns:IBackendServices_RequestTelemetryOfVehicle_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicleResponse" message="tns:IBackendServices_RequestTelemetryOfVehicle_OutputMessage" />
+    <wsdl:operation name="UpdateCommMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/UpdateCommMap" message="tns:IBackendServices_UpdateCommMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/UpdateCommMapResponse" message="tns:IBackendServices_UpdateCommMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommDataOfVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/GetCommDataOfVehicle" message="tns:IBackendServices_GetCommDataOfVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/GetCommDataOfVehicleResponse" message="tns:IBackendServices_GetCommDataOfVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWeatherMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/UpdateWeatherMap" message="tns:IBackendServices_UpdateWeatherMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/UpdateWeatherMapResponse" message="tns:IBackendServices_UpdateWeatherMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherDataOfVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/GetWeatherDataOfVehicle" message="tns:IBackendServices_GetWeatherDataOfVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/GetWeatherDataOfVehicleResponse" message="tns:IBackendServices_GetWeatherDataOfVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSpyMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/UpdateSpyMap" message="tns:IBackendServices_UpdateSpyMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/UpdateSpyMapResponse" message="tns:IBackendServices_UpdateSpyMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpyDataOfVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/GetSpyDataOfVehicle" message="tns:IBackendServices_GetSpyDataOfVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/GetSpyDataOfVehicleResponse" message="tns:IBackendServices_GetSpyDataOfVehicle_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendCommandToVehicle">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/SendCommandToVehicle" message="tns:IBackendServices_SendCommandToVehicle_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/SendCommandToVehicleResponse" message="tns:IBackendServices_SendCommandToVehicle_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SendCommandToPayloadVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/SendCommandToPayloadVehicle" message="tns:IBackendServices_SendCommandToPayloadVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/SendCommandToPayloadVehicleResponse" message="tns:IBackendServices_SendCommandToPayloadVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConnectToBackend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/ConnectToBackend" message="tns:IBackendServices_ConnectToBackend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/ConnectToBackendResponse" message="tns:IBackendServices_ConnectToBackend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectFromBackend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/DisconnectFromBackend" message="tns:IBackendServices_DisconnectFromBackend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/DisconnectFromBackendResponse" message="tns:IBackendServices_DisconnectFromBackend_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ReceiveCommand">
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/ReceiveCommand" message="tns:IBackendServices_ReceiveCommand_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/ReceiveCommandResponse" message="tns:IBackendServices_ReceiveCommand_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SendCommand">
-      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/SendCommand" message="tns:IBackendServices_SendCommand_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/SendCommandResponse" message="tns:IBackendServices_SendCommand_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CommunicationServiceEndpoint" type="tns:IBackendServices">
@@ -1210,14 +1602,69 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RequestTelemetryOfVehicle">
-      <soap12:operation soapAction="http://tempuri.org/IBackendServices/RequestTelemetryOfVehicle" style="document" />
+    <wsdl:operation name="UpdateCommMap">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/UpdateCommMap" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_RequestTelemetryOfVehicle_Input_policy" />
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_UpdateCommMap_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_RequestTelemetryOfVehicle_output_policy" />
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_UpdateCommMap_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommDataOfVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/GetCommDataOfVehicle" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_GetCommDataOfVehicle_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_GetCommDataOfVehicle_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWeatherMap">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/UpdateWeatherMap" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_UpdateWeatherMap_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_UpdateWeatherMap_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherDataOfVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/GetWeatherDataOfVehicle" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_GetWeatherDataOfVehicle_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_GetWeatherDataOfVehicle_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSpyMap">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/UpdateSpyMap" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_UpdateSpyMap_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_UpdateSpyMap_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpyDataOfVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/GetSpyDataOfVehicle" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_GetSpyDataOfVehicle_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_GetSpyDataOfVehicle_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -1232,6 +1679,39 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SendCommandToPayloadVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/SendCommandToPayloadVehicle" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_SendCommandToPayloadVehicle_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_SendCommandToPayloadVehicle_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConnectToBackend">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/ConnectToBackend" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_ConnectToBackend_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_ConnectToBackend_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectFromBackend">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/DisconnectFromBackend" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_DisconnectFromBackend_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_DisconnectFromBackend_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ReceiveCommand">
       <soap12:operation soapAction="http://tempuri.org/IBackendServices/ReceiveCommand" style="document" />
       <wsdl:input>
@@ -1240,17 +1720,6 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#CommunicationServiceEndpoint_ReceiveCommand_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SendCommand">
-      <soap12:operation soapAction="http://tempuri.org/IBackendServices/SendCommand" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_SendCommand_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_SendCommand_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

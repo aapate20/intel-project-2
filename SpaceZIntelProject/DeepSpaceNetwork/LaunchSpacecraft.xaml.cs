@@ -89,7 +89,7 @@ namespace DeepSpaceNetwork
                         process.StartInfo.Arguments = selectedSpacecraft;
                         MainWindow.processDirectorySpacecraft[selectedSpacecraft] = process;
                         process.Start();
-                        this.backendService.LaunchSpacecraft(selectedSpacecraft, "DSN_" + selectedSpacecraft);
+                        this.backendService.LaunchSpacecraft(selectedSpacecraft, Constants.SPACECRAFT_PREFIX + selectedSpacecraft);
                     }
                     var mainWindow = new MainWindow();
                     mainWindow.Show();

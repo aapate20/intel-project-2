@@ -20,3 +20,97 @@
 2022-01-30 15:00:55,106 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
 2022-01-31 01:15:05,470 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
 2022-01-31 02:54:33,381 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 17:58:04,586 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 18:43:58,128 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 19:18:24,870 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 20:22:39,716 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 20:23:54,214 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs - System.TimeoutException: This request operation sent to http://localhost:11997/Service1.svc did not receive a reply within the configured timeout (00:00:59.9979974).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.
+
+Server stack trace: 
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.SyncDuplexRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at LaunchVehicle.BackendServiceReference.IBackendServices.SendCommandToVehicle(Vehicle vehicle, String command, Boolean isDSN)
+   at LaunchVehicle.MainWindow.ProcessCommand(String command) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs:line 244
+2022-01-31 20:27:48,455 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 20:29:04,810 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs - System.TimeoutException: This request operation sent to http://localhost:11997/Service1.svc did not receive a reply within the configured timeout (00:00:59.9979997).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.
+
+Server stack trace: 
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.SyncDuplexRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at LaunchVehicle.BackendServiceReference.IBackendServices.SendCommandToVehicle(Vehicle vehicle, String command, Boolean isDSN)
+   at LaunchVehicle.MainWindow.ProcessCommand(String command) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs:line 244
+2022-01-31 20:36:51,753 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 20:52:54,283 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 20:54:11,963 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs - System.TimeoutException: This request operation sent to http://localhost:11997/Service1.svc did not receive a reply within the configured timeout (00:00:59.9939533).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.
+
+Server stack trace: 
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.SyncDuplexRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at LaunchVehicle.BackendServiceReference.IBackendServices.SendCommandToVehicle(Vehicle vehicle, String command, Boolean isDSN)
+   at LaunchVehicle.MainWindow.ProcessCommand(String command) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs:line 248
+2022-01-31 21:30:47,554 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 21:31:19,890 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 21:48:26,000 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 22:26:17,735 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 22:27:21,754 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs - System.TimeoutException: This request operation sent to http://localhost:11997/Service1.svc did not receive a reply within the configured timeout (00:00:59.9969994).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.
+
+Server stack trace: 
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.SyncDuplexRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at LaunchVehicle.BackendServiceReference.IBackendServices.SendCommandToVehicle(Vehicle vehicle, String command, Boolean isDSN)
+   at LaunchVehicle.MainWindow.ProcessCommand(String command) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\LaunchVehicle\MainWindow.xaml.cs:line 248
+2022-01-31 22:38:22,970 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 22:38:55,265 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 22:47:13,682 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 22:49:14,611 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 22:51:36,614 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 22:54:21,521 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:03:20,790 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:04:02,370 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:16:48,814 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:17:23,499 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:19:45,883 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:22:18,636 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:23:01,211 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:26:05,243 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-01-31 23:29:06,364 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-02-01 01:35:51,383 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-02-01 02:01:07,002 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-02-01 02:08:59,230 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-02-01 02:29:29,214 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: Bird-9 =============        
+2022-02-01 02:34:02,078 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: Bird-9 =============        
+2022-02-01 02:34:22,762 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: Bird-Heavy =============        
+2022-02-01 02:35:55,587 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: Hawk-Heavy =============        
+2022-02-01 10:35:48,786 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-02-01 11:01:16,445 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-02-01 11:06:03,412 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-02-01 11:07:08,558 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceB =============        
+2022-02-01 11:25:35,421 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        

@@ -13,14 +13,9 @@ namespace LaunchVehicle
     public class Callback : BackendServiceReference.IBackendServicesCallback
     {
 
-        public void ReceiveCommand(Vehicle vehicle, string command)
+        public void ReceiveCommand(string command)
         {
-            ((MainWindow)Application.Current.MainWindow).UpdateCommunicationBoard(command, vehicle.Name);
-        }
-
-        public void SendCommand(Vehicle vehicle, string command)
-        {
-            throw new NotImplementedException();
+            ((MainWindow)Application.Current.MainWindow).UpdateCommunicationBoard(command);
         }
     }
 }

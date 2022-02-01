@@ -180,27 +180,109 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RequestTelemetryOfVehicle">
+  <xs:element name="UpdateCommMap">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="vehicle" nillable="true" type="q9:Vehicle" />
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="comm" nillable="true" type="q9:Comm" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RequestTelemetryOfVehicleResponse">
+  <xs:element name="UpdateCommMapResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommDataOfVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommDataOfVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="GetCommDataOfVehicleResult" nillable="true" type="q10:Comm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWeatherMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="weather" nillable="true" type="q11:Weather" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWeatherMapResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWeatherDataOfVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWeatherDataOfVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="GetWeatherDataOfVehicleResult" nillable="true" type="q12:Weather" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSpyMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="spy" nillable="true" type="q13:Spy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSpyMapResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpyDataOfVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpyDataOfVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="GetSpyDataOfVehicleResult" nillable="true" type="q14:Spy" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendCommandToVehicle">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="vehicle" nillable="true" type="q10:Vehicle" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="vehicle" nillable="true" type="q15:Vehicle" />
         <xs:element minOccurs="0" name="command" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SendCommandToVehicleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCommandToPayloadVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="command" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCommandToPayloadVehicleResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -217,28 +299,26 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="DisconnectFromBackend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisconnectFromBackendResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ReceiveCommand">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="vehicle" nillable="true" type="q11:Vehicle" />
         <xs:element minOccurs="0" name="command" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ReceiveCommandResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SendCommand">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Backend" minOccurs="0" name="vehicle" nillable="true" type="q12:Vehicle" />
-        <xs:element minOccurs="0" name="command" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SendCommandResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

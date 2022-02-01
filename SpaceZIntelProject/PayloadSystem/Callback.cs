@@ -2,22 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PayloadSystem
 {
+    [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class Callback : BackendServiceReference.IBackendServicesCallback
     {
 
-        void IBackendServicesCallback.ReceiveCommand(Vehicle vehicle, string command)
+        public void ReceiveCommand(string command)
         {
-            throw new NotImplementedException();
-        }
-
-        void IBackendServicesCallback.SendCommand(Vehicle vehicle, string command)
-        {
-            throw new NotImplementedException();
+            ((MainWindow)Application.Current.MainWindow).UpdateCommunicationBoard(command);
         }
     }
 }

@@ -22,6 +22,9 @@ namespace Backend
         private static readonly MongoClientSettings settings = MongoClientSettings.FromConnectionString(connStr);
         private static readonly MongoClient client = new MongoClient(settings);
         private Dictionary<string, Telemetry> telemetryDictionary = new Dictionary<string, Telemetry>();  
+        private Dictionary<string, Weather> weatherDictionary = new Dictionary<string, Weather>();  
+        private Dictionary<string, Spy> spyDictionary = new Dictionary<string, Spy>();  
+        private Dictionary<string, Comm> commDictionary = new Dictionary<string, Comm>();  
         private Dictionary<string, IBackendCallback> allClients = new Dictionary<string, IBackendCallback>();  
         public string AddSpaceCraft(Vehicle vehicle)
         {
@@ -108,8 +111,6 @@ namespace Backend
         {
             UpdateSpacecraft2(vehicleName, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCH_INITIATED,
                             Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
-            var connection = OperationContext.Current.GetCallbackChannel<IBackendCallback>();
-            allClients[dsnDashboardName] = connection;
         }
 
         public void UpdateSpacecraft1(string vehicleName, string column, string status)
@@ -238,11 +239,6 @@ namespace Backend
             }
         }
 
-        public void RequestTelemetryOfVehicle(Vehicle vehicle)
-        {
-
-        }
-
         public void UpdateTelemetryMap(string vehicleName, Telemetry telemetry)
         {
             this.telemetryDictionary[vehicleName] = telemetry;
@@ -261,16 +257,139 @@ namespace Backend
             }
         }
 
+        public void UpdateWeatherMap(string vehicleName, Weather weather)
+        {
+            this.weatherDictionary[vehicleName] = weather;
+        }
+
+        public Weather GetWeatherDataOfVehicle(string vehicleName)
+        {
+            try
+            {
+                return this.weatherDictionary[vehicleName];
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, GetWeatherDataOfVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return new Weather();
+            }
+        }
+
+        public void UpdateCommMap(string vehicleName, Comm comm)
+        {
+            this.commDictionary[vehicleName] = comm;
+        }
+
+        public Comm GetCommDataOfVehicle(string vehicleName)
+        {
+            try
+            {
+                return this.commDictionary[vehicleName];
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, GetCommOfVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return new Comm();
+            }
+        }
+
+        public void UpdateSpyMap(string vehicleName, Spy spy)
+        {
+            this.spyDictionary[vehicleName] = spy;
+        }
+
+        public Spy GetSpyDataOfVehicle(string vehicleName)
+        {
+            try
+            {
+                return this.spyDictionary[vehicleName];
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, GetSpyOfVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return new Spy();
+            }
+        }
+
         public void SendCommandToVehicle(Vehicle vehicle, string command)
         {
-            allClients[vehicle.Name].ReceiveCommand(vehicle, command);
+            try
+            {
+                if (allClients.ContainsKey(vehicle.Name))
+                {
+                    log.Info("Sending Command to : " + vehicle.Name + " with command: " + command);
+                    allClients[vehicle.Name].ReceiveCommand(command);
+                }
+                else
+                {
+                    log.Warn("Client not in Connection pool.");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, SendCommandToVehicle(string vehicleName) Error for vehicle: " + vehicle.Name, ex);
+            }
+        }
+
+        public void SendCommandToPayloadVehicle(string vehicleName, string command)
+        {
+            try
+            {
+                if (allClients.ContainsKey(vehicleName))
+                {
+                    log.Info("Sending Command to : " + vehicleName + " with command: " + command);
+                    allClients[vehicleName].ReceiveCommand(command);
+                }
+                else
+                {
+                    log.Warn("Client not in Connection pool.");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, SendCommandToVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+            }
         }
 
         public void ConnectToBackend(string vehicleName)
         {
-            var connection = OperationContext.Current.GetCallbackChannel<IBackendCallback>();
-            allClients[vehicleName] = connection;
+            try
+            {
+                if (!allClients.ContainsKey(vehicleName))
+                {
+                    var connection = OperationContext.Current.GetCallbackChannel<IBackendCallback>();
+                    allClients[vehicleName] = connection;
+                    log.Info("Client Connected: " + vehicleName);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, ConnectToBackend(string vehicleName) Error for vehicle: " + vehicleName, ex);
+            }
         }
+
+        public void DisconnectFromBackend(string vehicleName)
+        {
+            try
+            {
+                if (allClients.ContainsKey(vehicleName))
+                {
+                    allClients.Remove(vehicleName);
+                    log.Info("Client Disconnected: " + vehicleName);
+                }
+                else
+                {
+                    log.Info("Client not in Connection pool.");
+                }
+            }
+            catch(Exception ex)
+            {
+                log.Error("Backend, DisconnectFromBackend(string vehicleName) Error for vehicle: " + vehicleName, ex);
+            }
+            
+        }
+
+
     }
 
 

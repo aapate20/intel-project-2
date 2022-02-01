@@ -9,9 +9,6 @@ namespace Backend
     public interface IBackendCallback
     {
         [OperationContract]
-        void ReceiveCommand(Vehicle vehicle, string command);
-
-        [OperationContract]
-        void SendCommand(Vehicle vehicle, string command);
+        void ReceiveCommand(string command);
     }
 }

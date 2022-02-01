@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PayloadSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
+        Title="MainWindow" Height="550" Width="800" Closing="Window_Closing">
     <Grid Background="AntiqueWhite">
         <Label x:Name="PayloadLabel" Content="" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Width="698" Height="71"/>
         <Label Content="Payload Type:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="51,100,0,0" VerticalAlignment="Top" Width="135" Height="39"/>

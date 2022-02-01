@@ -77,6 +77,12 @@ namespace DeepSpaceNetwork
                     MainWindow.processDirectorySpacecraft[spacecraftPayloadName] = process;
                     process.Start();
                 }
+                else
+                {
+                    log.Info("Process already running: " + spacecraftPayloadName);
+                }
+                var mainWindow = new MainWindow();
+                mainWindow.Show();
                 var payloadCommunicationDashboard = new PayloadCommunicationDashboard(sapceCraftDirectory[spacecraftPayloadName]);
                 payloadCommunicationDashboard.Show();
                 this.Close();
