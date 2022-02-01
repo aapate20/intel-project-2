@@ -8,6 +8,9 @@ namespace DeepSpaceNetwork
 {
     public class Constants
     {
+        public const string PAYLOAD_TYPE_SCIENTIFIC = "Scientific";
+        public const string PAYLOAD_TYPE_COMMUNICATION = "Communication";
+        public const string PAYLOAD_TYPE_SPY = "Spy";
         public const string STATUS_LAUNCHED = "Launched";
         public const string STATUS_LAUNCH_INITIATED = "Launch Initiated";
         public const string STATUS_DEORBIT = "Deorbit";
@@ -25,5 +28,14 @@ namespace DeepSpaceNetwork
         public const string STATUS_ORBIT_REACHED = "Orbit Reached";
         public const string LAUNCH_VEHICLE_DIRECTORY = "LaunchVehicle\\bin\\Debug\\LaunchVehicle.exe";
         public const string PAYLOAD_DIRECTORY = "PayloadSystem\\bin\\Debug\\PayloadSystem.exe";
+        public const string SERVICE_END_POINT = "CommunicationServiceEndpoint";
+        public const string DEORBIT_VEHICLE = "Deorbit Payload";
+
+        public const string SPACECRAFT_PREFIX = "DSN_";
+        public const string START_TELEMETRY = "Start Telemetry";
+        public const string STOP_TELEMETRY = "Stop Telemetry";
+        public const string START_DATA = "Request Data";
+        public const string STOP_DATA = "Stop Data Loading";
+        public const string SEND_COMMAND = "DSN-Command: ";
     }
 }

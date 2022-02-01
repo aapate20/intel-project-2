@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,10 +22,10 @@ namespace DeepSpaceNetwork
     public partial class LaunchSpacecraft : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
         private Dictionary<string, BackendServiceReference.Vehicle> spacecraftDirectory = new Dictionary<string, BackendServiceReference.Vehicle>();
-
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public LaunchSpacecraft()
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -36,17 +37,18 @@ namespace DeepSpaceNetwork
 
         private void Refresh_Window_After_Event()
         {
-            SpacecraftList.Items.Clear();
-            SpacecraftList.Items.Add("Select");
-            SpacecraftList.SelectedIndex = 0;
-            backendServicesClient = new BackendServiceReference.BackendServicesClient();
+            this.SpacecraftList.Items.Clear();
+            this.SpacecraftList.Items.Add("Select");
+            this.SpacecraftList.SelectedIndex = 0;
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
 
             try
             {
-                Arr = backendServicesClient.GetAddedSpacecraft();
+                Arr = this.backendService.GetAddedSpacecraft();
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
-                    SpacecraftList.Items.Add(v.Name);
+                    this.SpacecraftList.Items.Add(v.Name);
                     spacecraftDirectory[v.Name] = v;
                 }
             }
@@ -69,7 +71,7 @@ namespace DeepSpaceNetwork
             Mouse.OverrideCursor = Cursors.Wait;
             try
             {
-                string selectedSpacecraft = SpacecraftList.SelectedItem.ToString();
+                string selectedSpacecraft = this.SpacecraftList.SelectedItem.ToString();
                 if ("Select".Equals(selectedSpacecraft))
                 {
                     throw new Exception("Please select one from available spacecraft.");
@@ -87,8 +89,7 @@ namespace DeepSpaceNetwork
                         process.StartInfo.Arguments = selectedSpacecraft;
                         MainWindow.processDirectorySpacecraft[selectedSpacecraft] = process;
                         process.Start();
-                        backendServicesClient.UpdateSpacecraft(selectedSpacecraft, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCH_INITIATED);
-                        backendServicesClient.UpdateSpacecraft(selectedSpacecraft, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
+                        this.backendService.LaunchSpacecraft(selectedSpacecraft, Constants.SPACECRAFT_PREFIX + selectedSpacecraft);
                     }
                     var mainWindow = new MainWindow();
                     mainWindow.Show();

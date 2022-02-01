@@ -11,11 +11,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="Add Spacecraft" FontSize="30" HorizontalAlignment="Center" Margin="0,141,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Add_Spacecraft" />
-        <Button Content="Launch Spacecraft" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="550" Height="82" Click="Launch_Spacecraft" Margin="0,242,0,0"/>
-        <Button Content="View Spacecraft Details" FontSize="30" HorizontalAlignment="Center" Margin="0,347,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_DSN_Dashboard" />
+        <Button Content="Add Spacecraft" Background="Azure" FontSize="30" HorizontalAlignment="Center" Margin="0,141,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Add_Spacecraft" />
+        <Button Content="Launch Spacecraft" Background="Azure" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Width="550" Height="82" Click="Launch_Spacecraft" Margin="0,242,0,0"/>
+        <Button Content="View Spacecraft Details" Background="Azure" FontSize="30" HorizontalAlignment="Center" Margin="0,347,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_DSN_Dashboard" />
         <Label Content="Mission Control System" FontSize="40" HorizontalAlignment="Center" Margin="0,29,0,377" RenderTransformOrigin="0.48,0.899"/>
-        <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
+        <Button Content="&lt;" Background="Azure" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Height="25" Click="Go_Back" />
 
     </Grid>
 </Window>

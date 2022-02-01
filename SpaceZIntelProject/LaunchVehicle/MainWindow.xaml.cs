@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,8 +24,9 @@ namespace LaunchVehicle
     public partial class MainWindow : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         private readonly string spaceCraftName;
-        private readonly BackendServiceReference.BackendServicesClient client;
         private readonly BackendServiceReference.Vehicle vehicle;
         private readonly BackendServiceReference.Telemetry telemetry;
         private DispatcherTimer launchTimer;
@@ -33,19 +36,23 @@ namespace LaunchVehicle
         Random random;
         private double distanceCoveredinOneSec = 0;
         private double temperatureReduceInOneSec = 0;
+        private string command = "";
         public MainWindow(string spaceCraftName)
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
-            client = new BackendServiceReference.BackendServicesClient();
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
             this.telemetry = new BackendServiceReference.Telemetry();
             this.telemetry.Temperature = 340;
             random = new Random();
             this.spaceCraftName = spaceCraftName;
             this.SpaceCraftLabel.Content = this.spaceCraftName + " Dashboard";
+            this.backendService.ConnectToBackend(spaceCraftName);
+            Thread.Sleep(500);
             try
             {
-                this.vehicle = client.GetSpacecraft(spaceCraftName);
+                this.vehicle = this.backendService.GetSpacecraft(spaceCraftName);
                 if(vehicle != null)
                 {
                     this.OrbitRadius.Content = vehicle.OrbitRadius;
@@ -73,7 +80,6 @@ namespace LaunchVehicle
                 log.Error("Error Initializing LaunchVehicle Window.", ex);
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
@@ -104,9 +110,9 @@ namespace LaunchVehicle
             {
                 this.LaunchLabel.Visibility= Visibility.Hidden;
                 this.LaunchSequence.Visibility= Visibility.Hidden;
-                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCHED);
-                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
-                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_AIR);
+                this.backendService.UpdateSpacecraft3(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCHED, 
+                    Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE, 
+                    Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_AIR);
                 this.orbitTimer = new DispatcherTimer();
                 this.orbitTimer.Interval = TimeSpan.FromSeconds(1);
                 this.orbitTimer.Tick += TimeToReachOrbitTicker;
@@ -143,28 +149,30 @@ namespace LaunchVehicle
             this.telemetry.Temperature -= this.temperatureReduceInOneSec;
             this.telemetry.TimeToOrbit = this.timeToOrbitSeconds;
 
-            StringBuilder sb = new StringBuilder();
+            if (Constants.START_TELEMETRY.Equals(this.command))
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append('{').Append("\n");
+                sb.Append("\t").Append("\"").Append("Altitude").Append("\":  ").Append(this.telemetry.Altitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Longitude").Append("\":  ").Append(this.telemetry.Longitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Latitude").Append("\":  ").Append(this.telemetry.Latitude).Append("\n");
+                sb.Append("\t").Append("\"").Append("Temperature").Append("\":  ").Append(this.telemetry.Temperature).Append("\n");
+                sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append(this.TimeToOrbit.Content).Append("\n");
+                sb.Append('}').Append("\n");
 
-            sb.Append('{').Append("\n");
-            sb.Append("\t").Append("\"").Append("Altitude").Append("\":  ").Append(this.telemetry.Altitude).Append("\n");
-            sb.Append("\t").Append("\"").Append("Longitude").Append("\":  ").Append(this.telemetry.Longitude).Append("\n");
-            sb.Append("\t").Append("\"").Append("Latitude").Append("\":  ").Append(this.telemetry.Latitude).Append("\n");
-            sb.Append("\t").Append("\"").Append("Temperature").Append("\":  ").Append(this.telemetry.Temperature).Append("\n");
-            sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append(this.TimeToOrbit.Content).Append("\n");
-            sb.Append('}').Append("\n");
-
-            this.TelemetryBox.Text = sb.ToString();
-            this.TelemetryBox.ScrollToEnd();
-            this.client.UpdateTelemetryMap(this.vehicle.Name, this.telemetry);
+                this.TelemetryBox.Text = sb.ToString();
+                this.TelemetryBox.ScrollToEnd();
+            }
+            this.backendService.UpdateTelemetryMap(this.vehicle.Name, this.telemetry);
         }
 
         private void LaunchPayload()
         {
             try
             {
-                this.client.UpdateSpacecraft(vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_ORBIT_REACHED);
-                this.client.UpdateSpacecraft(vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_LAUNCH_INITIATED);
-                this.client.UpdateSpacecraft(vehicle.Name, Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_ONLINE);
+                this.backendService.UpdateSpacecraft3(vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_ORBIT_REACHED, 
+                    Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_LAUNCH_INITIATED, 
+                    Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_ONLINE);
             }
             catch (Exception ex)
             {
@@ -189,32 +197,69 @@ namespace LaunchVehicle
             }
         }
 
+        public void UpdateCommunicationBoard(string command)
+        {
+            this.command = command;
+            this.CommunicationBox.Text += Constants.RECEIVE_COMMAND + command + "\n";
+            this.CommunicationBox.ScrollToEnd();
+            this.ProcessCommand(command);
+        }
+
+        private void ProcessCommand(string command)
+        {
+            try
+            {
+                if (Constants.START_TELEMETRY.Equals(command))
+                {
+                    this.CommunicationBox.Text += this.vehicle.Name + ": " + Constants.SENDING_TELEMETRY + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                }
+                else if (Constants.LAUNCH_PAYLOAD.Equals(command))
+                {
+                    this.CommunicationBox.Text += this.vehicle.Name + ": " + Constants.LAUNCHING_PAYLOAD + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                }
+                else if (Constants.STOP_TELEMETRY.Equals(command))
+                {
+                    this.CommunicationBox.Text += this.vehicle.Name + ": " + Constants.STOP_TELEMETRY + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                }
+                else if (Constants.DEORBIT_VEHICLE.Equals(command))
+                {
+                    this.CommunicationBox.Text += this.vehicle.Name + ": " + Constants.DEORBITING_VEHICLE + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                this.TelemetryBox.Text = "";
+                this.CommunicationBox.Text += Constants.SEND_COMMAND + ": " + Constants.COMMAND_FAILURE + "\n";
+            }
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to close the window?", "Close?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, 
-                MessageBoxResult.Cancel) != MessageBoxResult.Yes)
-            {
-                e.Cancel = true;
-            }
+            this.backendService.DisconnectFromBackend(this.vehicle.Name);
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            if(this.launchSequenceSecond > 0)
+            if (this.launchSequenceSecond > 0)
             {
                 this.launchTimer.Stop();
-                if(this.vehicle != null)
+                if (this.vehicle != null)
                 {
-                    this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_ADDED);
-                    this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE);
+                    this.backendService.UpdateSpacecraft2(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_ADDED,
+                        Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE);
                 }
             }
-            else if(this.timeToOrbitSeconds > 0)
+            else if (this.timeToOrbitSeconds > 0)
             {
                 this.orbitTimer.Stop();
-                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_MISSION_ABORTED);
-                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE);
-                this.client.UpdateSpacecraft(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_MISSION_ABORTED);
+                this.backendService.UpdateSpacecraft3(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_MISSION_ABORTED,
+                    Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE,
+                    Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_MISSION_ABORTED);
             }
         }
 

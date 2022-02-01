@@ -15,13 +15,17 @@ namespace Backend
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "BackendServiceImpl" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select BackendServiceImpl.svc or BackendServiceImpl.svc.cs at the Solution Explorer and start debugging.
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single)]
-    public class BackendServiceImpl : BackendServices
+    public class BackendServiceImpl : IBackendServices
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
         private static string connStr = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
         private static readonly MongoClientSettings settings = MongoClientSettings.FromConnectionString(connStr);
         private static readonly MongoClient client = new MongoClient(settings);
         private Dictionary<string, Telemetry> telemetryDictionary = new Dictionary<string, Telemetry>();  
+        private Dictionary<string, Weather> weatherDictionary = new Dictionary<string, Weather>();  
+        private Dictionary<string, Spy> spyDictionary = new Dictionary<string, Spy>();  
+        private Dictionary<string, Comm> commDictionary = new Dictionary<string, Comm>();  
+        private Dictionary<string, IBackendCallback> allClients = new Dictionary<string, IBackendCallback>();  
         public string AddSpaceCraft(Vehicle vehicle)
         {
             try
@@ -103,7 +107,13 @@ namespace Backend
             
         }
 
-        public void UpdateSpacecraft(string vehicleName, string column, string status)
+        public void LaunchSpacecraft(string vehicleName, string dsnDashboardName)
+        {
+            UpdateSpacecraft2(vehicleName, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCH_INITIATED,
+                            Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
+        }
+
+        public void UpdateSpacecraft1(string vehicleName, string column, string status)
         {
             try
             {
@@ -120,6 +130,46 @@ namespace Backend
                 log.Error("Backend, UpdateSpacecraft(string vehicleName) Error.", ex);
             }
             
+        }
+
+        public void UpdateSpacecraft2(string vehicleName, string column1, string value1, string column2, string value2)
+        {
+            try
+            {
+                var db = client.GetDatabase(Constants.DATABASE_SPACEZ);
+                var collection = db.GetCollection<Vehicle>(Constants.COLLECTION_SPACECRAFT);
+                var filterBuilder = Builders<Vehicle>.Filter;
+                FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_NAME, vehicleName);
+                var update = Builders<Vehicle>.Update.Set(column1, value1).Set(column2, value2);
+                collection.UpdateOne(filter, update);
+                log.Info("UpdateSpacecraft() return successfully for vehicle: " + vehicleName + " " + column1 
+                    + ":" + value1 + ", " + column2 + ":" + value2);
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, UpdateSpacecraft(string vehicleName) Error.", ex);
+            }
+
+        }
+
+        public void UpdateSpacecraft3(string vehicleName, string column1, string value1, string column2, string value2, string column3, string value3)
+        {
+            try
+            {
+                var db = client.GetDatabase(Constants.DATABASE_SPACEZ);
+                var collection = db.GetCollection<Vehicle>(Constants.COLLECTION_SPACECRAFT);
+                var filterBuilder = Builders<Vehicle>.Filter;
+                FilterDefinition<Vehicle> filter = filterBuilder.Eq(Constants.COLUMN_NAME, vehicleName);
+                var update = Builders<Vehicle>.Update.Set(column1, value1).Set(column2, value2).Set(column3, value3);
+                collection.UpdateOne(filter, update);
+                log.Info("UpdateSpacecraft() return successfully for vehicle: " + vehicleName + " " + column1 + ":" + 
+                    value1 + ", " + column2 + ":" + value2 + ", " + column2 + ":" + value2);
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, UpdateSpacecraft(string vehicleName) Error.", ex);
+            }
+
         }
 
         public List<Vehicle> GetAllOnlineSpacecraft()
@@ -206,6 +256,157 @@ namespace Backend
                 return new Telemetry();
             }
         }
+
+        public void UpdateWeatherMap(string vehicleName, Weather weather)
+        {
+            this.weatherDictionary[vehicleName] = weather;
+        }
+
+        public Weather GetWeatherDataOfVehicle(string vehicleName)
+        {
+            try
+            {
+                return this.weatherDictionary[vehicleName];
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, GetWeatherDataOfVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return new Weather();
+            }
+        }
+
+        public void UpdateCommMap(string vehicleName, Comm comm)
+        {
+            this.commDictionary[vehicleName] = comm;
+        }
+
+        public Comm GetCommDataOfVehicle(string vehicleName)
+        {
+            try
+            {
+                return this.commDictionary[vehicleName];
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, GetCommOfVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return new Comm();
+            }
+        }
+
+        public void UpdateSpyMap(string vehicleName, Spy spy)
+        {
+            this.spyDictionary[vehicleName] = spy;
+        }
+
+        public Spy GetSpyDataOfVehicle(string vehicleName)
+        {
+            try
+            {
+                return this.spyDictionary[vehicleName];
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, GetSpyOfVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return new Spy();
+            }
+        }
+
+        public void SendCommandToVehicle(Vehicle vehicle, string command)
+        {
+            try
+            {
+                if (allClients.ContainsKey(vehicle.Name))
+                {
+                    log.Info("Sending Command to : " + vehicle.Name + " with command: " + command);
+                    allClients[vehicle.Name].ReceiveCommand(command);
+                }
+                else
+                {
+                    log.Warn("Client not in Connection pool.");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, SendCommandToVehicle(string vehicleName) Error for vehicle: " + vehicle.Name, ex);
+            }
+        }
+
+        public void SendCommandToPayloadVehicle(string vehicleName, string command)
+        {
+            try
+            {
+                if (allClients.ContainsKey(vehicleName))
+                {
+                    log.Info("Sending Command to : " + vehicleName + " with command: " + command);
+                    allClients[vehicleName].ReceiveCommand(command);
+                }
+                else
+                {
+                    log.Warn("Client not in Connection pool.");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, SendCommandToVehicle(string vehicleName) Error for vehicle: " + vehicleName, ex);
+            }
+        }
+
+        public void ConnectToBackend(string vehicleName)
+        {
+            try
+            {
+                if (!allClients.ContainsKey(vehicleName))
+                {
+                    var connection = OperationContext.Current.GetCallbackChannel<IBackendCallback>();
+                    allClients[vehicleName] = connection;
+                    log.Info("Client Connected: " + vehicleName);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, ConnectToBackend(string vehicleName) Error for vehicle: " + vehicleName, ex);
+            }
+        }
+
+        public void DisconnectFromBackend(string vehicleName)
+        {
+            try
+            {
+                if (allClients.ContainsKey(vehicleName))
+                {
+                    allClients.Remove(vehicleName);
+                    log.Info("Client Disconnected: " + vehicleName);
+                }
+                else
+                {
+                    log.Info("Client not in Connection pool.");
+                }
+            }
+            catch(Exception ex)
+            {
+                log.Error("Backend, DisconnectFromBackend(string vehicleName) Error for vehicle: " + vehicleName, ex);
+            }
+            
+        }
+
+        public bool CheckVehicleConnectedToBackend(string vehicleName)
+        {
+            try
+            {
+                if (allClients.ContainsKey(vehicleName))
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, CheckVehicleConnectedToBackend(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return false;
+            }
+        }
+
+
     }
 
 

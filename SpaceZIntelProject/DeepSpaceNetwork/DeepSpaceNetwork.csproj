@@ -274,6 +274,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Callback.cs" />
     <Compile Include="CommunicationDashboard.xaml.cs">
       <DependentUpon>CommunicationDashboard.xaml</DependentUpon>
     </Compile>
@@ -342,10 +343,19 @@
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="Connected Services\BackendServiceReference\BackendServiceImpl.wsdl" />
+    <None Include="Connected Services\BackendServiceReference\DeepSpaceNetwork.BackendServiceReference.Comm.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BackendServiceReference\DeepSpaceNetwork.BackendServiceReference.Spy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\BackendServiceReference\DeepSpaceNetwork.BackendServiceReference.Telemetry.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BackendServiceReference\DeepSpaceNetwork.BackendServiceReference.Vehicle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BackendServiceReference\DeepSpaceNetwork.BackendServiceReference.Weather.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BackendServiceReference\Service1.xsd">

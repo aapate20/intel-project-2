@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeepSpaceNetwork"
         mc:Ignorable="d"
-        Title="PayloadCommunicationDashboard" Height="600" Width="1200">
+        Title="PayloadCommunicationDashboard" Height="600" Width="1200" Closed="Window_Closed">
     <Grid Background="AntiqueWhite">
         <Grid Background="AntiqueWhite">
-            <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
-            <Label x:Name="payloadCommunicationSystemLabel" Content="" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Width="960" Height="62"/>
-            <Button x:Name="startTelemetryBtn" Background="Azure" Content="Start Telemetry" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,177,0,0" VerticalAlignment="Top" Width="164" Height="42"/>
-            <Button x:Name="stopTelemetryBtn" Background="Azure" Content="Stop Telemetry" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="204,177,0,0" VerticalAlignment="Top" Width="164" Height="42"/>
-            <Button x:Name="decommisionBtn" Background="Azure" Content="Decommision" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,104,0,0" VerticalAlignment="Top" Width="333" Height="42" Click="Decommision_Payload"/>
-            <Button x:Name="startDataBtn" Background="Azure" Content="Start Data" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,177,0,0" VerticalAlignment="Top" Width="164" Height="42"/>
-            <Button x:Name="stopDataBtn" Background="Azure" Content="Stop Data" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="605,177,0,0" VerticalAlignment="Top" Width="160" Height="42"/>
-            <Label Content="Payload Type:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="791,108,0,0" VerticalAlignment="Top" Width="191" Height="39"/>
-            <Label x:Name="payloadType" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="987,107,0,0" VerticalAlignment="Top" Width="186" Height="40"/>
-            <Label Content="Telemetry Information" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,219,0,0" VerticalAlignment="Top" Width="328" Height="39"/>
-            <TextBox Background="Azure" x:Name="telemetryBox" HorizontalAlignment="Left" Margin="35,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="328" Height="265"/>
-            <Label Content="Payload communication" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="840,220,0,0" VerticalAlignment="Top" Width="333" Height="38"/>
-            <TextBox Background="Azure" x:Name="communicationBox" HorizontalAlignment="Left" Margin="840,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="333" Height="265"/>
-            <Label Content="Payload Data" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,219,0,0" VerticalAlignment="Top" Width="328" Height="39"/>
-            <TextBox Background="Azure" x:Name="dataBox" HorizontalAlignment="Left" Margin="432,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="333" Height="265"/>
+            <Button Content="&lt;" Background="Azure" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Height="25" Click="Go_Back" />
+            <Label x:Name="PayloadCommunicationSystemLabel" Content="" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Width="960" Height="62"/>
+            <Button x:Name="StartTelemetryBtn" Background="Azure" Content="Start Telemetry" IsEnabled="False" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,177,0,0" VerticalAlignment="Top" Width="164" Height="42" Click="Start_Telemetry_Function"/>
+            <Button x:Name="StopTelemetryBtn" Background="Azure" Content="Stop Telemetry" IsEnabled="False" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="204,177,0,0" VerticalAlignment="Top" Width="164" Height="42" Click="Stop_Telemetry_Function"/>
+            <Button x:Name="DecommisionBtn" Background="Azure" Content="Decommision" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,104,0,0" VerticalAlignment="Top" Width="333" Height="42" Click="Decommision_Payload"/>
+            <Button x:Name="StartDataBtn" Background="Azure" Content="Start Data" FontSize="20" IsEnabled="False" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,177,0,0" VerticalAlignment="Top" Width="164" Height="42" Click="Start_Data_Function"/>
+            <Button x:Name="StopDataBtn" Background="Azure" Content="Stop Data" FontSize="20" IsEnabled="False" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="605,177,0,0" VerticalAlignment="Top" Width="160" Height="42" Click="Stop_Data_Function"/>
+            <Label Content="Payload Type:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="791,108,0,0" VerticalAlignment="Top" Width="133" Height="39"/>
+            <Label x:Name="PayloadType" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="929,107,0,0" VerticalAlignment="Top" Width="244" Height="40"/>
+            <Label Content="Telemetry Information" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="35,219,0,0" VerticalAlignment="Top" Width="328" Height="39"/>
+            <TextBox Background="Azure" x:Name="TelemetryBox" IsEnabled="False" HorizontalAlignment="Left" Margin="35,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="328" Height="265"/>
+            <Label Content="Payload communication" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="840,220,0,0" VerticalAlignment="Top" Width="333" Height="38"/>
+            <TextBox Background="Azure" x:Name="CommunicationBox" IsEnabled="False" HorizontalAlignment="Left" Margin="840,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="333" Height="265"/>
+            <Label Content="Payload Data" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,219,0,0" VerticalAlignment="Top" Width="328" Height="39"/>
+            <TextBox Background="Azure" x:Name="DataBox" IsEnabled="False" HorizontalAlignment="Left" Margin="432,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="333" Height="265"/>
         </Grid>
     </Grid>
 </Window>

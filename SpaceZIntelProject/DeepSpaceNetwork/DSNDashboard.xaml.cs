@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,32 +22,34 @@ namespace DeepSpaceNetwork
     public partial class DSNDashboard : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
-        private BackendServiceReference.BackendServicesClient backendServicesClient;
         private BackendServiceReference.Vehicle[] Arr;
-        private Dictionary<string, BackendServiceReference.Vehicle> SpaceCraftDir;   
+        private Dictionary<string, BackendServiceReference.Vehicle> SpaceCraftDir;
+        private BackendServiceReference.IBackendServices backendService;
+        private static DuplexChannelFactory<BackendServiceReference.IBackendServices> duplexChannelFactory;
         public DSNDashboard()
         {
             Mouse.OverrideCursor = Cursors.Wait;
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             SpaceCraftDir = new Dictionary<string, BackendServiceReference.Vehicle>();
-            backendServicesClient = new BackendServiceReference.BackendServicesClient();
-            ActiveSpaceCraftList.Items.Clear();
-            NewSpaceCraftList.Items.Clear();
+            duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
+            this.backendService = duplexChannelFactory.CreateChannel();
+            this.ActiveSpaceCraftList.Items.Clear();
+            this.NewSpaceCraftList.Items.Clear();
             try
             {
-                Arr = backendServicesClient.GetAllSpacecraft();
+                Arr = this.backendService.GetAllSpacecraft();
 
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
                     SpaceCraftDir[v.Name] = v;
                     if (Constants.STATUS_ADDED.Equals(v.Status) || Constants.STATUS_LAUNCHED.Equals(v.Status))
                     {
-                        NewSpaceCraftList.Items.Add(v.Name);
+                        this.NewSpaceCraftList.Items.Add(v.Name);
                     }
                     else
                     {
-                        ActiveSpaceCraftList.Items.Add(v.Name);
+                        this.ActiveSpaceCraftList.Items.Add(v.Name);
                     }
                 }
             }
@@ -70,26 +73,26 @@ namespace DeepSpaceNetwork
             try
             {
                 StringBuilder sb = new StringBuilder();
-                if(ActiveSpaceCraftList.SelectedItem == null && NewSpaceCraftList.SelectedItem == null)
+                if(this.ActiveSpaceCraftList.SelectedItem == null && this.NewSpaceCraftList.SelectedItem == null)
                 {
                     throw new Exception("Please select one item from either list.");
                 }
                 else 
                 {
-                    if(ActiveSpaceCraftList.SelectedItem != null)
+                    if(this.ActiveSpaceCraftList.SelectedItem != null)
                     {
-                        SpaceCraftDir.TryGetValue(ActiveSpaceCraftList.SelectedItem.ToString(), out BackendServiceReference.Vehicle vehicle1);
+                        SpaceCraftDir.TryGetValue(this.ActiveSpaceCraftList.SelectedItem.ToString(), out BackendServiceReference.Vehicle vehicle1);
                         this.Append_In_SB(sb, vehicle1);
                     }
 
-                    if (NewSpaceCraftList.SelectedItem != null)
+                    if (this.NewSpaceCraftList.SelectedItem != null)
                     {
-                        SpaceCraftDir.TryGetValue(NewSpaceCraftList.SelectedItem.ToString(), out BackendServiceReference.Vehicle vehicle2);
+                        SpaceCraftDir.TryGetValue(this.NewSpaceCraftList.SelectedItem.ToString(), out BackendServiceReference.Vehicle vehicle2);
                         this.Append_In_SB(sb, vehicle2);
                     }
 
-                    SpacecraftDetails.Text = sb.ToString();
-                    SpacecraftDetails.ScrollToEnd();
+                    this.SpacecraftDetails.Text = sb.ToString();
+                    this.SpacecraftDetails.ScrollToEnd();
                     sb.Clear();
                 }
             }
@@ -97,12 +100,12 @@ namespace DeepSpaceNetwork
             {
                 log.Error("Error in Get_Spacecraft_details() Event.", ex);
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                SpacecraftDetails.Text = "";
+                this.SpacecraftDetails.Text = "";
             }
             finally
             {
-                ActiveSpaceCraftList.SelectedItem = null;
-                NewSpaceCraftList.SelectedItem = null;
+                this.ActiveSpaceCraftList.SelectedItem = null;
+                this.NewSpaceCraftList.SelectedItem = null;
             }
         }
 

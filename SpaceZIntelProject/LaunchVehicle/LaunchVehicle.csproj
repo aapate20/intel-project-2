@@ -73,6 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Callback.cs" />
     <Compile Include="Connected Services\BackendServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,10 +105,19 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Connected Services\BackendServiceReference\BackendServiceImpl.wsdl" />
+    <None Include="Connected Services\BackendServiceReference\LaunchVehicle.BackendServiceReference.Comm.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BackendServiceReference\LaunchVehicle.BackendServiceReference.Spy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\BackendServiceReference\LaunchVehicle.BackendServiceReference.Telemetry.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BackendServiceReference\LaunchVehicle.BackendServiceReference.Vehicle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BackendServiceReference\LaunchVehicle.BackendServiceReference.Weather.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BackendServiceReference\Service1.xsd">

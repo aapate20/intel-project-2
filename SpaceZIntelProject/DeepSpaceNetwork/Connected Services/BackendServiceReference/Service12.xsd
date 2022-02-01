@@ -36,4 +36,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Telemetry" nillable="true" type="tns:Telemetry" />
+  <xs:complexType name="Comm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActiveTransponder" type="xs:int" />
+      <xs:element minOccurs="0" name="Downlink" type="xs:int" />
+      <xs:element minOccurs="0" name="Uplink" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Comm" nillable="true" type="tns:Comm" />
+  <xs:complexType name="Weather">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Humidity" type="xs:int" />
+      <xs:element minOccurs="0" name="Rainfall" type="xs:int" />
+      <xs:element minOccurs="0" name="Snow" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Weather" nillable="true" type="tns:Weather" />
+  <xs:complexType name="Spy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" type="xs:int" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Spy" nillable="true" type="tns:Spy" />
 </xs:schema>
