@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="PayloadCommunicationSystem" Height="450" Width="800">
     <Grid Background="AntiqueWhite">
-        <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
+        <Button Content="&lt;" Background="Azure" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Height="25" Click="Go_Back" />
         <Label Content="Payload Communication System" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" Width="665" Height="69"/>
-        <ComboBox x:Name="LaunchPayloadList" FontSize="20" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top" Width="432" Height="52"/>
-        <Button Content="Go To Payload Dashboard" FontSize="30" HorizontalAlignment="Center" Margin="0,290,0,0" VerticalAlignment="Top" Width="432" Height="63" Click="Payload_Communication_Dashboard"/>
+        <ComboBox x:Name="LaunchPayloadList" Background="Azure" FontSize="20" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top" Width="432" Height="52"/>
+        <Button Content="Go To Payload Dashboard" Background="Azure" FontSize="30" HorizontalAlignment="Center" Margin="0,290,0,0" VerticalAlignment="Top" Width="432" Height="63" Click="Payload_Communication_Dashboard"/>
     </Grid>
 </Window>

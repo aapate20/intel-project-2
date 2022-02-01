@@ -389,6 +389,23 @@ namespace Backend
             
         }
 
+        public bool CheckVehicleConnectedToBackend(string vehicleName)
+        {
+            try
+            {
+                if (allClients.ContainsKey(vehicleName))
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Backend, CheckVehicleConnectedToBackend(string vehicleName) Error for vehicle: " + vehicleName, ex);
+                return false;
+            }
+        }
+
 
     }
 

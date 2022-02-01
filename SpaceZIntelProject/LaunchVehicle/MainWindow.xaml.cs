@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -48,6 +49,7 @@ namespace LaunchVehicle
             this.spaceCraftName = spaceCraftName;
             this.SpaceCraftLabel.Content = this.spaceCraftName + " Dashboard";
             this.backendService.ConnectToBackend(spaceCraftName);
+            Thread.Sleep(500);
             try
             {
                 this.vehicle = this.backendService.GetSpacecraft(spaceCraftName);
@@ -195,40 +197,6 @@ namespace LaunchVehicle
             }
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to close the window?", "Close?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, 
-                MessageBoxResult.Cancel) != MessageBoxResult.Yes)
-            {
-                e.Cancel = true;
-            }
-            else
-            {
-                this.backendService.DisconnectFromBackend(this.vehicle.Name);
-            }
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            
-            if(this.launchSequenceSecond > 0)
-            {
-                this.launchTimer.Stop();
-                if(this.vehicle != null)
-                {
-                    this.backendService.UpdateSpacecraft2(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_ADDED, 
-                        Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE);
-                }
-            }
-            else if(this.timeToOrbitSeconds > 0)
-            {
-                this.orbitTimer.Stop();
-                this.backendService.UpdateSpacecraft3(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_MISSION_ABORTED, 
-                    Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE, 
-                    Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_MISSION_ABORTED);
-            }
-        }
-
         public void UpdateCommunicationBoard(string command)
         {
             this.command = command;
@@ -267,6 +235,31 @@ namespace LaunchVehicle
                 log.Error(ex);
                 this.TelemetryBox.Text = "";
                 this.CommunicationBox.Text += Constants.SEND_COMMAND + ": " + Constants.COMMAND_FAILURE + "\n";
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.backendService.DisconnectFromBackend(this.vehicle.Name);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (this.launchSequenceSecond > 0)
+            {
+                this.launchTimer.Stop();
+                if (this.vehicle != null)
+                {
+                    this.backendService.UpdateSpacecraft2(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_ADDED,
+                        Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE);
+                }
+            }
+            else if (this.timeToOrbitSeconds > 0)
+            {
+                this.orbitTimer.Stop();
+                this.backendService.UpdateSpacecraft3(this.vehicle.Name, Constants.COLUMN_STATUS, Constants.STATUS_MISSION_ABORTED,
+                    Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_OFFLINE,
+                    Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_MISSION_ABORTED);
             }
         }
 

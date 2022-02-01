@@ -80,5 +80,8 @@ namespace Backend
 
         [OperationContract]
         void DisconnectFromBackend(string vehicleName);
+
+        [OperationContract]
+        bool CheckVehicleConnectedToBackend(string vehicleName);
     }
 }

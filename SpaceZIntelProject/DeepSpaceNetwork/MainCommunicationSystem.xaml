@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainCommunicationSystem" Height="500" Width="800">
     <Grid Background="AntiqueWhite">
-        <Button Content="Back" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="Go_Back" />
+        <Button Content="&lt;" Background="Azure" FontSize="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Height="25" Click="Go_Back" />
         <Button Content="Spacecraft Communication Dashboard" Background="Azure" HorizontalContentAlignment="Center" FontSize="30" HorizontalAlignment="Center" Margin="0,189,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_Spacecraft_Communication_System" />
         <Button Content="Payload Communication Dashboard" Background="Azure" FontSize="30" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Width="550" Height="82" Click="Go_to_Payload_Communication_System"/>
-        <Label Content="Communication System Dashboard" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,62,0,344" Width="646"/>
+        <Label Content="Communication System Dashboard" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" Width="698" Height="71"/>
     </Grid>
 </Window>

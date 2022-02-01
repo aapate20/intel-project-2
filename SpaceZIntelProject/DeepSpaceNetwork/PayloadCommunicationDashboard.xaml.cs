@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,6 +36,7 @@ namespace DeepSpaceNetwork
         public PayloadCommunicationDashboard(BackendServiceReference.Vehicle vehicle)
         {
             Mouse.OverrideCursor = Cursors.Wait;
+            Thread.Sleep(1000);
             InitializeComponent();
             this.vehicle = vehicle;
             duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
@@ -48,10 +50,8 @@ namespace DeepSpaceNetwork
             try
             {
                 this.telemetry = new BackendServiceReference.Telemetry();
-
                 this.PayloadCommunicationSystemLabel.Content = this.vehicle.Payload.Name + " " + "Communication Dashboard";
                 this.PayloadType.Content = this.vehicle.Payload.Type;
-
                 this.telemetryTimer = new DispatcherTimer();
                 this.dataTimer = new DispatcherTimer();
 
@@ -70,11 +70,10 @@ namespace DeepSpaceNetwork
                     this.telemetryTimer.Interval = TimeSpan.FromSeconds(30);
                     this.dataTimer.Interval = TimeSpan.FromSeconds(30);
                 }
-
                 this.telemetryTimer.Tick += TelemetryTicker;
                 this.dataTimer.Tick += DataTicker;
-                this.StopTelemetryBtn.IsEnabled = true;
-                this.StopDataBtn.IsEnabled = true;
+                this.StartDataBtn.IsEnabled = true;
+                this.StartTelemetryBtn.IsEnabled = true;
             }
             catch (Exception ex)
             {
@@ -198,17 +197,26 @@ namespace DeepSpaceNetwork
         {
             try
             {
-                this.backendService.UpdateSpacecraft2(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_DECOMMISSION, 
-                    Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_OFFLINE);
-                MainWindow.processDirectorySpacecraft.TryGetValue(this.vehicle.Payload.Name, out Process currentProcess);
-                if (currentProcess != null && !currentProcess.HasExited)
+                bool status = this.backendService.CheckVehicleConnectedToBackend(this.vehicle.Payload.Name);
+                if (!status)
                 {
-                    currentProcess.Kill();
-                    MainWindow.processDirectorySpacecraft.Remove(this.vehicle.Payload.Name);
+                    MessageBox.Show("Vehicle is Disconnected. Please login again!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
                 }
+                else
+                {
+                    this.backendService.UpdateSpacecraft2(this.vehicle.Name, Constants.COLUMN_PAYLOAD_STATUS, Constants.STATUS_DECOMMISSION,
+                    Constants.COLUMN_PAYLOAD_PAYLOAD_STATUS, Constants.STATUS_OFFLINE);
+                    MainWindow.processDirectorySpacecraft.TryGetValue(this.vehicle.Payload.Name, out Process currentProcess);
+                    if (currentProcess != null && !currentProcess.HasExited)
+                    {
+                        currentProcess.CloseMainWindow();
+                        currentProcess.Close();
+                        MainWindow.processDirectorySpacecraft.Remove(this.vehicle.Payload.Name);
+                    }
 
-                this.Decommision_Command_Window_Refresh();
-                
+                    this.Decommision_Command_Window_Refresh();
+                }
             }
             catch (Exception ex)
             {
@@ -242,12 +250,21 @@ namespace DeepSpaceNetwork
             }
             else
             {
-                this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.START_TELEMETRY + "\n";
-                this.CommunicationBox.ScrollToEnd();
-                this.backendService.SendCommandToPayloadVehicle(this.vehicle.Payload.Name, Constants.START_TELEMETRY);
-                this.telemetryTimer.Start();
-                this.StopTelemetryBtn.IsEnabled = true;
-                this.StartTelemetryBtn.IsEnabled = false;
+                bool status = this.backendService.CheckVehicleConnectedToBackend(this.vehicle.Payload.Name);
+                if (!status)
+                {
+                    MessageBox.Show("Vehicle is Disconnected. Please login again!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+                }
+                else
+                {
+                    this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.START_TELEMETRY + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                    this.backendService.SendCommandToPayloadVehicle(this.vehicle.Payload.Name, Constants.START_TELEMETRY);
+                    this.telemetryTimer.Start();
+                    this.StopTelemetryBtn.IsEnabled = true;
+                    this.StartTelemetryBtn.IsEnabled = false;
+                }
             }
             
         }
@@ -262,12 +279,21 @@ namespace DeepSpaceNetwork
             }
             else
             {
-                this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.STOP_TELEMETRY + "\n";
-                this.CommunicationBox.ScrollToEnd();
-                this.backendService.SendCommandToPayloadVehicle(this.vehicle.Payload.Name, Constants.STOP_TELEMETRY);
-                this.telemetryTimer.Stop();
-                this.StartTelemetryBtn.IsEnabled = true;
-                this.StopTelemetryBtn.IsEnabled = false;
+                bool status = this.backendService.CheckVehicleConnectedToBackend(this.vehicle.Payload.Name);
+                if (!status)
+                {
+                    MessageBox.Show("Vehicle is Disconnected. Please login again!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+                }
+                else
+                {
+                    this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.STOP_TELEMETRY + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                    this.backendService.SendCommandToPayloadVehicle(this.vehicle.Payload.Name, Constants.STOP_TELEMETRY);
+                    this.telemetryTimer.Stop();
+                    this.StartTelemetryBtn.IsEnabled = true;
+                    this.StopTelemetryBtn.IsEnabled = false;
+                }
             }
             
         }
@@ -282,12 +308,21 @@ namespace DeepSpaceNetwork
             }
             else
             {
-                this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.START_DATA + "\n";
-                this.CommunicationBox.ScrollToEnd();
-                this.backendService.SendCommandToPayloadVehicle(this.vehicle.Payload.Name, Constants.START_DATA);
-                this.dataTimer.Start();
-                this.StopDataBtn.IsEnabled = true;
-                this.StartDataBtn.IsEnabled = false;
+                bool status = this.backendService.CheckVehicleConnectedToBackend(this.vehicle.Payload.Name);
+                if (!status)
+                {
+                    MessageBox.Show("Vehicle is Disconnected. Please login again!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+                }
+                else
+                {
+                    this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.START_DATA + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                    this.backendService.SendCommandToPayloadVehicle(this.vehicle.Payload.Name, Constants.START_DATA);
+                    this.dataTimer.Start();
+                    this.StopDataBtn.IsEnabled = true;
+                    this.StartDataBtn.IsEnabled = false;
+                }
             }
             
         }
@@ -302,12 +337,39 @@ namespace DeepSpaceNetwork
             }
             else
             {
-                this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.STOP_DATA + "\n";
-                this.CommunicationBox.ScrollToEnd();
-                this.backendService.SendCommandToPayloadVehicle(this.vehicle.Payload.Name, Constants.STOP_DATA);
-                this.dataTimer.Stop();
-                this.StartDataBtn.IsEnabled = true;
-                this.StopDataBtn.IsEnabled = false;
+                bool status = this.backendService.CheckVehicleConnectedToBackend(this.vehicle.Payload.Name);
+                if (!status)
+                {
+                    MessageBox.Show("Vehicle is Disconnected. Please login again!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+                }
+                else
+                {
+                    this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.STOP_DATA + "\n";
+                    this.CommunicationBox.ScrollToEnd();
+                    this.backendService.SendCommandToPayloadVehicle(this.vehicle.Payload.Name, Constants.STOP_DATA);
+                    this.dataTimer.Stop();
+                    this.StartDataBtn.IsEnabled = true;
+                    this.StopDataBtn.IsEnabled = false;
+                }
+            }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            try
+            {
+                MainWindow.processDirectorySpacecraft.TryGetValue(this.vehicle.Payload.Name, out Process currentProcess);
+                if (currentProcess != null && !currentProcess.HasExited)
+                {
+                    currentProcess.CloseMainWindow();
+                    currentProcess.Close();
+                    MainWindow.processDirectorySpacecraft.Remove(this.vehicle.Payload.Name);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Window_Closed_Spacecraft_Communication_Error(), Did not receive Vehicle object.", ex);
             }
         }
 

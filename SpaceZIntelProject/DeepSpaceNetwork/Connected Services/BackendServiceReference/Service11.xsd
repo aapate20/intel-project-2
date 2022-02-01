@@ -311,6 +311,20 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="CheckVehicleConnectedToBackend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vehicleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckVehicleConnectedToBackendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckVehicleConnectedToBackendResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ReceiveCommand">
     <xs:complexType>
       <xs:sequence>

@@ -9,10 +9,10 @@
     <Grid Background="AntiqueWhite">
         <Label x:Name="PayloadLabel" Content="" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Width="698" Height="71"/>
         <Label Content="Payload Type:" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="51,100,0,0" VerticalAlignment="Top" Width="135" Height="39"/>
-        <Label x:Name="PayloadType" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="208,100,0,0" VerticalAlignment="Top" Width="135" Height="39" RenderTransformOrigin="0.491,0.951"/>
-        <TextBox x:Name="TelemetryBox" Background="Azure" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="322" Height="315" Margin="51,191,0,0"/>
-        <Label Content="Telemetry Information" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="51,149,0,0" VerticalAlignment="Top" Width="292"/>
-        <TextBox x:Name="CommunicationBox" Background="Azure" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="322" Height="315" Margin="427,191,0,0"/>
-        <Label Content="Communication System (DSN)" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="427,149,0,0" VerticalAlignment="Top" Width="292"/>
+        <Label x:Name="PayloadType" Content="" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="208,100,0,0" VerticalAlignment="Top" Width="380" Height="39" RenderTransformOrigin="0.491,0.951"/>
+        <Label Content="Data" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="16,149,0,0" VerticalAlignment="Top" Width="384"/>
+        <TextBox Background="Azure" x:Name="TelemetryBox" IsEnabled="False" HorizontalAlignment="Left" Margin="16,191,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="360" Height="315"/>
+        <TextBox Background="Azure" x:Name="CommunicationBox" IsEnabled="False" HorizontalAlignment="Left" Margin="405,191,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="360" Height="315"/>
+        <Label Content="Communication System (DSN)" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="405,149,0,0" VerticalAlignment="Top" Width="390"/>
     </Grid>
 </Window>

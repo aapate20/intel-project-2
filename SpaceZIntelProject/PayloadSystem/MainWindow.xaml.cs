@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,8 +36,6 @@ namespace PayloadSystem
         public string command = "";
         private DispatcherTimer telemetryTimer;
         private DispatcherTimer dataTimer;
-        private int telemetrySecond = 0;
-        private int dataSecond = 0;
         Random random;
         public MainWindow(string Spacecraft)
         {
@@ -55,8 +54,8 @@ namespace PayloadSystem
             {
                 random = new Random();
                 this.vehicle = this.backendService.GetSpacecraft(spaceCraftName);
+                Thread.Sleep(500);
                 this.telemetry = new BackendServiceReference.Telemetry();
-                this.backendService.ConnectToBackend(this.vehicle.Payload.Name);
                 this.PayloadLabel.Content = this.vehicle.Payload.Name + " Dashboard";
                 this.PayloadType.Content = this.vehicle.Payload.Type;
                 this.telemetryTimer = new DispatcherTimer();
@@ -83,6 +82,7 @@ namespace PayloadSystem
 
                 this.telemetryTimer.Tick += TelemetryTicker;
                 this.dataTimer.Tick += DataTicker;
+                this.backendService.ConnectToBackend(this.vehicle.Payload.Name);
             }
             catch (Exception ex)
             {
@@ -228,7 +228,6 @@ namespace PayloadSystem
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.SENDING_TELEMETRY + "\n";
                     this.CommunicationBox.ScrollToEnd();
-                    this.telemetrySecond = 0;
                     this.telemetryTimer.Start();
                 }
                 else if (Constants.STOP_TELEMETRY.Equals(command))
@@ -241,7 +240,6 @@ namespace PayloadSystem
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.STARTING_DATA + "\n";
                     this.CommunicationBox.ScrollToEnd();
-                    this.dataSecond = 0;
                     this.dataTimer.Start();
                 }
                 else if (Constants.STOP_DATA.Equals(command))
@@ -261,15 +259,7 @@ namespace PayloadSystem
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to close the window?", "Close?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question,
-                MessageBoxResult.Cancel) != MessageBoxResult.Yes)
-            {
-                e.Cancel = true;
-            }
-            else
-            {
-                this.backendService.DisconnectFromBackend(this.vehicle.Payload.Name);
-            }
+            this.backendService.DisconnectFromBackend(this.vehicle.Payload.Name);
         }
     }
 }

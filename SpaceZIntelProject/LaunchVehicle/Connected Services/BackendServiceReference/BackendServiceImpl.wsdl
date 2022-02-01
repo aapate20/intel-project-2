@@ -1161,6 +1161,52 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_CheckVehicleConnectedToBackend_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CommunicationServiceEndpoint_CheckVehicleConnectedToBackend_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="CommunicationServiceEndpoint_ReceiveCommand_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -1352,6 +1398,12 @@
   <wsdl:message name="IBackendServices_DisconnectFromBackend_OutputMessage">
     <wsdl:part name="parameters" element="tns:DisconnectFromBackendResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackendServices_CheckVehicleConnectedToBackend_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckVehicleConnectedToBackend" />
+  </wsdl:message>
+  <wsdl:message name="IBackendServices_CheckVehicleConnectedToBackend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckVehicleConnectedToBackendResponse" />
+  </wsdl:message>
   <wsdl:message name="IBackendServices_ReceiveCommand_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ReceiveCommand" />
   </wsdl:message>
@@ -1450,6 +1502,10 @@
     <wsdl:operation name="DisconnectFromBackend">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/DisconnectFromBackend" message="tns:IBackendServices_DisconnectFromBackend_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/DisconnectFromBackendResponse" message="tns:IBackendServices_DisconnectFromBackend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckVehicleConnectedToBackend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackendServices/CheckVehicleConnectedToBackend" message="tns:IBackendServices_CheckVehicleConnectedToBackend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/CheckVehicleConnectedToBackendResponse" message="tns:IBackendServices_CheckVehicleConnectedToBackend_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ReceiveCommand">
       <wsdl:output wsaw:Action="http://tempuri.org/IBackendServices/ReceiveCommand" message="tns:IBackendServices_ReceiveCommand_OutputCallbackMessage" />
@@ -1709,6 +1765,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#CommunicationServiceEndpoint_DisconnectFromBackend_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckVehicleConnectedToBackend">
+      <soap12:operation soapAction="http://tempuri.org/IBackendServices/CheckVehicleConnectedToBackend" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_CheckVehicleConnectedToBackend_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#CommunicationServiceEndpoint_CheckVehicleConnectedToBackend_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

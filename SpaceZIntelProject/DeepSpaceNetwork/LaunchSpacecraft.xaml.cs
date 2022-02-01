@@ -37,9 +37,9 @@ namespace DeepSpaceNetwork
 
         private void Refresh_Window_After_Event()
         {
-            SpacecraftList.Items.Clear();
-            SpacecraftList.Items.Add("Select");
-            SpacecraftList.SelectedIndex = 0;
+            this.SpacecraftList.Items.Clear();
+            this.SpacecraftList.Items.Add("Select");
+            this.SpacecraftList.SelectedIndex = 0;
             duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
             this.backendService = duplexChannelFactory.CreateChannel();
 
@@ -48,7 +48,7 @@ namespace DeepSpaceNetwork
                 Arr = this.backendService.GetAddedSpacecraft();
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
-                    SpacecraftList.Items.Add(v.Name);
+                    this.SpacecraftList.Items.Add(v.Name);
                     spacecraftDirectory[v.Name] = v;
                 }
             }
@@ -71,7 +71,7 @@ namespace DeepSpaceNetwork
             Mouse.OverrideCursor = Cursors.Wait;
             try
             {
-                string selectedSpacecraft = SpacecraftList.SelectedItem.ToString();
+                string selectedSpacecraft = this.SpacecraftList.SelectedItem.ToString();
                 if ("Select".Equals(selectedSpacecraft))
                 {
                     throw new Exception("Please select one from available spacecraft.");

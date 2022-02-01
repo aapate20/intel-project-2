@@ -41,32 +41,40 @@ namespace DeepSpaceNetwork
             Mouse.OverrideCursor = Cursors.Wait;
             try
             {
-                if (spaceCraftName.Text != "" && orbitRadius.Text != "" && payload != null && payload.Name != null
-                && payload.Name != "" && payload.Type != null && payload.Type != "")
+                if (this.SpaceCraftName.Text != "" && this.OrbitRadius.Text != "" && this.payload != null && this.payload.Name != null
+                && this.payload.Name != "" && this.payload.Type != null && this.payload.Type != "")
                 {
-                    vehicle.Name = spaceCraftName.Text;
-                    long count = backendService.CheckSpacecraftExists(vehicle.Name, payload.Name);
+                    if(!Constants.PAYLOAD_TYPE_COMMUNICATION.Equals(this.payload.Type) 
+                        && !Constants.PAYLOAD_TYPE_SPY.Equals(this.payload.Type)
+                        && !Constants.PAYLOAD_TYPE_SCIENTIFIC.Equals(this.payload.Type))
+                    {
+                        throw new Exception("Payload type should be one of following: " + 
+                            Constants.PAYLOAD_TYPE_SCIENTIFIC + ", " + Constants.PAYLOAD_TYPE_SPY + ", " 
+                            + Constants.PAYLOAD_TYPE_COMMUNICATION);
+                    }
+                    this.vehicle.Name = SpaceCraftName.Text;
+                    long count = backendService.CheckSpacecraftExists(this.vehicle.Name, this.payload.Name);
                     if (count > 0)
                     {
-                        throw new Exception("Spacecraft or Payload already exist. " + count.ToString());
+                        throw new Exception("Spacecraft or Payload already exist. ");
                     } 
-                    bool success = Double.TryParse(orbitRadius.Text, out double orbitDoubleInput);
+                    bool success = Double.TryParse(this.OrbitRadius.Text, out double orbitDoubleInput);
                     if (success)
                     {
-                        vehicle.OrbitRadius = Math.Round(orbitDoubleInput, 3);
+                        this.vehicle.OrbitRadius = Math.Round(orbitDoubleInput, 3);
                     }
                     else
                     {
                         throw new Exception("Please enter integer value in Orbit Radius field.");
                     }
-                    vehicle.Status = Constants.STATUS_ADDED;
-                    payload.Status = Constants.STATUS_ADDED;
-                    vehicle.SpacecraftStatus = Constants.STATUS_OFFLINE;
-                    payload.PayloadStatus = Constants.STATUS_OFFLINE;
-                    vehicle.Payload = payload;
+                    this.vehicle.Status = Constants.STATUS_ADDED;
+                    this.payload.Status = Constants.STATUS_ADDED;
+                    this.vehicle.SpacecraftStatus = Constants.STATUS_OFFLINE;
+                    this.payload.PayloadStatus = Constants.STATUS_OFFLINE;
+                    this.vehicle.Payload = this.payload;
                     
-                    string msg = backendService.AddSpaceCraft(vehicle);
-                    MessageBox.Show(msg + " " + count.ToString(), "Status", MessageBoxButton.OK, MessageBoxImage.Information);
+                    string msg = backendService.AddSpaceCraft(this.vehicle);
+                    MessageBox.Show(msg, "Status", MessageBoxButton.OK, MessageBoxImage.Information);
                     var missionControlSystem = new MissionControlSystem(); //create your new form.
                     missionControlSystem.Show(); //show the new form.
                     this.Close();
@@ -79,11 +87,11 @@ namespace DeepSpaceNetwork
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                vehicle = new BackendServiceReference.Vehicle();
-                payload = new BackendServiceReference.Payload();
-                spaceCraftName.Text = string.Empty;
-                orbitRadius.Text = string.Empty;
-                selectedFileName.Text = string.Empty;
+                this.vehicle = new BackendServiceReference.Vehicle();
+                this.payload = new BackendServiceReference.Payload();
+                this.SpaceCraftName.Text = string.Empty;
+                this.OrbitRadius.Text = string.Empty;
+                this.SelectedFileName.Text = string.Empty;
             }
             Mouse.OverrideCursor = Cursors.Arrow;
         }
@@ -103,7 +111,7 @@ namespace DeepSpaceNetwork
             {
                 try
                 {
-                    selectedFileName.Text = System.IO.Path.GetFileName(ofd.FileName);
+                    this.SelectedFileName.Text = System.IO.Path.GetFileName(ofd.FileName);
                     payloadData = File.ReadAllText(ofd.FileName);
                 }
                 catch (Exception ex)
@@ -119,11 +127,11 @@ namespace DeepSpaceNetwork
                 {
                     if ("Name".Equals(data.Key.ToString()))
                     {
-                        payload.Name = data.Value.ToString();
+                        this.payload.Name = data.Value.ToString();
                     }
                     else if ("Type".Equals(data.Key.ToString()))
                     {
-                        payload.Type = data.Value.ToString();
+                        this.payload.Type = data.Value.ToString();
                     }
                 }
             }

@@ -696,6 +696,12 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/DisconnectFromBackend", ReplyAction="http://tempuri.org/IBackendServices/DisconnectFromBackendResponse")]
         System.Threading.Tasks.Task DisconnectFromBackendAsync(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/CheckVehicleConnectedToBackend", ReplyAction="http://tempuri.org/IBackendServices/CheckVehicleConnectedToBackendResponse")]
+        bool CheckVehicleConnectedToBackend(string vehicleName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackendServices/CheckVehicleConnectedToBackend", ReplyAction="http://tempuri.org/IBackendServices/CheckVehicleConnectedToBackendResponse")]
+        System.Threading.Tasks.Task<bool> CheckVehicleConnectedToBackendAsync(string vehicleName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -915,6 +921,14 @@ namespace DeepSpaceNetwork.BackendServiceReference {
         
         public System.Threading.Tasks.Task DisconnectFromBackendAsync(string vehicleName) {
             return base.Channel.DisconnectFromBackendAsync(vehicleName);
+        }
+        
+        public bool CheckVehicleConnectedToBackend(string vehicleName) {
+            return base.Channel.CheckVehicleConnectedToBackend(vehicleName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckVehicleConnectedToBackendAsync(string vehicleName) {
+            return base.Channel.CheckVehicleConnectedToBackendAsync(vehicleName);
         }
     }
 }

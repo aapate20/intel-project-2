@@ -34,8 +34,8 @@ namespace DeepSpaceNetwork
             SpaceCraftDir = new Dictionary<string, BackendServiceReference.Vehicle>();
             duplexChannelFactory = new DuplexChannelFactory<BackendServiceReference.IBackendServices>(new Callback(), Constants.SERVICE_END_POINT);
             this.backendService = duplexChannelFactory.CreateChannel();
-            ActiveSpaceCraftList.Items.Clear();
-            NewSpaceCraftList.Items.Clear();
+            this.ActiveSpaceCraftList.Items.Clear();
+            this.NewSpaceCraftList.Items.Clear();
             try
             {
                 Arr = this.backendService.GetAllSpacecraft();
@@ -45,11 +45,11 @@ namespace DeepSpaceNetwork
                     SpaceCraftDir[v.Name] = v;
                     if (Constants.STATUS_ADDED.Equals(v.Status) || Constants.STATUS_LAUNCHED.Equals(v.Status))
                     {
-                        NewSpaceCraftList.Items.Add(v.Name);
+                        this.NewSpaceCraftList.Items.Add(v.Name);
                     }
                     else
                     {
-                        ActiveSpaceCraftList.Items.Add(v.Name);
+                        this.ActiveSpaceCraftList.Items.Add(v.Name);
                     }
                 }
             }
@@ -73,26 +73,26 @@ namespace DeepSpaceNetwork
             try
             {
                 StringBuilder sb = new StringBuilder();
-                if(ActiveSpaceCraftList.SelectedItem == null && NewSpaceCraftList.SelectedItem == null)
+                if(this.ActiveSpaceCraftList.SelectedItem == null && this.NewSpaceCraftList.SelectedItem == null)
                 {
                     throw new Exception("Please select one item from either list.");
                 }
                 else 
                 {
-                    if(ActiveSpaceCraftList.SelectedItem != null)
+                    if(this.ActiveSpaceCraftList.SelectedItem != null)
                     {
-                        SpaceCraftDir.TryGetValue(ActiveSpaceCraftList.SelectedItem.ToString(), out BackendServiceReference.Vehicle vehicle1);
+                        SpaceCraftDir.TryGetValue(this.ActiveSpaceCraftList.SelectedItem.ToString(), out BackendServiceReference.Vehicle vehicle1);
                         this.Append_In_SB(sb, vehicle1);
                     }
 
-                    if (NewSpaceCraftList.SelectedItem != null)
+                    if (this.NewSpaceCraftList.SelectedItem != null)
                     {
-                        SpaceCraftDir.TryGetValue(NewSpaceCraftList.SelectedItem.ToString(), out BackendServiceReference.Vehicle vehicle2);
+                        SpaceCraftDir.TryGetValue(this.NewSpaceCraftList.SelectedItem.ToString(), out BackendServiceReference.Vehicle vehicle2);
                         this.Append_In_SB(sb, vehicle2);
                     }
 
-                    SpacecraftDetails.Text = sb.ToString();
-                    SpacecraftDetails.ScrollToEnd();
+                    this.SpacecraftDetails.Text = sb.ToString();
+                    this.SpacecraftDetails.ScrollToEnd();
                     sb.Clear();
                 }
             }
@@ -100,12 +100,12 @@ namespace DeepSpaceNetwork
             {
                 log.Error("Error in Get_Spacecraft_details() Event.", ex);
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                SpacecraftDetails.Text = "";
+                this.SpacecraftDetails.Text = "";
             }
             finally
             {
-                ActiveSpaceCraftList.SelectedItem = null;
-                NewSpaceCraftList.SelectedItem = null;
+                this.ActiveSpaceCraftList.SelectedItem = null;
+                this.NewSpaceCraftList.SelectedItem = null;
             }
         }
 
