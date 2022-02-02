@@ -1,0 +1,138 @@
+2022-02-01 17:31:06,460 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 17:31:06,502 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 17:33:45,289 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 17:33:45,330 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 17:37:12,565 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 17:37:12,606 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 17:41:05,393 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 17:41:05,435 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 18:09:42,744 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 18:09:42,786 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 18:10:15,827 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 18:10:15,890 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 18:12:50,704 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 18:12:50,766 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 18:24:37,947 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 18:24:37,989 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 18:28:48,449 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 18:28:55,267 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 18:28:55,308 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 18:42:33,986 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 18:42:34,033 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 18:48:12,896 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 18:48:12,939 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 19:00:39,790 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 19:00:39,849 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 19:01:14,839 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 19:01:14,882 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 19:03:45,244 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 19:03:45,309 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 19:10:36,477 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 19:10:36,533 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 19:21:52,989 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 19:21:53,040 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 19:35:19,190 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 19:35:19,233 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:16:16,975 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:16:17,032 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:17:13,624 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationSystem.xaml.cs - Communication_Dashboard() error
+System.Exception: Please select one from available spacecraft.
+   at DeepSpaceNetwork.CommunicationSystem.Communication_Dashboard(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationSystem.xaml.cs:line 69
+2022-02-01 20:17:16,837 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationSystem.xaml.cs - Communication_Dashboard() error
+System.Exception: Please select one from available spacecraft.
+   at DeepSpaceNetwork.CommunicationSystem.Communication_Dashboard(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationSystem.xaml.cs:line 69
+2022-02-01 20:17:25,003 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\PayloadCommunicationSystem.xaml.cs - Communication_Dashboard() error
+System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at DeepSpaceNetwork.PayloadCommunicationSystem.Payload_Communication_Dashboard(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\PayloadCommunicationSystem.xaml.cs:line 76
+2022-02-01 20:17:28,552 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:17:33,065 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:19:03,099 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:19:25,006 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:19:47,310 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: Aayush
+2022-02-01 20:23:25,541 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:23:25,591 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:23:38,228 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:24:16,102 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:24:16,150 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:24:44,851 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:24:44,910 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:24:53,258 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:24:56,020 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:25:03,485 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: RO-245
+2022-02-01 20:27:12,125 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: Prerak
+2022-02-01 20:27:18,684 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationSystem.xaml.cs - Communication_Dashboard() error
+System.Exception: Please select one from available spacecraft.
+   at DeepSpaceNetwork.CommunicationSystem.Communication_Dashboard(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationSystem.xaml.cs:line 69
+2022-02-01 20:27:31,430 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:28:36,734 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:28:48,522 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:31:11,363 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:31:43,838 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
+2022-02-01 20:31:43,849 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Process already running: GPM
+2022-02-01 20:34:48,285 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:34:48,338 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:35:53,038 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:35:53,087 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:36:07,575 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:36:11,950 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:36:15,163 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:36:19,654 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:36:25,782 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:36:35,440 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:37:04,295 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: gokuldham
+2022-02-01 20:37:29,706 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: a
+2022-02-01 20:37:54,744 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\PayloadCommunicationSystem.xaml.cs - Process already running: gokuldham
+2022-02-01 20:37:54,746 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:42:41,340 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\PayloadCommunicationDashboard.xaml.cs - Error Initializing Telemetry Object
+System.TimeoutException: This request operation sent to http://localhost:11997/Service1.svc did not receive a reply within the configured timeout (00:00:55.7960716).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.
+
+Server stack trace: 
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.SyncDuplexRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DeepSpaceNetwork.BackendServiceReference.IBackendServices.GetTelemetryOfVehicle(String vehicleName)
+   at DeepSpaceNetwork.PayloadCommunicationDashboard.UpdateTelemetry() in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\PayloadCommunicationDashboard.xaml.cs:line 104
+2022-02-01 20:53:06,537 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:53:06,590 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:53:16,210 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\AddSpacecraft.xaml.cs - Newtonsoft.Json.JsonReaderException: Unexpected end of content while loading JObject. Path 'Type', line 5, position 0.
+   at Newtonsoft.Json.Linq.JContainer.ReadTokenFrom(JsonReader reader, JsonLoadSettings options)
+   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at DeepSpaceNetwork.AddSpacecraft.Open_File_Dialog(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\AddSpacecraft.xaml.cs:line 126
+2022-02-01 20:54:24,014 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:54:24,065 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:54:32,539 [1] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\AddSpacecraft.xaml.cs - Newtonsoft.Json.JsonReaderException: Unexpected end of content while loading JObject. Path 'Type', line 5, position 0.
+   at Newtonsoft.Json.Linq.JContainer.ReadTokenFrom(JsonReader reader, JsonLoadSettings options)
+   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at DeepSpaceNetwork.AddSpacecraft.Open_File_Dialog(Object sender, RoutedEventArgs e) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\AddSpacecraft.xaml.cs:line 124
+2022-02-01 20:56:57,589 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 20:56:57,638 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:57:52,775 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:58:03,628 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 20:58:33,758 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: gokuldham
+2022-02-01 20:58:38,196 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\PayloadCommunicationSystem.xaml.cs - Process already running: gokuldham
+2022-02-01 20:58:38,198 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:00:27,805 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: SpaceA
+2022-02-01 21:01:33,404 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 21:01:33,459 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:03:23,131 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 21:03:23,183 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:03:36,424 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:03:43,880 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:03:50,387 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:04:28,466 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: GPM
+2022-02-01 21:04:38,239 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Spacecraft Deorbited: SpaceB
+2022-02-01 21:05:35,957 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\PayloadCommunicationSystem.xaml.cs - Process already running: GPM
+2022-02-01 21:05:35,959 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:07:26,664 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 21:07:26,712 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:08:31,403 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 21:08:31,460 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started

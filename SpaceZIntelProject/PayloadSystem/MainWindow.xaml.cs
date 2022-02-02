@@ -33,7 +33,6 @@ namespace PayloadSystem
         private BackendServiceReference.Weather weather;
         private BackendServiceReference.Comm comm;
         string spaceCraftName;
-        public string command = "";
         private DispatcherTimer telemetryTimer;
         private DispatcherTimer dataTimer;
         Random random;
@@ -82,6 +81,8 @@ namespace PayloadSystem
 
                 this.telemetryTimer.Tick += TelemetryTicker;
                 this.dataTimer.Tick += DataTicker;
+                this.telemetryTimer.Start();
+                this.dataTimer.Start();
                 this.backendService.ConnectToBackend(this.vehicle.Payload.Name);
             }
             catch (Exception ex)
@@ -214,7 +215,6 @@ namespace PayloadSystem
 
         public void UpdateCommunicationBoard(string command)
         {
-            this.command = command;
             this.CommunicationBox.Text += Constants.RECEIVE_COMMAND + command + "\n";
             this.CommunicationBox.ScrollToEnd();
             this.ProcessCommand(command);
@@ -228,25 +228,21 @@ namespace PayloadSystem
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.SENDING_TELEMETRY + "\n";
                     this.CommunicationBox.ScrollToEnd();
-                    this.telemetryTimer.Start();
                 }
                 else if (Constants.STOP_TELEMETRY.Equals(command))
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.STOP_TELEMETRY + "\n";
                     this.CommunicationBox.ScrollToEnd();
-                    this.telemetryTimer.Stop();
                 }
                 else if (Constants.START_DATA.Equals(command))
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.STARTING_DATA + "\n";
                     this.CommunicationBox.ScrollToEnd();
-                    this.dataTimer.Start();
                 }
                 else if (Constants.STOP_DATA.Equals(command))
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.STOPIING_DATA + "\n";
                     this.CommunicationBox.ScrollToEnd();
-                    this.dataTimer.Stop();
                 }
             }
             catch (Exception ex)

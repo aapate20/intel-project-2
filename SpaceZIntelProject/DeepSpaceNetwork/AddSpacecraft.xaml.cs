@@ -22,6 +22,7 @@ namespace DeepSpaceNetwork
     /// </summary>
     public partial class AddSpacecraft : Window
     {
+        private static readonly log4net.ILog log = LogHelper.GetLogger();
         private BackendServiceReference.Vehicle vehicle;
         private BackendServiceReference.Payload payload;
         private BackendServiceReference.IBackendServices backendService;
@@ -61,11 +62,13 @@ namespace DeepSpaceNetwork
                     bool success = Double.TryParse(this.OrbitRadius.Text, out double orbitDoubleInput);
                     if (success)
                     {
+                        if (orbitDoubleInput < 3600)
+                            throw new Exception("Value should be greater than 3600");
                         this.vehicle.OrbitRadius = Math.Round(orbitDoubleInput, 3);
                     }
                     else
                     {
-                        throw new Exception("Please enter integer value in Orbit Radius field.");
+                        throw new Exception("Please enter number in Orbit Radius field.");
                     }
                     this.vehicle.Status = Constants.STATUS_ADDED;
                     this.payload.Status = Constants.STATUS_ADDED;
@@ -87,8 +90,6 @@ namespace DeepSpaceNetwork
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.vehicle = new BackendServiceReference.Vehicle();
-                this.payload = new BackendServiceReference.Payload();
                 this.SpaceCraftName.Text = string.Empty;
                 this.OrbitRadius.Text = string.Empty;
                 this.SelectedFileName.Text = string.Empty;
@@ -122,18 +123,30 @@ namespace DeepSpaceNetwork
 
             if(payloadData != null)
             {
-                JObject json = JObject.Parse(payloadData);
-                foreach(var data in json)
+                try
                 {
-                    if ("Name".Equals(data.Key.ToString()))
+                    JObject json = JObject.Parse(payloadData);
+                    foreach (var data in json)
                     {
-                        this.payload.Name = data.Value.ToString();
-                    }
-                    else if ("Type".Equals(data.Key.ToString()))
-                    {
-                        this.payload.Type = data.Value.ToString();
+                        if ("Name".Equals(data.Key.ToString()))
+                        {
+                            this.payload.Name = data.Value.ToString();
+                        }
+                        else if ("Type".Equals(data.Key.ToString()))
+                        {
+                            this.payload.Type = data.Value.ToString();
+                        }
                     }
                 }
+                catch(Exception ex)
+                {
+                    log.Error(ex);
+                    MessageBox.Show("Configuration file not in correct format. It should be in JSON format.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    this.SpaceCraftName.Text = string.Empty;
+                    this.OrbitRadius.Text = string.Empty;
+                    this.SelectedFileName.Text = string.Empty;
+                }
+                
             }
             else
             {

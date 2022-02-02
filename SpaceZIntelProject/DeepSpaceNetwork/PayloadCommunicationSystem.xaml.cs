@@ -48,8 +48,11 @@ namespace DeepSpaceNetwork
                 Arr = this.backendService.GetAllOnlinePayload();
                 foreach (BackendServiceReference.Vehicle v in Arr)
                 {
-                    LaunchPayloadList.Items.Add(v.Payload.Name);
-                    sapceCraftDirectory[v.Payload.Name] = v;
+                    if (Constants.STATUS_LAUNCHED.Equals(v.Payload.Status))
+                    {
+                        LaunchPayloadList.Items.Add(v.Payload.Name);
+                        sapceCraftDirectory[v.Payload.Name] = v;
+                    }
                 }
             }
             catch (Exception ex)

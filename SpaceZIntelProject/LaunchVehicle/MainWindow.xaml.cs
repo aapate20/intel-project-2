@@ -36,7 +36,6 @@ namespace LaunchVehicle
         Random random;
         private double distanceCoveredinOneSec = 0;
         private double temperatureReduceInOneSec = 0;
-        private string command = "";
         public MainWindow(string spaceCraftName)
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -149,20 +148,17 @@ namespace LaunchVehicle
             this.telemetry.Temperature -= this.temperatureReduceInOneSec;
             this.telemetry.TimeToOrbit = this.timeToOrbitSeconds;
 
-            if (Constants.START_TELEMETRY.Equals(this.command))
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append('{').Append("\n");
-                sb.Append("\t").Append("\"").Append("Altitude").Append("\":  ").Append(this.telemetry.Altitude).Append("\n");
-                sb.Append("\t").Append("\"").Append("Longitude").Append("\":  ").Append(this.telemetry.Longitude).Append("\n");
-                sb.Append("\t").Append("\"").Append("Latitude").Append("\":  ").Append(this.telemetry.Latitude).Append("\n");
-                sb.Append("\t").Append("\"").Append("Temperature").Append("\":  ").Append(this.telemetry.Temperature).Append("\n");
-                sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append(this.TimeToOrbit.Content).Append("\n");
-                sb.Append('}').Append("\n");
+            StringBuilder sb = new StringBuilder();
+            sb.Append('{').Append("\n");
+            sb.Append("\t").Append("\"").Append("Altitude").Append("\":  ").Append(this.telemetry.Altitude).Append("\n");
+            sb.Append("\t").Append("\"").Append("Longitude").Append("\":  ").Append(this.telemetry.Longitude).Append("\n");
+            sb.Append("\t").Append("\"").Append("Latitude").Append("\":  ").Append(this.telemetry.Latitude).Append("\n");
+            sb.Append("\t").Append("\"").Append("Temperature").Append("\":  ").Append(this.telemetry.Temperature).Append("\n");
+            sb.Append("\t").Append("\"").Append("TimeToOrbit").Append("\":  ").Append(this.TimeToOrbit.Content).Append("\n");
+            sb.Append('}').Append("\n");
 
-                this.TelemetryBox.Text = sb.ToString();
-                this.TelemetryBox.ScrollToEnd();
-            }
+            this.TelemetryBox.Text = sb.ToString();
+            this.TelemetryBox.ScrollToEnd();
             this.backendService.UpdateTelemetryMap(this.vehicle.Name, this.telemetry);
         }
 
@@ -199,7 +195,6 @@ namespace LaunchVehicle
 
         public void UpdateCommunicationBoard(string command)
         {
-            this.command = command;
             this.CommunicationBox.Text += Constants.RECEIVE_COMMAND + command + "\n";
             this.CommunicationBox.ScrollToEnd();
             this.ProcessCommand(command);
