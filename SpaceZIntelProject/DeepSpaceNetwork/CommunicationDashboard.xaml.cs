@@ -20,6 +20,9 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for CommunicationDashboard.xaml
     /// </summary>
+    /* 
+     * DSN Spacecraft Communication Dashboard used to communicate with Launched Spacecraft.
+     */
     public partial class CommunicationDashboard : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -70,7 +73,9 @@ namespace DeepSpaceNetwork
             }
         }
 
-
+        /*
+         * Function to deorbit (send spacecraft out or orbit) spacecraft.
+         */
         private void DeOrbit_Spacecraft(object sender, RoutedEventArgs e)
         {
             try
@@ -133,6 +138,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /* 
+         * Function to Launch Payload
+         */
         private void Custom_Payload_Function(object sender, RoutedEventArgs e)
         {
             try
@@ -180,6 +188,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /* 
+         * Function to Launch Payload
+         */
         private void Launch_Payload()
         {
             this.CommunicationBox.Text += Constants.SEND_COMMAND + Constants.LAUNCH_PAYLOAD + "\n";
@@ -222,13 +233,11 @@ namespace DeepSpaceNetwork
             }
         }
 
-        private void Go_Back(object sender, RoutedEventArgs e)
-        {
-            var communicationSystem = new CommunicationSystem();
-            communicationSystem.Show();
-            this.Close();
-        }
 
+        /*
+         * Function to get telemetry data from spacecraft.
+         * Used thread that will update the UI with telemetry data from payload.
+         */
         private void Start_Telemetry_Function(object sender, RoutedEventArgs e)
         {
             bool status = this.backendService.CheckVehicleConnectedToBackend(this.vehicle.Name);
@@ -296,6 +305,10 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /*
+         * Stop thread that is running in background 
+         * Stop getting telemetry data from spacecraft.
+         */
         private void Stop_Telemetry_Function(object sender, RoutedEventArgs e)
         {
             bool status = this.backendService.CheckVehicleConnectedToBackend(this.vehicle.Name);
@@ -315,6 +328,17 @@ namespace DeepSpaceNetwork
             }
         }
 
+        // Function to go back to Spacecraft communication system.
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            var communicationSystem = new CommunicationSystem();
+            communicationSystem.Show();
+            this.Close();
+        }
+
+        /* This function will close communication channel with spacecraft and stop the process of Launch Vehicle if it is running.
+         * Disconnecting client from backend if window is closed so that callback function work properly.
+         */
         private void Window_Closed(object sender, EventArgs e)
         {
             try

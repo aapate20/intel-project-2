@@ -26,6 +26,7 @@ namespace DeepSpaceNetwork
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
+        // Redirect to Add Spacecraft Window
         private void Add_Spacecraft(object sender, RoutedEventArgs e)
         {
             Window addSpacecraft = new AddSpacecraft();
@@ -33,6 +34,7 @@ namespace DeepSpaceNetwork
             this.Close();
         }
 
+        // Redirect to Launch Spacecraft Window
         private void Launch_Spacecraft(object sender, RoutedEventArgs e)
         {
             Window launchSpacecraft = new LaunchSpacecraft(); 
@@ -40,6 +42,7 @@ namespace DeepSpaceNetwork
             this.Close();
         }
 
+        // Redirect to DSN Dashboard Window
         private void Go_to_DSN_Dashboard(object sender, RoutedEventArgs e)
         {
             Window dsnDashboard = new DSNDashboard(); 
@@ -47,6 +50,7 @@ namespace DeepSpaceNetwork
             this.Close();
         }
 
+        // Function to go Previous Window
         private void Go_Back(object sender, RoutedEventArgs e)
         {
             Window backWindow = new MainWindow();

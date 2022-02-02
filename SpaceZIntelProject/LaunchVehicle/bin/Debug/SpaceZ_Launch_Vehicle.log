@@ -144,3 +144,11 @@ Exception rethrown at [0]:
 2022-02-01 16:29:54,297 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
 2022-02-01 16:30:42,826 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
 2022-02-01 16:33:00,031 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceB =============        
+2022-02-01 20:19:03,141 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: Aayush =============        
+2022-02-01 20:23:38,238 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: Prerak =============        
+2022-02-01 20:24:56,104 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: Prerak =============        
+2022-02-01 20:28:36,737 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: Varad =============        
+2022-02-01 20:36:07,570 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: a =============        
+2022-02-01 20:57:52,772 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceA =============        
+2022-02-01 21:03:36,377 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SpaceB =============        
+2022-02-01 21:15:00,175 [1] INFO LaunchVehicle.App -         =============  Started Logging - Launch Vehicle: SPaceA =============        

@@ -22,6 +22,9 @@ namespace PayloadSystem
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     
+    /* 
+     * This window will open if client launch the payload or create communication channel to get data from Payload.
+     */
     public partial class MainWindow : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -33,7 +36,6 @@ namespace PayloadSystem
         private BackendServiceReference.Weather weather;
         private BackendServiceReference.Comm comm;
         string spaceCraftName;
-        public string command = "";
         private DispatcherTimer telemetryTimer;
         private DispatcherTimer dataTimer;
         Random random;
@@ -48,6 +50,10 @@ namespace PayloadSystem
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
+        /*
+         * There are three different types of Payload, so this function will configured the object as per payload type.
+         * Also used different thread to configured Payload and Telemetry data as per Payload type.
+         */
         private void Configured_Window()
         {
             try
@@ -106,6 +112,7 @@ namespace PayloadSystem
                 this.UpdateSpy();
         }
 
+        // Function to update telemetry of the Payload and send data to Backend for DSN to consumed.
         private void UpdateTelemetry()
         {
             try
@@ -136,6 +143,7 @@ namespace PayloadSystem
             }
         }
 
+        // Function to update Payload Data if Payload type is Scientific.
         private void UpdateScientific()
         {
             try
@@ -162,6 +170,7 @@ namespace PayloadSystem
             }
         }
 
+        // Function to update Payload Data if Payload type is Communication.
         private void UpdateCommunication()
         {
             try
@@ -188,6 +197,7 @@ namespace PayloadSystem
             }
         }
 
+        // Function to update Payload Data if Payload type is Spy.
         private void UpdateSpy()
         {
             try
@@ -212,14 +222,15 @@ namespace PayloadSystem
             }
         }
 
+        // Function to update communication board (UI).
         public void UpdateCommunicationBoard(string command)
         {
-            this.command = command;
             this.CommunicationBox.Text += Constants.RECEIVE_COMMAND + command + "\n";
             this.CommunicationBox.ScrollToEnd();
             this.ProcessCommand(command);
         }
 
+        // Function to process command get from DSN.
         private void ProcessCommand(string command)
         {
             try
@@ -257,6 +268,7 @@ namespace PayloadSystem
             }
         }
 
+        // Disconnect Payload type client from backend.
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             this.backendService.DisconnectFromBackend(this.vehicle.Payload.Name);

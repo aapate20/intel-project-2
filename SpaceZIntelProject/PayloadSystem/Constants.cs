@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PayloadSystem
 {
+    // This file contains all the constants used in this project.
     public class Constants
     {
         public const string SERVICE_END_POINT = "CommunicationServiceEndpoint";

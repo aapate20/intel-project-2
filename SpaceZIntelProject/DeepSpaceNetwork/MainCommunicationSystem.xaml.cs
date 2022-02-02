@@ -17,6 +17,11 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for MainCommunicationSystem.xaml
     /// </summary>
+    /*
+     * In this window, client can redirect to Spacecraft or payload communication System as 
+     * both spacecraft and payload are two different entity and payload can only be launched 
+     * from spacecraft, once spacecraft and payload launched they both get online.
+     */
     public partial class MainCommunicationSystem : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -28,6 +33,7 @@ namespace DeepSpaceNetwork
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
+        // Go to Spacecraft Communication system.
         private void Go_to_Spacecraft_Communication_System(object sender, RoutedEventArgs e)
         {
             var communicationSystem = new CommunicationSystem();
@@ -35,6 +41,7 @@ namespace DeepSpaceNetwork
             this.Close();
         }
 
+        // Go to Payload Communication System.
         private void Go_to_Payload_Communication_System(object sender, RoutedEventArgs e)
         {
             var payloadCommunicationSystem = new PayloadCommunicationSystem();
@@ -42,6 +49,7 @@ namespace DeepSpaceNetwork
             this.Close();
         }
 
+        // Function to go back at starting point of application.
         private void Go_Back(object sender, RoutedEventArgs e)
         {
             var mainWindow = new MainWindow();

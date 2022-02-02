@@ -2821,3 +2821,338 @@ Exception rethrown at [0]:
 2022-02-01 16:36:58,886 [235] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Request Data
 2022-02-01 16:37:18,017 [235] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceB Payload.Status:Decommission, Payload.PayloadStatus:Offline
 2022-02-01 16:37:18,021 [235] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: GPM
+2022-02-01 18:42:45,588 [120] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA gokuldham
+2022-02-01 18:42:45,757 [94] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-02-01 20:17:10,160 [152] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:17:15,193 [307] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:17:19,144 [305] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:17:22,852 [307] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:17:26,303 [307] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:18:29,313 [309] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: Aayush gokuldham
+2022-02-01 20:18:29,435 [309] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. Aayush
+2022-02-01 20:19:00,332 [311] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:19:03,095 [320] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Aayush Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 20:19:03,280 [311] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: Aayush
+2022-02-01 20:19:03,853 [311] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Aayush
+2022-02-01 20:19:13,942 [320] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Aayush Status:Launched, SpacecraftStatus:Online, SpacecraftStatus:Online
+2022-02-01 20:19:22,760 [311] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:19:24,062 [320] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Aayush Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 20:19:29,476 [309] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Aayush
+2022-02-01 20:19:29,482 [309] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : Aayush with command: Start Telemetry
+2022-02-01 20:19:47,299 [320] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Aayush
+2022-02-01 20:19:47,305 [320] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : Aayush with command: Deorbit Payload
+2022-02-01 20:19:47,371 [320] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Aayush SpacecraftStatus:Offline, Status:Deorbit
+2022-02-01 20:19:47,377 [320] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: Aayush
+2022-02-01 20:19:47,435 [301] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Aayush Payload.PayloadStatus:Offline, Payload.Status:Decommission
+2022-02-01 20:20:09,044 [334] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft(), Return successful with documents: System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:20:25,895 [333] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft(), Return successful with documents: System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:21:17,864 [332] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: Prerak GPM
+2022-02-01 20:21:34,458 [56] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: Prerak RO-245
+2022-02-01 20:21:34,527 [56] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. Prerak
+2022-02-01 20:23:31,458 [50] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:23:38,225 [64] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Prerak Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 20:23:38,381 [26] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: Prerak
+2022-02-01 20:23:38,995 [26] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:24:00,291 [64] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Backend, UpdateSpacecraft(string vehicleName) Error.
+MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server. ---> System.Net.Sockets.SocketException: No such host is known
+   at System.Net.Dns.GetAddrInfo(String name)
+   at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at System.Net.Sockets.Socket.Connect(String host, Int32 port)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.Connect(Socket socket, EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.TcpStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.PooledConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.ConnectionCreator.CreateOpenedInternal(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.ConnectionCreator.CreateOpenedOrReuse(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.AcquireConnectionHelper.AcquireConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.AcquireConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.GetChannel(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Bindings.ServerChannelSource.GetChannel(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Bindings.ChannelSourceHandle.GetChannel(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteContext.Initialize(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteContext.Create(IWriteBinding binding, Boolean retryRequested, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkMixedWriteOperation.Execute(IWriteBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteWriteOperation[TResult](IWriteBinding binding, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteWriteOperation[TResult](IClientSessionHandle session, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass28_0.<BulkWrite>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionBase`1.UpdateOne(FilterDefinition`1 filter, UpdateDefinition`1 update, UpdateOptions options, Func`3 bulkWrite)
+   at MongoDB.Driver.MongoCollectionBase`1.UpdateOne(FilterDefinition`1 filter, UpdateDefinition`1 update, UpdateOptions options, CancellationToken cancellationToken)
+   at Backend.BackendServiceImpl.UpdateSpacecraft3(String vehicleName, String column1, String value1, String column2, String value2, String column3, String value3) in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs:line 165
+2022-02-01 20:24:31,556 [50] ERROR C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Backend, GetAddedSpacecraft() Error.
+MongoDB.Driver.MongoConnectionException: An exception occurred while receiving a message from the server. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Net.FixedSizeReader.ReadPacket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Net.Security._SslStream.StartFrameHeader(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security._SslStream.StartReading(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security._SslStream.ProcessRead(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at MongoDB.Driver.Core.Misc.StreamExtensionMethods.ReadBytes(Stream stream, Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.ReceiveBuffer(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Operations.RetryableReadOperationExecutor.Execute[TResult](IRetryableReadOperation`1 operation, RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.ReadCommandOperation`1.Execute(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindCommandOperation`1.Execute(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(RetryableReadContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.FindOperation`1.Execute(IReadBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteReadOperation[TResult](IReadBinding binding, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, ReadPreference readPreference, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteReadOperation[TResult](IClientSessionHandle session, IReadOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](IClientSessionHandle session, FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass46_0`1.<FindSync>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.FindSync[TProjection](FilterDefinition`1 filter, FindOptions`2 options, CancellationToken cancellationToken)
+   at MongoDB.Driver.FindFluent`2.ToCursor(CancellationToken cancellationToken)
+   at Backend.BackendServiceImpl.GetAllOnlineSpacecraft() in C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs:line 183
+2022-02-01 20:24:37,100 [31] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:24:37,111 [29] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Prerak Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 20:24:37,118 [29] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: Prerak
+2022-02-01 20:24:47,775 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft(), Return successful with documents: System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:24:50,143 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:24:54,603 [31] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:24:56,250 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: Prerak
+2022-02-01 20:24:56,821 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:25:03,483 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:25:03,492 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : Prerak with command: Launch Payload
+2022-02-01 20:25:03,607 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Prerak Payload.Status:Launched, Payload.PayloadStatus:Online
+2022-02-01 20:25:03,837 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:25:04,347 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: RO-245
+2022-02-01 20:25:15,568 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:25:15,578 [92] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : RO-245 with command: Start Telemetry
+2022-02-01 20:25:18,158 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:25:18,165 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : RO-245 with command: Request Data
+2022-02-01 20:26:09,774 [92] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:26:09,783 [92] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : RO-245 with command: Stop Telemetry
+2022-02-01 20:26:58,698 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:26:58,707 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : RO-245 with command: Stop Data Loading
+2022-02-01 20:27:04,069 [18] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Prerak Payload.Status:Decommission, Payload.PayloadStatus:Offline
+2022-02-01 20:27:04,073 [18] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: RO-245
+2022-02-01 20:27:12,114 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Prerak
+2022-02-01 20:27:12,119 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : Prerak with command: Deorbit Payload
+2022-02-01 20:27:12,185 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Prerak SpacecraftStatus:Offline, Status:Deorbit
+2022-02-01 20:27:12,191 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: Prerak
+2022-02-01 20:27:15,550 [18] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:27:20,252 [18] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:27:23,942 [18] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:27:28,243 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:27:35,412 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:27:58,038 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 1 for vehicle: Varads RO-245
+2022-02-01 20:28:15,552 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: Varad GPM
+2022-02-01 20:28:15,616 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. Varad
+2022-02-01 20:28:19,658 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft(), Return successful with documents: System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:28:34,978 [61] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:28:36,729 [61] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Varad Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 20:28:36,880 [61] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: Varad
+2022-02-01 20:28:37,454 [61] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:28:43,515 [61] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:28:46,868 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:28:47,531 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Varad Status:Launched, SpacecraftStatus:Online, SpacecraftStatus:Online
+2022-02-01 20:28:50,123 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:29:03,634 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:29:06,287 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:29:06,294 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : Varad with command: Start Telemetry
+2022-02-01 20:29:54,063 [331] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : Varad with command: Stop Telemetry
+2022-02-01 20:30:03,453 [331] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:30:03,459 [331] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : Varad with command: Start Telemetry
+2022-02-01 20:30:37,995 [331] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Varad Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 20:31:01,786 [61] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:31:11,627 [331] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:31:12,144 [331] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: GPM
+2022-02-01 20:31:17,498 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:31:17,507 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Request Data
+2022-02-01 20:31:19,654 [18] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:31:19,664 [18] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Start Telemetry
+2022-02-01 20:31:43,836 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:31:43,842 [43] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : Varad with command: Launch Payload
+2022-02-01 20:31:47,768 [331] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:31:47,777 [331] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Request Data
+2022-02-01 20:31:48,983 [305] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:31:48,991 [305] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Start Telemetry
+2022-02-01 20:32:28,877 [312] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:32:28,886 [312] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Stop Data Loading
+2022-02-01 20:32:30,328 [305] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:32:30,338 [305] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Stop Telemetry
+2022-02-01 20:32:31,497 [305] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: Varad Payload.Status:Decommission, Payload.PayloadStatus:Offline
+2022-02-01 20:32:31,503 [305] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: GPM
+2022-02-01 20:32:59,028 [312] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: Varad
+2022-02-01 20:34:35,831 [91] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: Varad
+2022-02-01 20:35:05,741 [287] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: a gokuldham
+2022-02-01 20:35:05,828 [287] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. a
+2022-02-01 20:35:16,800 [65] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: b GPM
+2022-02-01 20:35:16,863 [65] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. b
+2022-02-01 20:36:02,983 [110] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: c RO-245
+2022-02-01 20:36:03,050 [110] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. c
+2022-02-01 20:36:05,513 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:36:07,570 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: a Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 20:36:07,714 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: a
+2022-02-01 20:36:08,291 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:36:13,265 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:36:15,159 [110] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: b Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 20:36:15,302 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: b
+2022-02-01 20:36:15,873 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: b
+2022-02-01 20:36:17,907 [287] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:36:18,349 [287] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: a Status:Launched, SpacecraftStatus:Online, SpacecraftStatus:Online
+2022-02-01 20:36:19,651 [110] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: c Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 20:36:19,765 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: c
+2022-02-01 20:36:20,337 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: c
+2022-02-01 20:36:23,668 [7] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:36:26,153 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: b Status:Launched, SpacecraftStatus:Online, SpacecraftStatus:Online
+2022-02-01 20:36:30,397 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: c Status:Launched, SpacecraftStatus:Online, SpacecraftStatus:Online
+2022-02-01 20:36:31,921 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:36:38,474 [287] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: a Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 20:36:50,554 [59] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: c Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 20:37:04,293 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:37:04,299 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : a with command: Launch Payload
+2022-02-01 20:37:04,380 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: a Payload.Status:Launched, Payload.PayloadStatus:Online
+2022-02-01 20:37:04,568 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:37:05,083 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: gokuldham
+2022-02-01 20:37:08,638 [326] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:37:15,938 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:37:15,943 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : a with command: Start Telemetry
+2022-02-01 20:37:21,751 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:37:21,756 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : a with command: Start Telemetry
+2022-02-01 20:37:29,695 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:37:29,700 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : a with command: Deorbit Payload
+2022-02-01 20:37:29,769 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: a SpacecraftStatus:Offline, Status:Deorbit
+2022-02-01 20:37:29,773 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: a
+2022-02-01 20:37:52,434 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:38:06,979 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:38:06,987 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Start Telemetry
+2022-02-01 20:38:08,079 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:38:08,087 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Request Data
+2022-02-01 20:38:09,653 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:38:09,661 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Start Telemetry
+2022-02-01 20:38:10,483 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:38:10,490 [47] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Request Data
+2022-02-01 20:38:26,729 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:38:26,738 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Stop Telemetry
+2022-02-01 20:38:41,608 [37] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: b Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 20:39:22,013 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: a
+2022-02-01 20:39:22,023 [99] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Stop Data Loading
+2022-02-01 20:57:08,970 [30] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: Space gokuldham
+2022-02-01 20:57:20,370 [30] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceA gokuldham
+2022-02-01 20:57:20,516 [48] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceA
+2022-02-01 20:57:32,231 [48] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceB GPM
+2022-02-01 20:57:32,295 [48] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceB
+2022-02-01 20:57:45,632 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SpaceC RO-245
+2022-02-01 20:57:45,694 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SpaceC
+2022-02-01 20:57:47,719 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 20:57:52,772 [45] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 20:57:52,917 [45] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: SpaceA
+2022-02-01 20:57:53,493 [45] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:57:58,010 [48] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:58:02,278 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 20:58:03,572 [49] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status:Launched, SpacecraftStatus:Online, SpacecraftStatus:Online
+2022-02-01 20:58:07,890 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:58:07,896 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceA with command: Start Telemetry
+2022-02-01 20:58:14,659 [45] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 20:58:29,751 [39] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:58:33,756 [45] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:58:33,763 [45] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceA with command: Launch Payload
+2022-02-01 20:58:33,839 [45] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status:Launched, Payload.PayloadStatus:Online
+2022-02-01 20:58:34,034 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:58:34,544 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: gokuldham
+2022-02-01 20:58:36,402 [39] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 20:58:42,957 [39] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:58:42,964 [39] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Start Telemetry
+2022-02-01 20:59:05,573 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:59:05,581 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Request Data
+2022-02-01 20:59:14,623 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:59:14,631 [39] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Start Telemetry
+2022-02-01 20:59:17,764 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:59:17,773 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Request Data
+2022-02-01 20:59:37,145 [53] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 20:59:37,153 [53] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Stop Telemetry
+2022-02-01 21:00:20,390 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA Payload.Status:Decommission, Payload.PayloadStatus:Offline
+2022-02-01 21:00:20,394 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: gokuldham
+2022-02-01 21:00:21,854 [44] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 21:00:27,795 [53] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceA
+2022-02-01 21:00:27,799 [53] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceA with command: Deorbit Payload
+2022-02-01 21:00:27,865 [53] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceA SpacecraftStatus:Offline, Status:Deorbit
+2022-02-01 21:00:27,869 [53] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: SpaceA
+2022-02-01 21:03:30,056 [74] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllSpacecraft(), Return successful with documents: System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 21:03:35,056 [83] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 21:03:36,420 [83] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceB Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 21:03:36,521 [81] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: SpaceB
+2022-02-01 21:03:37,103 [83] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:03:42,097 [83] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 21:03:47,060 [79] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 21:03:47,161 [79] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceB Status:Launched, SpacecraftStatus:Online, SpacecraftStatus:Online
+2022-02-01 21:03:53,570 [83] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:03:53,579 [83] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceB with command: Start Telemetry
+2022-02-01 21:03:56,554 [54] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:03:56,559 [54] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceB with command: Start Telemetry
+2022-02-01 21:04:03,357 [82] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceB with command: Stop Telemetry
+2022-02-01 21:04:07,290 [81] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceB Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 21:04:09,654 [81] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:04:09,661 [81] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceB with command: Start Telemetry
+2022-02-01 21:04:28,464 [81] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:04:28,471 [81] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceB with command: Launch Payload
+2022-02-01 21:04:28,544 [81] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceB Payload.Status:Launched, Payload.PayloadStatus:Online
+2022-02-01 21:04:28,734 [82] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:04:29,244 [83] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: GPM
+2022-02-01 21:04:31,631 [54] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:04:38,227 [80] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:04:38,231 [80] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SpaceB with command: Deorbit Payload
+2022-02-01 21:04:38,306 [80] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SpaceB SpacecraftStatus:Offline, Status:Deorbit
+2022-02-01 21:04:38,310 [80] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: SpaceB
+2022-02-01 21:05:28,051 [108] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:05:28,059 [87] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Start Telemetry
+2022-02-01 21:05:34,101 [108] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 21:05:44,073 [112] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:05:44,083 [112] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Start Telemetry
+2022-02-01 21:05:56,613 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SpaceB
+2022-02-01 21:05:56,622 [111] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : GPM with command: Stop Telemetry
+2022-02-01 21:08:34,895 [129] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: GPM
+2022-02-01 21:14:04,945 [87] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - CheckSpacecraftExists() return successfully with count: 0 for vehicle: SPaceA gokuldham
+2022-02-01 21:14:05,164 [87] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Spacecraft added successfully. SPaceA
+2022-02-01 21:14:58,862 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAddedSpacecraft() return successfully.
+2022-02-01 21:15:00,167 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SPaceA Status:Launch Initiated, SpacecraftStatus:Online
+2022-02-01 21:15:00,319 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: SPaceA
+2022-02-01 21:15:00,888 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:15:10,951 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SPaceA Status:Launched, SpacecraftStatus:Online, SpacecraftStatus:Online
+2022-02-01 21:16:03,939 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 21:16:08,243 [206] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:16:08,249 [206] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SPaceA with command: Start Telemetry
+2022-02-01 21:16:09,799 [135] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllLaunchSequenceSpacecraft() return successfully.
+2022-02-01 21:16:14,417 [195] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:16:14,422 [195] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SPaceA with command: Start Telemetry
+2022-02-01 21:16:18,431 [182] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SPaceA with command: Stop Telemetry
+2022-02-01 21:16:27,992 [206] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:16:27,998 [206] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SPaceA with command: Start Telemetry
+2022-02-01 21:16:33,648 [195] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SPaceA with command: Stop Telemetry
+2022-02-01 21:17:01,755 [206] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SPaceA Status:Orbit Reached, Payload.Status:Launch Initiated, Payload.Status:Launch Initiated
+2022-02-01 21:17:02,731 [182] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:17:02,737 [182] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : SPaceA with command: Launch Payload
+2022-02-01 21:17:02,821 [182] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SPaceA Payload.Status:Launched, Payload.PayloadStatus:Online
+2022-02-01 21:17:03,035 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:17:03,551 [194] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: gokuldham
+2022-02-01 21:17:05,827 [135] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:17:07,416 [206] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: SPaceA
+2022-02-01 21:17:20,248 [176] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:17:20,255 [182] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Start Telemetry
+2022-02-01 21:18:23,184 [177] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:18:23,192 [177] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Request Data
+2022-02-01 21:18:57,063 [146] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:18:57,071 [146] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Stop Telemetry
+2022-02-01 21:19:01,697 [151] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:19:01,705 [140] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Stop Data Loading
+2022-02-01 21:19:10,224 [146] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetAllOnlinePayload() return successfully.System.Collections.Generic.List`1[Backend.Vehicle]
+2022-02-01 21:19:10,249 [146] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: gokuldham
+2022-02-01 21:19:14,754 [151] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:19:15,270 [151] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Connected: gokuldham
+2022-02-01 21:19:18,255 [154] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:19:18,263 [154] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Start Telemetry
+2022-02-01 21:19:40,871 [134] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - GetSpacecraft() return successfully for vehicle: SPaceA
+2022-02-01 21:19:40,880 [134] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Sending Command to : gokuldham with command: Stop Telemetry
+2022-02-01 21:19:41,895 [159] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - UpdateSpacecraft() return successfully for vehicle: SPaceA Payload.Status:Decommission, Payload.PayloadStatus:Offline
+2022-02-01 21:19:41,901 [159] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\Backend\Service1.svc.cs - Client Disconnected: gokuldham

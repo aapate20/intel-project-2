@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Backend
 {
+    // This file contains all the constants used in this project.
     public class Constants
     {
         public const string DATABASE_SPACEZ = "SpaceZ";

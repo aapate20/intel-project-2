@@ -9,6 +9,9 @@ using System.Windows;
 
 namespace PayloadSystem
 {
+    /* 
+     * Callback function to receive command from the DSN.
+     */
     [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class Callback : BackendServiceReference.IBackendServicesCallback
     {

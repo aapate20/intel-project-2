@@ -19,6 +19,10 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for CommunicationSystem.xaml
     /// </summary>
+    
+    /*
+     * This window is used to open specific spacecraft communication channel.
+     */
     public partial class CommunicationSystem : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -58,6 +62,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /*
+         * Used mulitprocessing to open a Launch Vehicle application in parallel to DSN spacecraft communication dashboard.
+         */
         private void Communication_Dashboard(object sender, RoutedEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -102,6 +109,7 @@ namespace DeepSpaceNetwork
             }
         }
 
+        // Function to go back to center communication system.
         private void Go_Back(object sender, RoutedEventArgs e)
         {
             var mainCommunicationSystem = new MainCommunicationSystem();

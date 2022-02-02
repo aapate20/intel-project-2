@@ -19,6 +19,10 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for DSNDashboard.xaml
     /// </summary>
+    
+    /* 
+     * In this window, logic is added to see information of history data of all spacecraft.
+     */
     public partial class DSNDashboard : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -61,13 +65,7 @@ namespace DeepSpaceNetwork
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
-        private void Go_Back(object sender, RoutedEventArgs e)
-        {
-            var missionControlSystem = new MissionControlSystem(); //create your new form.
-            missionControlSystem.Show(); //show the new form.
-            this.Close();
-        }
-
+        // Function to get spacecraft details.
         private void Get_Spacecraft_details(object sender, RoutedEventArgs e)
         {
             try
@@ -121,6 +119,14 @@ namespace DeepSpaceNetwork
                 sb.Append("Payload Status: " + vehicle.Payload.Status + "\n");
                 sb.Append("----------------\n\n");
             }
+        }
+
+        // Function to go back to mission control system.
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            var missionControlSystem = new MissionControlSystem(); //create your new form.
+            missionControlSystem.Show(); //show the new form.
+            this.Close();
         }
     }
 }

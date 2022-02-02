@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Backend
 {
+    // Class to store Weather Data for Payload type Scientific.
     public class Weather
     {
         public int Rainfall { get; set; }

@@ -19,6 +19,10 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for LaunchSpacecraft.xaml
     /// </summary>
+    
+    /*
+     * After adding Spacecraft, one can launch spacecraft from this window.
+     */
     public partial class LaunchSpacecraft : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -59,13 +63,9 @@ namespace DeepSpaceNetwork
             }
         }
 
-        private void Go_Back(object sender, RoutedEventArgs e)
-        {
-            var missionControlSystem = new MissionControlSystem(); //create your new form.
-            missionControlSystem.Show(); //show the new form.
-            this.Close();
-        }
-
+        /*
+         * Function to launch Spacecraft and its DSN communication dashboard.
+         */
         private void Launch_Spacecraft(object sender, RoutedEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -106,6 +106,14 @@ namespace DeepSpaceNetwork
             finally{
                 Mouse.OverrideCursor = Cursors.Arrow;
             }
+        }
+
+        // Function to go back to Mission Control System Window.
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            var missionControlSystem = new MissionControlSystem(); //create your new form.
+            missionControlSystem.Show(); //show the new form.
+            this.Close();
         }
 
     }

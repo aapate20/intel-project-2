@@ -21,6 +21,12 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for PayloadCommunicationDashboard.xaml
     /// </summary>
+    /*
+     * Dashboard to communicate with payload vehicle
+     * Payload accept the commands from DSN for Telemetry and Payload Data.
+     * Used two DispatcherTimer (a thread that runs in background and update necessary data without block UI).
+     * One thread to telemetry information reqested to Payload vehicle and another thread to request random data from payload.
+     */
     public partial class PayloadCommunicationDashboard : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -97,6 +103,9 @@ namespace DeepSpaceNetwork
                 this.UpdateSpy();
         }
 
+        /*
+         * Function to update telemetry data with latest data send by payload.
+         */
         private void UpdateTelemetry()
         {
             try
@@ -121,6 +130,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /*
+         * If Payload is of type Scietific then this function will get Weather data from Payload.
+         */
         private void UpdateScientific()
         {
             try
@@ -144,6 +156,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /*
+         * If Payload is of type Communication then this function will get Communication data from Payload.
+         */
         private void UpdateCommunication()
         {
             try
@@ -165,6 +180,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /*
+         * If Payload is of type Spy then this function will get Spy data from Payload.
+         */
         private void UpdateSpy()
         {
             try
@@ -186,6 +204,7 @@ namespace DeepSpaceNetwork
             }
         }
 
+        // Function to go back to Payload Communication System.
         private void Go_Back(object sender, RoutedEventArgs e)
         {
             var payloadCommunicationSystem = new PayloadCommunicationSystem();
@@ -193,6 +212,9 @@ namespace DeepSpaceNetwork
             this.Close();
         }
 
+        /*
+         * Function to decommision payload (sending payload out of orbit).
+         */
         private void Decommision_Payload(object sender, RoutedEventArgs e)
         {
             try
@@ -225,6 +247,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /*
+         * Function to update values in UI after decomissioning the payload.
+         */
         private void Decommision_Command_Window_Refresh()
         {
             this.StartTelemetryBtn.IsEnabled = false;
@@ -240,6 +265,10 @@ namespace DeepSpaceNetwork
             this.CommunicationBox.IsEnabled = false;
         }
 
+        /*
+         * Function to get telemetry data from payload.
+         * Used thread that will update the UI with telemetry data from payload.
+         */
         private void Start_Telemetry_Function(object sender, RoutedEventArgs e)
         {
             this.vehicle = this.backendService.GetSpacecraft(this.vehicle.Name);
@@ -269,6 +298,10 @@ namespace DeepSpaceNetwork
             
         }
 
+        /*
+         * Stop thread that is running in background 
+         * Stop getting telemetry data from payload.
+         */
         private void Stop_Telemetry_Function(object sender, RoutedEventArgs e)
         {
             this.vehicle = this.backendService.GetSpacecraft(this.vehicle.Name);
@@ -298,6 +331,10 @@ namespace DeepSpaceNetwork
             
         }
 
+        /*
+         * Function to get data from payload.
+         * Used thread that will update the UI with data from payload.
+         */
         private void Start_Data_Function(object sender, RoutedEventArgs e)
         {
             this.vehicle = this.backendService.GetSpacecraft(this.vehicle.Name);
@@ -327,6 +364,10 @@ namespace DeepSpaceNetwork
             
         }
 
+        /*
+         * Stop thread that is running in background 
+         * Stop getting data from payload.
+         */
         private void Stop_Data_Function(object sender, RoutedEventArgs e)
         {
             this.vehicle = this.backendService.GetSpacecraft(this.vehicle.Name);
@@ -355,6 +396,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /*
+         * Disconnecting client from backend if window is closed so that callback function work properly.
+         */
         private void Window_Closed(object sender, EventArgs e)
         {
             try
