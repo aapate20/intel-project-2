@@ -6,6 +6,7 @@ using System.Web;
 
 namespace Backend
 {
+    // Callback Interface for two way communication between connected clients.
     public interface IBackendCallback
     {
         [OperationContract]

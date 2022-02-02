@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Backend
 {
+    // Class to store Telemetry Data for Launched Payload and Spacecraft.
     public class Telemetry
     {
         public double Altitude { get; set; }

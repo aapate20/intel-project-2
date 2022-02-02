@@ -14,6 +14,10 @@ namespace Backend
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "BackendServiceImpl" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select BackendServiceImpl.svc or BackendServiceImpl.svc.cs at the Solution Explorer and start debugging.
+    
+    /* Purpose to use concurrency mode multiple is to serve Multiple request at once while 
+     * keeping single shared instance to shared data between clients.
+     */
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single)]
     public class BackendServiceImpl : IBackendServices
     {
@@ -26,6 +30,8 @@ namespace Backend
         private Dictionary<string, Spy> spyDictionary = new Dictionary<string, Spy>();  
         private Dictionary<string, Comm> commDictionary = new Dictionary<string, Comm>();  
         private Dictionary<string, IBackendCallback> allClients = new Dictionary<string, IBackendCallback>();  
+        
+        // Add Spacecraft in the database.
         public string AddSpaceCraft(Vehicle vehicle)
         {
             try
@@ -44,6 +50,10 @@ namespace Backend
             
         }
 
+        /// <summary>
+        /// Return List of all spacecraft from DB.
+        /// </summary>
+        /// <returns></returns>
         public List<Vehicle> GetAllSpacecraft()
         {
             try
@@ -62,6 +72,12 @@ namespace Backend
             }
         }
 
+        /// <summary>
+        /// Check if Spacecraft exist in Database, Make sure doesn't contains duplicate spacecraft name and payload name.
+        /// </summary>
+        /// <param name="vehicleName"></param>
+        /// <param name="payloadName"></param>
+        /// <returns></returns>
         public long CheckSpacecraftExists(string vehicleName, string payloadName)
         {
             try
@@ -82,6 +98,10 @@ namespace Backend
             }
         }
 
+        /// <summary>
+        /// Return List of all object of newly added spacecraft in system.
+        /// </summary>
+        /// <returns>List<Vehicle></returns>
         public List<Vehicle> GetAddedSpacecraft()
         {
             try
@@ -106,13 +126,23 @@ namespace Backend
             }
             
         }
-
+        /// <summary>
+        /// Update Spacecraft Status
+        /// </summary>
+        /// <param name="vehicleName"></param>
+        /// <param name="dsnDashboardName"></param>
         public void LaunchSpacecraft(string vehicleName, string dsnDashboardName)
         {
             UpdateSpacecraft2(vehicleName, Constants.COLUMN_STATUS, Constants.STATUS_LAUNCH_INITIATED,
                             Constants.COLUMN_SPACECRAFT_STATUS, Constants.STATUS_ONLINE);
         }
 
+        /// <summary>
+        /// Update Spacecraft Status
+        /// </summary>
+        /// <param name="vehicleName"></param>
+        /// <param name="column"></param>
+        /// <param name="status"></param>
         public void UpdateSpacecraft1(string vehicleName, string column, string status)
         {
             try
@@ -132,6 +162,14 @@ namespace Backend
             
         }
 
+        /// <summary>
+        /// Update Spacecraft Status
+        /// </summary>
+        /// <param name="vehicleName"></param>
+        /// <param name="column1"></param>
+        /// <param name="value1"></param>
+        /// <param name="column2"></param>
+        /// <param name="value2"></param>
         public void UpdateSpacecraft2(string vehicleName, string column1, string value1, string column2, string value2)
         {
             try
@@ -152,6 +190,16 @@ namespace Backend
 
         }
 
+        /// <summary>
+        ///  Update Spacecraft Status
+        /// </summary>
+        /// <param name="vehicleName"></param>
+        /// <param name="column1"></param>
+        /// <param name="value1"></param>
+        /// <param name="column2"></param>
+        /// <param name="value2"></param>
+        /// <param name="column3"></param>
+        /// <param name="value3"></param>
         public void UpdateSpacecraft3(string vehicleName, string column1, string value1, string column2, string value2, string column3, string value3)
         {
             try
@@ -172,6 +220,10 @@ namespace Backend
 
         }
 
+        /// <summary>
+        /// List of all Spacecraft object having Status online.
+        /// </summary>
+        /// <returns>List<Vehicle></returns>
         public List<Vehicle> GetAllOnlineSpacecraft()
         {
             try
@@ -196,6 +248,10 @@ namespace Backend
             }
         }
 
+        /// <summary>
+        /// List of all Spacecraft object having payload status online.
+        /// </summary>
+        /// <returns>List<Vehicle></returns>
         public List<Vehicle> GetAllOnlinePayload()
         {
             try
@@ -220,6 +276,11 @@ namespace Backend
             }
         }
 
+        /// <summary>
+        /// Return Spacecraft data.
+        /// </summary>
+        /// <param name="vehicleName"></param>
+        /// <returns>Spacecraft Object</returns>
         public Vehicle GetSpacecraft(string vehicleName)
         {
             try
@@ -239,11 +300,13 @@ namespace Backend
             }
         }
 
+        // Update Telemetry data by Payload and Spacecraft.
         public void UpdateTelemetryMap(string vehicleName, Telemetry telemetry)
         {
             this.telemetryDictionary[vehicleName] = telemetry;
         }
 
+        // Send Telemetry data to DSN.
         public Telemetry GetTelemetryOfVehicle(string vehicleName)
         {
             try
@@ -257,11 +320,13 @@ namespace Backend
             }
         }
 
+        // Update Scientific data by Payload.
         public void UpdateWeatherMap(string vehicleName, Weather weather)
         {
             this.weatherDictionary[vehicleName] = weather;
         }
 
+        // Send Scientific data to DSN.
         public Weather GetWeatherDataOfVehicle(string vehicleName)
         {
             try
@@ -275,11 +340,13 @@ namespace Backend
             }
         }
 
+        // Update Communication data by Payload.
         public void UpdateCommMap(string vehicleName, Comm comm)
         {
             this.commDictionary[vehicleName] = comm;
         }
 
+        // Send Communication data to DSN.
         public Comm GetCommDataOfVehicle(string vehicleName)
         {
             try
@@ -293,11 +360,13 @@ namespace Backend
             }
         }
 
+        // Update Spy data by Payload.
         public void UpdateSpyMap(string vehicleName, Spy spy)
         {
             this.spyDictionary[vehicleName] = spy;
         }
 
+        // Send Spy data to DSN.
         public Spy GetSpyDataOfVehicle(string vehicleName)
         {
             try
@@ -311,6 +380,7 @@ namespace Backend
             }
         }
 
+        // Send DSN command through callback to Spacecraft.
         public void SendCommandToVehicle(Vehicle vehicle, string command)
         {
             try
@@ -331,6 +401,7 @@ namespace Backend
             }
         }
 
+        // Send DSN command through callback to Payload.
         public void SendCommandToPayloadVehicle(string vehicleName, string command)
         {
             try
@@ -351,6 +422,7 @@ namespace Backend
             }
         }
 
+        // Connect client and add it in pool of connection.
         public void ConnectToBackend(string vehicleName)
         {
             try
@@ -368,6 +440,7 @@ namespace Backend
             }
         }
 
+        // Disconnect client and remove it from pool of connection.
         public void DisconnectFromBackend(string vehicleName)
         {
             try
@@ -389,6 +462,7 @@ namespace Backend
             
         }
 
+        // Check if client is connected or not.
         public bool CheckVehicleConnectedToBackend(string vehicleName)
         {
             try

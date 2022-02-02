@@ -7,6 +7,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Backend
 {
+    // Class to store Spacecraft Data.
     public class Vehicle
     {
         [BsonId]

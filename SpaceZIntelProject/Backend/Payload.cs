@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Backend
 {
+    // Class to hold Payload Data for Spacecraft.
     public class Payload
     {
         public string Name { get; set; }

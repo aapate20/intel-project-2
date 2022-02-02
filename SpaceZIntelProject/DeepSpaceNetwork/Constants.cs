@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeepSpaceNetwork
 {
+    // This file contains all the constants used in this project.
     public class Constants
     {
         public const string PAYLOAD_TYPE_SCIENTIFIC = "Scientific";

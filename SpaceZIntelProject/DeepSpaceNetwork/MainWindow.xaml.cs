@@ -21,6 +21,10 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
+    /*
+     * Main Window -> Starting point of the application.
+     */
     public partial class MainWindow : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -33,6 +37,7 @@ namespace DeepSpaceNetwork
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
+        // Redirect to Mission Control System
         private void Go_to_DSN_Dashboard(object sender, RoutedEventArgs e)
         {
             Window missionControlSystem = new MissionControlSystem();
@@ -40,6 +45,7 @@ namespace DeepSpaceNetwork
             this.Close();
         }
 
+        // Redirect to Communication System
         private void Go_to_Communication_System(object sender, RoutedEventArgs e)
         {
             Window mianCommunicationSystem = new MainCommunicationSystem();

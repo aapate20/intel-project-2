@@ -136,3 +136,10 @@ Exception rethrown at [0]:
 2022-02-01 21:07:26,712 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
 2022-02-01 21:08:31,403 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
 2022-02-01 21:08:31,460 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:13:45,929 [1] INFO DeepSpaceNetwork.App -         =============  Started Logging DSN =============        
+2022-02-01 21:13:45,990 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:15:00,170 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:16:05,737 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:16:10,908 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started
+2022-02-01 21:17:02,733 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\CommunicationDashboard.xaml.cs - Launched Payload: gokuldham
+2022-02-01 21:19:14,498 [1] INFO C:\Aakash\Internship\Intel\Intel-project-2\SpaceZIntelProject\DeepSpaceNetwork\MainWindow.xaml.cs - Application started

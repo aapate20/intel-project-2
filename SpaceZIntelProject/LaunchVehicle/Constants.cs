@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LaunchVehicle
 {
+    // This file contains all the constants used in this project.
     public class Constants
     {
         public const string STATUS_LAUNCHED = "Launched";

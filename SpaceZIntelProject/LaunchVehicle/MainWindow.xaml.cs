@@ -21,6 +21,9 @@ namespace LaunchVehicle
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /* 
+     * This window will open if client launch the spacecraft or create communication channel to get telemetry data.
+     */
     public partial class MainWindow : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -82,6 +85,7 @@ namespace LaunchVehicle
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
+        // Start Launch sequence -> 10, 9, 8, ...  
         private void Start_Launch_Sequence()
         {
             this.launchTimer = new DispatcherTimer();
@@ -103,6 +107,8 @@ namespace LaunchVehicle
                 this.LaunchSpacecraft();
             }
         }
+
+        // Function to Launch Spacecraft after launch sequence  = 0.
         private void LaunchSpacecraft()
         {
             try
@@ -125,6 +131,7 @@ namespace LaunchVehicle
             
         }
 
+        // Start counter for time to reach orbit after spacecraft is launched.
         private void TimeToReachOrbitTicker(object sender, EventArgs e)
         {
             this.timeToOrbitSeconds--;
@@ -140,6 +147,7 @@ namespace LaunchVehicle
             this.UpdateTelemetry();
         }
 
+        // Function to update telemetry board (UI).
         private void UpdateTelemetry()
         {
             this.telemetry.Altitude += this.distanceCoveredinOneSec;
@@ -162,6 +170,7 @@ namespace LaunchVehicle
             this.backendService.UpdateTelemetryMap(this.vehicle.Name, this.telemetry);
         }
 
+        // Function to launch payload
         private void LaunchPayload()
         {
             try
@@ -177,6 +186,7 @@ namespace LaunchVehicle
             }
         }
 
+        // Function to calculate time to reach orbit.
         private void CalculateTimeToOrbit()
         {
             try
@@ -193,6 +203,7 @@ namespace LaunchVehicle
             }
         }
 
+        // Function to update communication board (UI).
         public void UpdateCommunicationBoard(string command)
         {
             this.CommunicationBox.Text += Constants.RECEIVE_COMMAND + command + "\n";
@@ -200,6 +211,7 @@ namespace LaunchVehicle
             this.ProcessCommand(command);
         }
 
+        // Function to process command get from DSN.
         private void ProcessCommand(string command)
         {
             try
@@ -233,11 +245,13 @@ namespace LaunchVehicle
             }
         }
 
+        // Function to disconnect if client disconnected.
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             this.backendService.DisconnectFromBackend(this.vehicle.Name);
         }
 
+        // Function to take step if spacecraft is disconnected while in Launching state or Reaching the orbit.
         private void Window_Closed(object sender, EventArgs e)
         {
             if (this.launchSequenceSecond > 0)

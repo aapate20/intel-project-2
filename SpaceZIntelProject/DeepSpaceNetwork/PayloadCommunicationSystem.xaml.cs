@@ -19,6 +19,10 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for PayloadCommunicationSystem.xaml
     /// </summary>
+    /*
+     * In this window, we create communication channel with payload which are launched and currently online. 
+     * Once payload selected from list of available online payload, client redirect to payload dashboard.
+     */
     public partial class PayloadCommunicationSystem : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -62,6 +66,9 @@ namespace DeepSpaceNetwork
             }
         }
 
+        /*
+         * Function to open communication channel with selected payload from list of available online and launched payload.
+         */
         private void Payload_Communication_Dashboard(object sender, RoutedEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -103,6 +110,7 @@ namespace DeepSpaceNetwork
             }
         }
 
+        // Function to go back to Main Communication System.
         private void Go_Back(object sender, RoutedEventArgs e)
         {
             var mainCommunicationSystem = new MainCommunicationSystem();

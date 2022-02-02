@@ -20,6 +20,9 @@ namespace DeepSpaceNetwork
     /// <summary>
     /// Interaction logic for AddSpacecraft.xaml
     /// </summary>
+    /*
+     * Add new spacecraft from this window.
+     */
     public partial class AddSpacecraft : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -37,6 +40,9 @@ namespace DeepSpaceNetwork
             payload = new BackendServiceReference.Payload();
         }
 
+        /*
+         * Function to add spacecraft in Database to maintain all the records.
+         */
         private void Add_Spacecraft_in_DB(object sender, RoutedEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -97,12 +103,7 @@ namespace DeepSpaceNetwork
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
-        private void Go_Back(object sender, RoutedEventArgs e)
-        {
-            var missionControlWindow = new MissionControlSystem(); //create your new form.
-            missionControlWindow.Show(); //show the new form.
-            this.Close();
-        }
+        // Function to upload configuration file.
         private void Open_File_Dialog(object sender, RoutedEventArgs e)
         {
             string payloadData = null;
@@ -152,6 +153,14 @@ namespace DeepSpaceNetwork
             {
                 MessageBox.Show("Please enter correct configuration file!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        // Function to go back to Mission control Window.
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            var missionControlWindow = new MissionControlSystem(); //create your new form.
+            missionControlWindow.Show(); //show the new form.
+            this.Close();
         }
     }
 }

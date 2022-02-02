@@ -22,6 +22,9 @@ namespace PayloadSystem
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     
+    /* 
+     * This window will open if client launch the payload or create communication channel to get data from Payload.
+     */
     public partial class MainWindow : Window
     {
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -47,6 +50,10 @@ namespace PayloadSystem
             Mouse.OverrideCursor = Cursors.Arrow;
         }
 
+        /*
+         * There are three different types of Payload, so this function will configured the object as per payload type.
+         * Also used different thread to configured Payload and Telemetry data as per Payload type.
+         */
         private void Configured_Window()
         {
             try
@@ -81,8 +88,6 @@ namespace PayloadSystem
 
                 this.telemetryTimer.Tick += TelemetryTicker;
                 this.dataTimer.Tick += DataTicker;
-                this.telemetryTimer.Start();
-                this.dataTimer.Start();
                 this.backendService.ConnectToBackend(this.vehicle.Payload.Name);
             }
             catch (Exception ex)
@@ -107,6 +112,7 @@ namespace PayloadSystem
                 this.UpdateSpy();
         }
 
+        // Function to update telemetry of the Payload and send data to Backend for DSN to consumed.
         private void UpdateTelemetry()
         {
             try
@@ -137,6 +143,7 @@ namespace PayloadSystem
             }
         }
 
+        // Function to update Payload Data if Payload type is Scientific.
         private void UpdateScientific()
         {
             try
@@ -163,6 +170,7 @@ namespace PayloadSystem
             }
         }
 
+        // Function to update Payload Data if Payload type is Communication.
         private void UpdateCommunication()
         {
             try
@@ -189,6 +197,7 @@ namespace PayloadSystem
             }
         }
 
+        // Function to update Payload Data if Payload type is Spy.
         private void UpdateSpy()
         {
             try
@@ -213,6 +222,7 @@ namespace PayloadSystem
             }
         }
 
+        // Function to update communication board (UI).
         public void UpdateCommunicationBoard(string command)
         {
             this.CommunicationBox.Text += Constants.RECEIVE_COMMAND + command + "\n";
@@ -220,6 +230,7 @@ namespace PayloadSystem
             this.ProcessCommand(command);
         }
 
+        // Function to process command get from DSN.
         private void ProcessCommand(string command)
         {
             try
@@ -228,21 +239,25 @@ namespace PayloadSystem
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.SENDING_TELEMETRY + "\n";
                     this.CommunicationBox.ScrollToEnd();
+                    this.telemetryTimer.Start();
                 }
                 else if (Constants.STOP_TELEMETRY.Equals(command))
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.STOP_TELEMETRY + "\n";
                     this.CommunicationBox.ScrollToEnd();
+                    this.telemetryTimer.Stop();
                 }
                 else if (Constants.START_DATA.Equals(command))
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.STARTING_DATA + "\n";
                     this.CommunicationBox.ScrollToEnd();
+                    this.dataTimer.Start();
                 }
                 else if (Constants.STOP_DATA.Equals(command))
                 {
                     this.CommunicationBox.Text += this.vehicle.Payload.Name + ": " + Constants.STOPIING_DATA + "\n";
                     this.CommunicationBox.ScrollToEnd();
+                    this.dataTimer.Stop();
                 }
             }
             catch (Exception ex)
@@ -253,6 +268,7 @@ namespace PayloadSystem
             }
         }
 
+        // Disconnect Payload type client from backend.
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             this.backendService.DisconnectFromBackend(this.vehicle.Payload.Name);
